@@ -1,0 +1,6 @@
+.DS_Store
+.cursor/
+.mobile-build/
+.venv/
+Generated_image_*.png
+*.tmp.png
