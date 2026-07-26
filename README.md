@@ -8,11 +8,13 @@
 travel-log/
 ├── README.md
 ├── docs/                          ← GitHub Pages（Settings → /docs）
-│   ├── index.html                 ← 旅程總索引
+│   ├── index.html                 ← Travel Log 首頁
 │   └── Japan/
+│       ├── index.html             ← 日本行程總索引（手機入口）
 │       ├── 20260721_Tokyo/        ← 東京 2026/7 網站
 │       └── 20260812_Tokyo/        ← 東京 2026/8 + next-trip 網站
 └── Japan/
+    ├── index.html                 ← 指向 docs/Japan/ 的捷徑
     ├── 20260721_Tokyo/            ← 七月行程原始檔
     └── 20260812_Tokyo/            ← 八月行程 / next-trip 原始檔
 ```
@@ -23,7 +25,8 @@ travel-log/
 
 | 頁面 | URL |
 |------|-----|
-| 總索引 | `https://djiann.github.io/travel-log/` |
+| Travel Log 首頁 | `https://djiann.github.io/travel-log/` |
+| **日本行程總索引** | `https://djiann.github.io/travel-log/Japan/` |
 | 東京 7 月 | `https://djiann.github.io/travel-log/Japan/20260721_Tokyo/` |
 | 東京 8 月索引 | `https://djiann.github.io/travel-log/Japan/20260812_Tokyo/` |
 | 八月完整指南 | `https://djiann.github.io/travel-log/Japan/20260812_Tokyo/tokyo-2026-08-guide.html` |
