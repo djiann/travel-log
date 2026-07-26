@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>東京 2026/8/12–8/17 慶典活動調查（行程重排前）</title>
+<style>
+  :root{
+    --bg:#f6f4f0; --card:#ffffff; --card2:#faf8f5; --ink:#2a3238; --mut:#6b7a88;
+    --acc:#d4566a; --acc2:#3a8f9f; --ok:#2d8a62; --warn:#b87820; --line:#e6e1da;
+    --shadow:0 2px 12px rgba(42,50,56,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,"PingFang TC","Noto Sans TC","Hiragino Sans GB","Microsoft JhengHei",system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink); line-height:1.7; font-size:16px;
+  }
+  header{
+    padding:32px 20px 24px;
+    background:linear-gradient(145deg,#fff 0%,#fdf6f4 45%,#f0f7f8 100%);
+    border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+  }
+  h1{margin:0 0 8px;font-size:22px;font-weight:700}
+  .sub{color:var(--mut);font-size:14px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 16px 80px}
+  nav.toc{
+    position:sticky;top:0;z-index:20;
+    background:rgba(246,244,240,.92); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line); padding:10px 0; margin:0 -16px 20px;
+    overflow-x:auto; white-space:nowrap;
+  }
+  nav.toc a{
+    display:inline-block; color:var(--acc2); text-decoration:none; font-size:13px; font-weight:500;
+    padding:6px 12px; background:#fff; border:1px solid var(--line); border-radius:20px; margin:4px;
+  }
+  h2{font-size:18px;font-weight:700;border-left:4px solid var(--acc);padding-left:12px;margin:28px 0 14px;scroll-margin-top:64px}
+  h3{font-size:15px;font-weight:600;color:var(--acc2);margin:16px 0 8px}
+  .card{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+  .event{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;margin:14px 0;box-shadow:var(--shadow);
+  }
+  .event h3{margin-top:0;font-size:17px;color:var(--ink)}
+  .pill{display:inline-block;background:#eef2f5;color:var(--mut);font-size:12px;padding:2px 10px;border-radius:20px;margin:2px 4px 2px 0}
+  .pill.t{background:#e8f4f6;color:#2a6f7d}
+  .pill.f{background:#fceef1;color:#b84a5c}
+  .pill.m{background:#e8f5ee;color:#2d7a55}
+  .pill.w{background:#fdf5e8;color:#9a6518}
+  .pill.k{background:#efe8f8;color:#6b4f8a}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f0f4f6;color:var(--acc2);font-weight:600;white-space:nowrap}
+  a{color:var(--acc2);text-decoration:none;border-bottom:1px solid rgba(58,143,159,.25)}
+  ul{padding-left:20px;margin:8px 0}
+  li{margin:5px 0}
+  .warnbox{
+    background:#fff9ee;border:1px solid #f0ddb8;border-left:4px solid var(--warn);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .okbox{
+    background:#f0faf5;border:1px solid #c5e6d4;border-left:4px solid var(--ok);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .mute{color:var(--mut);font-size:13px}
+  .daygrid{display:grid;gap:8px;margin:12px 0}
+  .day{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+  .day strong{color:var(--acc)}
+  footer{color:var(--mut);font-size:12px;padding:24px 0;border-top:1px solid var(--line);margin-top:32px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap" style="padding-bottom:0">
+    <h1>東京 2026/8/12–8/17 慶典活動調查</h1>
+    <p class="sub">行程自 7/21–7/27 延至 8/12–8/17（小孩暑輔）・重排前參考資料<br>
+    資料查詢基準：2026/7/16・請出發前再核對各官方網站</p>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="toc">
+  <a href="#summary">總覽</a>
+  <a href="#calendar">日曆</a>
+  <a href="#fukagawa">深川八幡</a>
+  <a href="#tourou">燈籠流</a>
+  <a href="#hoshi">星空祭</a>
+  <a href="#toyosu">豊洲夏祭（不排）</a>
+  <a href="#tomica">トミカ博</a>
+  <a href="#anime">動漫祭</a>
+  <a href="#other">其他／避開</a>
+  <a href="#hanabi">花火說明</a>
+  <a href="#tips">親子建議</a>
+</nav>
+
+<section id="summary">
+  <h2>一、總覽結論</h2>
+  <div class="okbox">
+    <strong>這段時間最大亮點：深川八幡祭り（本祭り年）</strong><br>
+    2026 是三年一度的「本祭り」，8/12–16 在富岡八幡宮周邊舉行；8/16（日）神輿連合渡御＋水かけ是東京夏季最值得排進親子行程的傳統祭典之一。
+  </div>
+  <div class="card">
+    <strong>期間內可排入的活動優先序（親子角度）</strong>
+    <ol>
+      <li><span class="pill f">必看</span> 深川八幡祭り（尤其 8/15 鳳輦、8/16 水かけ神輿）</li>
+      <li><span class="pill m">親子友善</span> トミカ博（有明，至 8/16；避開コミケ週末較佳）</li>
+      <li><span class="pill k">已不排</span> とよす夏祭り（ららぽーと豊洲）— 離上野遠、晚間回程過晚</li>
+      <li><span class="pill t">夜間體驗</span> 東京 星空と光の夏祭り（立川・昭和記念公園，至 8/16）</li>
+      <li><span class="pill w">靜心／文化</span> 隅田川とうろう流し（8/15 晚，需買燈籠）</li>
+      <li><span class="pill k">避開或謹慎</span> コミケ C108、POP GALAXY（8/15–16 有明／台場大塞車）</li>
+    </ol>
+  </div>
+  <div class="warnbox">
+    <strong>重要：8/12–17 期間「沒有」東京主要大型花火大會</strong><br>
+    最近的大型花火在出發前已結束：隅田川 7/25、江戸川／板橋 8/1、神宮外苑 8/8、江東花火 8/11（火・祝）。<br>
+    期間內可看「花火」的替代：昭和記念公園「星空と光の夏祭り」每晚約 20:30 音樂花火（約 3 分鐘，需門票）。
+  </div>
+</section>
+
+<section id="calendar">
+  <h2>二、日期一覽（8/12 三 ～ 8/17 一）</h2>
+  <div class="daygrid">
+    <div class="day"><strong>8/12（三）</strong> 深川：例祭前々日祭 9:00＋午後奉納　｜　星空祭／トミカ博進行中</div>
+    <div class="day"><strong>8/13（四）</strong> 深川：例祭前日祭 9:00＋能／舞踊　｜　星空祭／トミカ博</div>
+    <div class="day"><strong>8/14（五）</strong> 深川：例祭祭典 11:00＋午後奉納（神事日）　｜　星空祭／トミカ博</div>
+    <div class="day"><strong>8/15（六）</strong> ★深川神幸祭（鳳輦）8:00 發輦／16:15 還御　｜　隅田川燈籠流 18:30～　｜　星空祭　｜　コミケ／POP GALAXY 首日（灣岸大擁擠）　｜　<span class="pill k">とよす夏祭不排</span></div>
+    <div class="day"><strong>8/16（日）</strong> ★★深川神輿連合渡御 7:30～（水かけ本命日）　｜　星空祭最終日　｜　トミカ博最終日　｜　コミケ／POP GALAXY 二日目　｜　<span class="pill k">とよす夏祭不排</span></div>
+    <div class="day"><strong>8/17（一）</strong> 上述大型祭典多已結束；可排一般觀光／補休</div>
+  </div>
+</section>
+
+<!-- ========== 深川 ========== -->
+<section id="fukagawa">
+  <h2>三、【重點】深川八幡祭り（富岡八幡宮例祭）</h2>
+  <div class="event">
+    <h3>深川八幡祭り 2026・本祭り</h3>
+    <p>
+      <span class="pill f">免費</span>
+      <span class="pill t">傳統祭典</span>
+      <span class="pill w">三年一度本祭り</span>
+      <span class="pill m">親子可（選時段）</span>
+    </p>
+    <table>
+      <tr><th>期間</th><td>2026/8/12（三）～ 8/16（日）</td></tr>
+      <tr><th>地點</th><td>富岡八幡宮及氏子町內（江東區富岡・門前仲町周邊，巡行至清澄・箱崎・新川等）</td></tr>
+      <tr><th>地址</th><td>東京都江東区富岡1-20-3</td></tr>
+      <tr><th>Google Maps</th><td><a href="https://maps.google.com/?q=%E5%AF%8C%E5%B2%A1%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">富岡八幡宮</a></td></tr>
+      <tr><th>官方</th><td><a href="http://www.tomiokahachimangu.or.jp/" target="_blank" rel="noopener">tomiokahachimangu.or.jp</a>　｜　行程 PDF：<a href="http://www.tomiokahachimangu.or.jp/pdf/R8reisai/nittei.pdf" target="_blank" rel="noopener">nittei.pdf</a></td></tr>
+      <tr><th>參考</th><td><a href="https://www.gotokyo.org/jp/spot/ev093/index.html" target="_blank" rel="noopener">GO TOKYO</a>　｜　<a href="https://www.chuo-kanko.or.jp/blogs/event/2607081430" target="_blank" rel="noopener">中央區觀光協會</a></td></tr>
+    </table>
+
+    <h3>官方行事日程（令和8年社報）</h3>
+    <table>
+      <tr><th>日期</th><th>時間</th><th>內容</th></tr>
+      <tr><td>8/12（三）</td><td>9:00<br>15:00／16:30</td><td>例祭前々日祭<br>歌謡・太鼓奉納</td></tr>
+      <tr><td>8/13（四）</td><td>9:00<br>17:00／19:00</td><td>例祭前日祭<br>深川能舞台・民族舞踊</td></tr>
+      <tr><td>8/14（五）</td><td>11:00<br>午後～夜</td><td><strong>例祭祭典</strong>（莊嚴神事）<br>琴・三味線・茶會・ガムラン等</td></tr>
+      <tr><td>8/15（六）</td><td><strong>8:00</strong> 發輦<br><strong>16:15</strong> 還御</td><td><strong>神幸祭（鳳輦渡御）</strong>：神社神輿級鳳輦巡行氏子區域（約 70km 路線規劃，旅客看重點路段即可）</td></tr>
+      <tr><td>8/16（日）</td><td><strong>7:30</strong> 出發<br>先頭約 13:00／尾約 15:30 還御</td><td><strong>神輿連合渡御</strong>：約 54 基町神輿、約 8km 環狀巡行＋<strong>水かけ</strong></td></tr>
+    </table>
+
+    <h3>8/16 連合渡御・官方路點時間（概略）</h3>
+    <table>
+      <tr><th>路點</th><th>先頭／尾</th></tr>
+      <tr><td>富岡八幡宮前出發</td><td>7:30／9:00</td></tr>
+      <tr><td>永代通り～大門通り</td><td>8:00／9:30</td></tr>
+      <tr><td>資料館通り一帶</td><td>9:00／10:30</td></tr>
+      <tr><td>清洲橋通り</td><td>先頭約 9:30</td></tr>
+      <tr><td>新川午餐休息</td><td>10:30～12:00</td></tr>
+      <tr><td>12:00 再出發 → 永代橋一帶返回（水かけ重點）</td><td>午後</td></tr>
+      <tr><td>富岡八幡宮前到達</td><td>13:00／15:30</td></tr>
+    </table>
+    <p class="mute">路線 PDF：<a href="http://www.tomiokahachimangu.or.jp/pdf/R8reisai/junro2.pdf" target="_blank" rel="noopener">junro2.pdf</a>　｜　交通規制：<a href="http://www.tomiokahachimangu.or.jp/pdf/R8reisai/koutuKisei.pdf" target="_blank" rel="noopener">koutuKisei.pdf</a>　｜　時間會因現場而變動</p>
+
+    <h3>交通</h3>
+    <ul>
+      <li><strong>最便</strong>：東京 Metro 東西線／都營大江戶線 <strong>門前仲町</strong>（T12／E15）→ 徒歩約 3–6 分　｜　<a href="https://maps.google.com/?q=%E9%96%80%E5%89%8D%E4%BB%B2%E7%94%BA%E9%A7%85" target="_blank" rel="noopener">門前仲町站</a></li>
+      <li><strong>備援疏散</strong>：清澄白河（大江戶／半藏門）・木場（東西線）・越中島（JR 京葉）・茅場町（東西／日比谷，新川一帶離開時）</li>
+      <li>8/16 永代通り（門前仲町交差點～木場 5 丁目）約 <strong>6:30–17:00 全面封鎖</strong>；計程車／巴士幾乎不可用，請用電車＋步行</li>
+    </ul>
+
+    <h3>詳細注意事項（親子必讀）</h3>
+    <ul>
+      <li><strong>會濕透</strong>：水かけ是祭典核心（觀眾對神輿／抬轎者潑淨水）。靠近路線＝幾乎一定淋濕。手機／護照用紙袋或防水套；不要背開放式紙袋。</li>
+      <li><strong>不要推嬰兒車進最前線</strong>；小孩建議看<strong>早上一段</strong>（7:30–9:30）後離開，避開午後酷熱與返程人潮。</li>
+      <li><strong>8 月中旬東京極熱</strong>：防中暑（水、鹽分、帽子、冰袋）。濕路面＋人群＝易滑倒。</li>
+      <li><strong>服裝</strong>：速乾衣＋止滑鞋；浴衣可穿但勿站水かけ最前線。避免濕後透明的淺色薄衣。</li>
+      <li><strong>現金</strong>：屋台多收現金；Suica 先儲值。不要帶大行李。</li>
+      <li><strong>集合點</strong>：事先約定門前仲町站外較安靜出口，或清澄白河當 Plan B。</li>
+      <li><strong>潑水禮儀</strong>：只對神輿／抬轎者；勿對警察、工作人員、路人小孩亂潑。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== 燈籠 ========== -->
+<section id="tourou">
+  <h2>四、隅田川とうろう流し</h2>
+  <div class="event">
+    <h3>すみだ・浅草連携 令和8年 隅田川とうろう流し</h3>
+    <p><span class="pill t">盂蘭盆供養</span><span class="pill w">需購燈籠</span><span class="pill m">親子可（晚間靜態）</span></p>
+    <table>
+      <tr><th>日期</th><td>2026/8/15（六）　※雨天決行；颱風等無法舉行時順延至 8/16（日）</td></tr>
+      <tr><th>時間</th><td>18:30～ 式典／來賓流し初め　｜　18:45～ 一般流し（至約 20:15）</td></tr>
+      <tr><th>地點</th><td>墨田區側：隅田川親水テラス（區役所前うるおい広場）＋ 台東區側：隅田公園親水テラス（吾妻橋附近）同時舉行</td></tr>
+      <tr><th>Google Maps</th><td>
+        <a href="https://maps.google.com/?q=%E5%A2%A8%E7%94%B0%E5%8C%BA%E5%BD%B9%E6%89%80+%E5%90%BE%E5%A6%BB%E6%A9%8B" target="_blank" rel="noopener">墨田區役所／吾妻橋親水テラス</a>　｜　
+        <a href="https://maps.google.com/?q=%E9%9A%85%E7%94%B0%E5%85%AC%E5%9C%92+%E5%90%BE%E5%A6%BB%E6%A9%8B" target="_blank" rel="noopener">隅田公園（淺草側）</a>
+      </td></tr>
+      <tr><th>官方</th><td><a href="https://visit-sumida.jp/event/20260815_tourou/" target="_blank" rel="noopener">墨田區觀光協會</a></td></tr>
+      <tr><th>燈籠費用</th><td>網路／事前直賣 ¥1,700　｜　當日現場 ¥2,000（約 15:00 起賣）　｜　網路售至 8/6</td></tr>
+    </table>
+    <h3>交通</h3>
+    <ul>
+      <li>淺草側：東京 Metro 銀座線・東武・TX・都營淺草線 <strong>淺草站</strong> 徒歩數分　｜　<a href="https://maps.google.com/?q=%E6%B5%85%E8%8D%89%E9%A7%85" target="_blank" rel="noopener">淺草站</a></li>
+      <li>墨田側：都營淺草線・東京 Metro 銀座線 <strong>本所吾妻橋</strong> 徒歩約 5 分　｜　<a href="https://maps.google.com/?q=%E6%9C%AC%E6%89%80%E5%90%BE%E5%A6%BB%E6%A9%8B%E9%A7%85" target="_blank" rel="noopener">本所吾妻橋站</a></li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>流燈須依整理券指定時段；1 基燈籠原則 1 人入場（小學生以下可 1 名保護者同行）。</li>
+      <li><strong>墨田側買的燈籠不能從淺草側流</strong>（官方明訂）。</li>
+      <li>蠟燭當日發放；已購不退費。夜間河邊注意小孩落水與蚊蟲。</li>
+      <li>8/15 若白天已去深川鳳輦，晚上可轉淺草／兩國看燈籠，動線順。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== 星空 ========== -->
+<section id="hoshi">
+  <h2>五、東京 星空と光の夏祭り 2026</h2>
+  <div class="event">
+    <h3>ドローンショー × 花火 × ランタン（昭和記念公園）</h3>
+    <p><span class="pill f">需門票</span><span class="pill m">親子友善</span><span class="pill t">夜間</span></p>
+    <table>
+      <tr><th>期間</th><td>2026/8/8（六）～ 8/16（日）共 9 日（含旅程期間）</td></tr>
+      <tr><th>時間</th><td>17:00 開場 ～ 21:00 閉場</td></tr>
+      <tr><th>地點</th><td>國營昭和記念公園「みんなの原っぱ」</td></tr>
+      <tr><th>地址</th><td>東京都昭島市もくせいの杜3-1（入場僅限<strong>西立川口</strong>）</td></tr>
+      <tr><th>Google Maps</th><td><a href="https://maps.google.com/?q=%E5%9B%BD%E5%96%B6%E6%98%AD%E5%92%8C%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E8%A5%BF%E7%AB%8B%E5%B7%9D%E5%8F%A3" target="_blank" rel="noopener">昭和記念公園・西立川口</a></td></tr>
+      <tr><th>官方</th><td><a href="https://hoshihika-fes.redcliff-inc.co.jp/" target="_blank" rel="noopener">hoshihika-fes.redcliff-inc.co.jp</a></td></tr>
+      <tr><th>票價</th><td>前賣：大人 ¥3,200／小人(4歲–中學生) ¥1,800　｜　當日各加 ¥300　｜　3歲以下免費（需保護者門票）</td></tr>
+      <tr><th>購票</th><td><a href="https://www.asoview.com/base/164912/" target="_blank" rel="noopener">アソビュー！</a>　｜　<a href="https://w.pia.jp/t/hoshitohikari26/" target="_blank" rel="noopener">チケットぴあ</a></td></tr>
+    </table>
+    <h3>當日大致時程</h3>
+    <ul>
+      <li>17:00–　フード／ステージ／光のケヤキ／手持花火ひろば（另購券）</li>
+      <li>18:00–19:00 ランタン發放　｜　19:00–19:15 ランタン點灯・釋放（另購 ¥4,000／日限 500）</li>
+      <li>19:15／20:15　星空ドローンシアター（各約 10 分，500 機）</li>
+      <li>20:30　音樂花火ショー（約 3 分）</li>
+    </ul>
+    <h3>交通</h3>
+    <ul>
+      <li>JR 青梅線・五日市線／南武線 <strong>西立川站</strong> 徒歩すぐ（事件日僅西立川口入退場）　｜　<a href="https://maps.google.com/?q=JR%E8%A5%BF%E7%AB%8B%E5%B7%9D%E9%A7%85" target="_blank" rel="noopener">西立川站</a></li>
+      <li>自都心：新宿 → JR 中央線快速至立川 → 換青梅線 1 站西立川（約 50–70 分）</li>
+      <li>停車：西立川口當日現場 ¥1,500／先著 300 台；官方仍建議電車</li>
+    </ul>
+    <h3>注意事項</h3>
+    <ul>
+      <li>雨天原則舉行；強風／雷等可能取消無人機或花火，部分中止<strong>不退入場票</strong>。</li>
+      <li>手持花火區：另購ひろば券 ¥1,000（最多 4 人），花火需自備。</li>
+      <li>夜間草地／步道偏暗，盯牢小孩；適合 8/12–14 等白天無大型祭典時的夜間行程。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== 豊洲（已不排） ========== -->
+<section id="toyosu">
+  <h2>六、とよす夏祭り（ららぽーと豊洲）— <span class="pill k">本趟不排</span></h2>
+  <div class="warnbox">
+    <strong>已自行程取消（2026/7 決策）</strong><br>
+    理由：住上野時，傍晚去ららぽーと豊洲盆踊り／緣日 → 回上野路程遠、結束常偏晚，不適合連住節奏。<br>
+    活動本身仍可能照常舉辦（約 8/8–16），但<strong>本旅程不安排、空檔亦不優先推薦</strong>。<br>
+    Day4 白天的<strong>豐洲市場／teamLab</strong>仍保留（與夏祭無關；午後建議直接回上野或改深川／燈籠流）。
+  </div>
+</section>
+
+<!-- ========== トミカ ========== -->
+<section id="tomica">
+  <h2>七、トミカ博 in TOKYO 2026</h2>
+  <div class="event">
+    <h3>出動！まちをまもるパトロールカー</h3>
+    <p><span class="pill m">親子強推</span><span class="pill f">需門票</span></p>
+    <table>
+      <tr><th>期間</th><td>2026/8/6（四）～ 8/16（日）</td></tr>
+      <tr><th>時間</th><td>10:00～16:30（最終入場 16:00）</td></tr>
+      <tr><th>地點</th><td>有明 GYM-EX</td></tr>
+      <tr><th>地址</th><td>東京都江東区有明1-10-1</td></tr>
+      <tr><th>Google Maps</th><td><a href="https://maps.google.com/?q=%E6%9C%89%E6%98%8EGYM-EX" target="_blank" rel="noopener">有明GYM-EX</a></td></tr>
+      <tr><th>官方</th><td><a href="https://www.tomica-tokyo.com/" target="_blank" rel="noopener">tomica-tokyo.com</a></td></tr>
+      <tr><th>票價</th><td>前賣：大人 ¥1,300／小孩(3歲–小學生) ¥900　｜　當日各加 ¥100　｜　2歲以下免費</td></tr>
+    </table>
+    <h3>交通</h3>
+    <ul>
+      <li>ゆりかもめ <strong>有明テニスの森</strong> 徒歩約 5 分　｜　<a href="https://maps.google.com/?q=%E6%9C%89%E6%98%8E%E3%83%86%E3%83%8B%E3%82%B9%E3%81%AE%E6%A3%AE%E9%A7%85" target="_blank" rel="noopener">有明テニスの森站</a></li>
+      <li><strong>警示</strong>：8/15–16 同區有コミケ，灣岸線／百合海鷗／公車極擠。若要去トミカ博，優先排 <strong>8/12–14</strong>。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== 動漫 ========== -->
+<section id="anime">
+  <h2>八、動漫／同人／偶像相關（你記得的「動漫祭」）</h2>
+  <div class="okbox">
+    旅程期間東京最大的「動漫祭」就是 <strong>コミックマーケット 108（夏コミ）</strong>，8/15–16 在東京ビッグサイト。<br>
+    不是 AnimeJapan（那是每年 3 月的官方企業動漫展）。
+  </div>
+
+  <div class="event">
+    <h3>① コミックマーケット 108（C108／夏コミ）— 世界最大同人誌即賣會</h3>
+    <p><span class="pill f">需預購手環／票</span><span class="pill k">人潮極大</span><span class="pill t">同人＋企業ブース</span></p>
+    <table>
+      <tr><th>日期</th><td>2026/8/15（六）10:30～17:00（企業ブース至 17:00）<br>2026/8/16（日）10:30～16:00</td></tr>
+      <tr><th>地點</th><td>東京ビッグサイト（有明）東・西・南ホール</td></tr>
+      <tr><th>地址</th><td>東京都江東区有明3-11-1</td></tr>
+      <tr><th>Google Maps</th><td><a href="https://maps.google.com/?q=%E6%9D%B1%E4%BA%AC%E3%83%93%E3%83%83%E3%82%B0%E3%82%B5%E3%82%A4%E3%83%88" target="_blank" rel="noopener">東京ビッグサイト</a></td></tr>
+      <tr><th>官方</th><td><a href="https://www.comiket.co.jp/" target="_blank" rel="noopener">comiket.co.jp</a>　｜　海外參加者：<a href="https://comiket.co.jp/info-a/TAFO/C108TAFO/index.html" target="_blank" rel="noopener">C108 International</a></td></tr>
+      <tr><th>規模</th><td>約 2 萬＋サークル、兩日合計數十萬人次；2026 夏為 50 週年相關特別會期之一</td></tr>
+      <tr><th>內容</th><td>同人誌／周邊、企業ブース（遊戲・動畫・VTuber 等）、コスプレ（須場內更衣室）</td></tr>
+      <tr><th>票務</th><td>須預購入場手環（早入場抽選／午前／午後等）。海外可經 e+ 等通路購電子票再換手環（詳見官方；售價以當期公告為準，參考往屆午前約 ¥1,210、午後約 ¥1,000、早入場較貴）</td></tr>
+    </table>
+    <h3>兩日ジャンル差異（選日很重要）</h3>
+    <ul>
+      <li><strong>8/15</strong>：ブルーアーカイブ、ウマ娘、TYPE-MOON、艦これ、アズールレーン、ガンダム、少女／一般アニメ、VTuber 飾品等較多</li>
+      <li><strong>8/16</strong>：東方、アイマス、ラブライブ！、創作／男性向、コスプレホール等較多</li>
+    </ul>
+    <h3>交通</h3>
+    <ul>
+      <li>りんかい線 <strong>国際展示場</strong>／ゆりかもめ <strong>東京ビッグサイト</strong>／巴士自豐洲・門前仲町等</li>
+      <li>當日灣岸全線極擠；建議極早抵達，離場避開尖峰</li>
+    </ul>
+    <h3>親子／一般旅客注意</h3>
+    <ul>
+      <li>本質是<strong>同人即賣會</strong>，不是親子展；場內有成人向刊物（分區，但仍可能擦邊）。</li>
+      <li>酷熱＋長時間排隊＋巨大人潮，帶小孩負擔大；非死忠粉通常<strong>不建議硬排</strong>。</li>
+      <li>若只想「感受氣氛」：可只走企業ブース半日，或改去秋葉原／池袋逛街買正版，不必進場。</li>
+      <li>8/15–16 若<strong>不去</strong>コミケ，也請避開把台場／有明當交通樞紐（與深川、豊洲動線衝突）。</li>
+    </ul>
+  </div>
+
+  <div class="event">
+    <h3>② POP GALAXY 2026 — 大型ガールズポップ／偶像祭</h3>
+    <p><span class="pill w">偶像演唱會型</span><span class="pill f">需門票</span></p>
+    <table>
+      <tr><th>日期</th><td>2026/8/15–16　開場 9:00／開演約 10:00</td></tr>
+      <tr><th>地點</th><td>お台場 R 地區　｜　<a href="https://maps.google.com/?q=%E3%81%8A%E5%8F%B0%E5%A0%B4R%E5%9C%B0%E5%8C%BA" target="_blank" rel="noopener">Maps</a></td></tr>
+      <tr><th>票價</th><td>一般約 ¥4,500＋1D　｜　VIP ¥20,000＋1D</td></tr>
+      <tr><th>內容</th><td>約 300 組級ガールズアイドル／ポップ多舞台；與コミケ同週末疊加灣岸人潮</td></tr>
+    </table>
+  </div>
+
+  <div class="warnbox">
+    <strong>③ とよす夏祭り「アニソン盆踊り」— 本趟不排</strong><br>
+    原可作 8/16 晚輕量動漫氣氛選項，但離上野遠、回程晚，已取消。見 <a href="#toyosu">六、とよす夏祭</a>。
+  </div>
+
+  <div class="card">
+    <strong>容易搞混、但不在 8/12–17 的大型動漫活動</strong>
+    <table>
+      <tr><th>活動</th><th>2026 日期</th><th>地點</th></tr>
+      <tr><td>AnimeJapan 2026（官方企業動漫展）</td><td>3/28–29</td><td>ビッグサイト</td></tr>
+      <tr><td>Animelo Summer Live（アニソン演唱會）</td><td>7/10–12</td><td>幕張メッセ</td></tr>
+      <tr><td>Wonder Festival 夏（模型／手辦）</td><td>7/26</td><td>幕張メッセ</td></tr>
+      <tr><td>TOKYO IDOL FESTIVAL</td><td>約 7/31–8/2</td><td>お台場</td></tr>
+      <tr><td>World Cosplay Summit</td><td>7/31–8/2</td><td>名古屋（非東京）</td></tr>
+      <tr><td>コミケ 109（冬コミ）</td><td>12/29–31</td><td>ビッグサイト</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 其他 ========== -->
+<section id="other">
+  <h2>九、其他活動</h2>
+
+  <div class="event">
+    <h3>柴又帝釈天 納涼盆踊り（待確認）</h3>
+    <p class="mute">2025 年為 8/13–15、約 16:00 或 18:30～21:00 於境內舉行。2026 官方日程查詢時尚未見明確公告，出發前請再查 <a href="https://www.taishakuten.or.jp/" target="_blank" rel="noopener">帝釈天</a>／葛飾區活動資訊。</p>
+    <p>地點：<a href="https://maps.google.com/?q=%E6%9F%B4%E5%8F%88%E5%B8%9D%E9%87%88%E5%A4%A9" target="_blank" rel="noopener">柴又帝釈天</a>（京成柴又站徒歩）</p>
+  </div>
+
+  <div class="card">
+    <strong>期間外、不在 8/12–17 內的知名祭（避免搞錯）</strong>
+    <ul>
+      <li>三社祭：已於 5/15–17 結束</li>
+      <li>築地本願寺盆踊り：7/29–8/1</li>
+      <li>麻布十番納涼祭：8/22–23</li>
+      <li>高円寺阿波おどり：8/29–30</li>
+      <li>淺草山巴嘉年華：約 8/29</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== 花火 ========== -->
+<section id="hanabi">
+  <h2>十、花火大會說明（與旅程關係）</h2>
+  <table>
+    <tr><th>花火</th><th>2026 日期</th><th>與 8/12–17</th></tr>
+    <tr><td>隅田川花火</td><td>7/25</td><td>出發前已過</td></tr>
+    <tr><td>江戸川／板橋／八王子等</td><td>8/1</td><td>出發前已過</td></tr>
+    <tr><td>神宮外苑花火</td><td>8/8（順延 8/9）</td><td>出發前已過</td></tr>
+    <tr><td>江東花火</td><td>8/11 19:00–20:00　荒川・砂町水辺公園</td><td>抵達前一日；若 8/11 晚已在東京可趕</td></tr>
+    <tr><td>星空祭音樂花火</td><td>8/8–16 每晚約 20:30</td><td><strong>旅程內唯一穩定「花火體驗」</strong></td></tr>
+  </table>
+  <p class="mute">來源：<a href="https://www.tabikko.com/tokyo/hanabi.html" target="_blank" rel="noopener">旅っ子東京花火一覽</a>、<a href="https://koto-hanabi.com/" target="_blank" rel="noopener">江東花火公式</a></p>
+</section>
+
+<!-- ========== tips ========== -->
+<section id="tips">
+  <h2>十一、重排行程時的建議骨架</h2>
+  <div class="okbox">
+    <ol>
+      <li><strong>8/16（日）上午鎖定深川水かけ</strong>（本祭り年幾乎不可錯過）→ 約 10:00 轉 Solamachi／晴空塔 → 傍晚上野叙々苑；<b>不排</b>豊洲盆踊り。</li>
+      <li><strong>8/15（六）</strong>：白天葛西／豐洲／teamLab → 傍晚新宿都廳週末光雕秀（本趟定案）；燈籠流改不排。</li>
+      <li><strong>8/12–14</strong>：可排一般觀光＋晚間星空祭（立川）或トミカ博（避開週末コミケ）。</li>
+      <li><strong>8/17</strong>：大型祭結束，適合迪士尼／箱根／自由行補遺。</li>
+      <li>8/15–16 盡量<strong>不要</strong>把台場／有明當交通樞紐。</li>
+    </ol>
+  </div>
+  <div class="warnbox">
+    所有祭典均可能因天候、警備、交通規制變更。出發前請再確認各官方頁／社報 PDF。本檔僅供重排行程前調查用，非正式入場保證。
+  </div>
+</section>
+
+<footer>
+  調查整理：2026-07-16　｜　對應原行程指南：Japan/20260721_Tokyo/tokyo-2026-guide-light.html　｜　新資料夾：20260812_Tokyo
+</footer>
+</div>
+</body>
+</html>

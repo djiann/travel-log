@@ -2,5 +2,6 @@
 .cursor/
 .mobile-build/
 .venv/
+.venv-maps/
 Generated_image_*.png
 *.tmp.png

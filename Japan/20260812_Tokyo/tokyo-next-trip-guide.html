@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>東京 7 日順路深度行・全新地標與水族館巡禮</title>
+<style>
+  :root{
+    --bg:#f6f4f0; --card:#ffffff; --card2:#faf8f5; --ink:#2a3238; --mut:#6b7a88;
+    --acc:#d4566a; --acc2:#3a8f9f; --ok:#2d8a62; --warn:#b87820; --line:#e6e1da;
+    --shadow:0 2px 12px rgba(42,50,56,.06); --shadow-lg:0 8px 28px rgba(42,50,56,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,"PingFang TC","Noto Sans TC","Hiragino Sans GB","Microsoft JhengHei",system-ui,sans-serif;
+    background:var(--bg);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 100% -10%, rgba(212,86,106,.07), transparent),
+      radial-gradient(ellipse 60% 40% at 0% 100%, rgba(58,143,159,.06), transparent);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    padding:32px 20px 24px;
+    background:linear-gradient(145deg,#fff 0%,#fdf6f4 45%,#f0f7f8 100%);
+    border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  h1{margin:0 0 8px;font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+  .sub{color:var(--mut);font-size:14px;line-height:1.55}
+  .wrap{max-width:880px;margin:0 auto;padding:0 16px 80px}
+  nav.toc{
+    position:sticky;top:0;z-index:20;
+    background:rgba(246,244,240,.92);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    padding:10px 0;margin:0 -16px 20px;
+    overflow-x:auto;white-space:nowrap;
+    box-shadow:0 1px 0 rgba(255,255,255,.8);
+  }
+  nav.toc a{
+    display:inline-block;color:var(--acc2);text-decoration:none;font-size:13px;font-weight:500;
+    padding:6px 12px;background:#fff;border:1px solid var(--line);
+    border-radius:20px;margin:4px;box-shadow:0 1px 3px rgba(0,0,0,.04);
+    transition:background .15s,border-color .15s;
+  }
+  nav.toc a:hover{background:#f0f7f8;border-color:#b8d4da}
+  section{margin:24px 0}
+  h2{
+    font-size:19px;font-weight:700;
+    border-left:4px solid var(--acc);
+    padding-left:12px;margin:28px 0 14px;
+    scroll-margin-top:64px;color:var(--ink);
+  }
+  h3{font-size:16px;font-weight:600;color:var(--acc2);margin:18px 0 8px}
+  details{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:14px;margin:10px 0;padding:0 16px;
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  details[open]{padding-bottom:14px}
+  summary{
+    cursor:pointer;font-weight:600;padding:14px 0;
+    list-style:none;font-size:15px;color:var(--ink);
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▸ ";color:var(--acc);font-size:13px}
+  details[open]>summary::before{content:"▾ "}
+  .card{
+    background:var(--card2);border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .pill{
+    display:inline-block;background:#eef2f5;color:var(--mut);
+    font-size:12px;padding:2px 10px;border-radius:20px;margin:2px 4px 2px 0;
+  }
+  .pill.t{background:#e8f4f6;color:#2a6f7d}
+  .pill.f{background:#fceef1;color:#b84a5c}
+  .pill.m{background:#e8f5ee;color:#2d7a55}
+  .pill.w{background:#fdf5e8;color:#9a6518}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;display:block;overflow-x:auto;border-radius:10px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f0f4f6;color:var(--acc2);font-weight:600;white-space:nowrap}
+  tr:nth-child(even) td{background:#fafafa}
+  a{color:var(--acc2);text-decoration:none;border-bottom:1px solid rgba(58,143,159,.25)}
+  a:hover{color:#2a6f7d;border-bottom-color:currentColor}
+  ul{padding-left:20px;margin:8px 0}
+  li{margin:5px 0}
+  .tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px;letter-spacing:.02em}
+  .b{background:#e3f0f3;color:#2a6f7d}
+  .l{background:#e5f3eb;color:#2d7a55}
+  .d{background:#fce8ec;color:#b84a5c}
+  .warnbox{
+    background:#fff9ee;border:1px solid #f0ddb8;border-left:4px solid var(--warn);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .okbox{
+    background:#f0faf4;border:1px solid #c5e6d4;border-left:4px solid var(--ok);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .accbox{
+    background:linear-gradient(135deg,#fdf4f6,#f4f9fa);
+    border:1px solid #e8d4d8;border-left:4px solid var(--acc);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .time{color:var(--acc);font-weight:700;font-variant-numeric:tabular-nums}
+  .muted{color:var(--mut);font-size:13px}
+  .big{font-size:18px;font-weight:800;color:var(--ok)}
+  code{
+    background:#f0ece6;padding:2px 8px;border-radius:6px;
+    font-size:13px;color:#8a5a18;border:1px solid #e8e0d4;
+  }
+  hr{border:none;border-top:1px dashed var(--line);margin:18px 0}
+  .grid{display:grid;gap:10px}
+  @media(min-width:620px){.grid.two{grid-template-columns:1fr 1fr}}
+  .price{color:var(--ok);font-weight:700}
+  .footer{
+    color:var(--mut);font-size:12px;text-align:center;
+    padding:32px 0 16px;border-top:1px solid var(--line);margin-top:48px;
+  }
+  a.gmap{
+    display:inline-block;font-size:12px;font-weight:600;
+    color:var(--acc2);text-decoration:none;
+    border:1px solid rgba(58,143,159,.35);border-radius:6px;
+    padding:0 6px;margin-left:4px;white-space:nowrap;
+    vertical-align:baseline;line-height:1.5;
+  }
+  a.gmap:hover{border-color:var(--acc2);background:#eef7f9}
+  @media print{
+    body{background:#fff;color:#000;font-size:11pt;background-image:none}
+    nav.toc,.noprint{display:none}
+    header{background:#fff;box-shadow:none}
+    details{border:1px solid #ccc;box-shadow:none}
+    details>summary{font-size:12pt}
+    details:not([open])>*{display:block}
+    summary::before{content:""}
+    h2{color:#000;border-color:var(--acc)}
+    h3{color:#2a6f7d}
+    .card,.warnbox,.okbox,.accbox{background:#fafafa;border:1px solid #ddd;box-shadow:none}
+    a{color:#000;text-decoration:underline;border:none}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🗼 東京 7 日順路深度行・全新地標與水族館巡禮</h1>
+  <div class="sub">完美融入 2026 最新地標（MoN Takanawa、大井町 TRACKS、江戶東京博物館）與 5 大特色水族館，順路不折返的彈性行程。</div>
+</header>
+
+<div class="wrap">
+
+<div class="noprint accbox" style="margin-top:14px">
+  💡 <b>行程設計亮點</b>：<br>
+  1. <b>水族館分散配置</b>：將 5 間水族館安排在不同天，結合周邊景點，避免視覺疲勞。<br>
+  2. <b>2026 最新景點打卡</b>：完整收錄 3 月剛開幕的 MoN Takanawa、大井町 TRACKS 及重新開幕的江戶東京博物館。<br>
+  3. <b>分區攻略不折返</b>：每天集中在特定區域（如灣岸、南區、西區），節省交通時間。<br>
+  📱 <b>存成 PDF 帶著走</b>：手機用 Safari/Chrome 開此檔 → 分享/列印 → <b>「儲存為 PDF」</b>。列印時所有折疊區塊會自動展開。
+</div>
+
+<nav class="toc">
+  <a href="#d1">Day1 品川・大井町</a>
+  <a href="#d2">Day2 兩國・晴空塔</a>
+  <a href="#d3">Day3 原宿・澀谷・新宿</a>
+  <a href="#d4">Day4 豐洲・葛西・東京車站</a>
+  <a href="#d5">Day5 高輪・戶越銀座・品川</a>
+  <a href="#d6">Day6 吉祥寺・池袋</a>
+  <a href="#d7">Day7 神谷町・秋葉原・上野</a>
+  <a href="#tips">預約與注意事項</a>
+</nav>
+
+<div class="warnbox">
+  <b>⚠️ 預約超級警報：</b><br>
+  <code>澀谷SKY</code>、<code>豐洲 teamLab</code> 務必在出發前 <b>1個月</b> 上網搶票！<br>
+  <code>MoN Takanawa 博物館</code> 建議提前至官網確認當期展覽是否需要預約。
+</div>
+
+<!-- ============ 行程明細 ============ -->
+<section id="d1">
+<h2>Day 1｜品川・大井町（南區新名所與夜間水族館）</h2>
+<div class="card">
+<p class="muted">抵達東京後，先從南區的輕鬆行程開始，感受結合聲光效果的都會型水族館與最新複合商場。</p>
+<details open>
+<summary>行程時間表</summary>
+<ul>
+<li><span class="tag b">抵達</span> 抵達東京（成田/羽田），前往飯店放行李（建議住品川、大井町或上野）。</li>
+<li><span class="tag l">下午</span> <span class="time">15:00–18:00</span> <b>マクセル Aqua Park 品川</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Maxell+Aqua+Park+Shinagawa" target="_blank">📍地圖</a>
+  <br><span class="muted">特色：結合先進聲光效果的都會型水族館。強烈建議待到傍晚，欣賞極具特色的「夜間海豚秀」（Night Version），燈光與水幕的結合非常震撼。</span></li>
+<li><span class="tag d">晚上</span> <span class="time">18:30 起</span> <b>大井町 TRACKS（OIMACHI TRACKS）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=OIMACHI+TRACKS" target="_blank">📍地圖</a>
+  <br><span class="muted">2026 年 3 月底全新開幕的大型複合設施！直接與 JR 大井町站相連。在此享用晚餐、逛街，感受品川周邊的全新活力。</span></li>
+</ul>
+</details>
+</div>
+</section>
+
+<section id="d2">
+<h2>Day 2｜兩國・晴空塔（下町文化與天空水族館）</h2>
+<div class="card">
+<p class="muted">集中在東京東邊，體驗歷史與現代的交錯。江戶東京博物館歷經 4 年整修，終於在 2026 年 3 月華麗回歸！</p>
+<details open>
+<summary>行程時間表</summary>
+<ul>
+<li><span class="tag b">上午</span> <span class="time">09:30–12:30</span> <b>江戶東京博物館</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Edo-Tokyo+Museum" target="_blank">📍地圖</a>
+  <br><span class="muted">2026/3/31 重新開幕！必看全新升級的常設展與大型模型，深入了解江戶到現代東京的歷史變遷。</span></li>
+<li><span class="tag l">午餐</span> 兩國周邊享用相撲火鍋或前往晴空塔 Solamachi 用餐。</li>
+<li><span class="tag l">下午</span> <span class="time">14:00–17:00</span> <b>東京晴空塔 + Solamachi 購物</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree" target="_blank">📍地圖</a>
+  <br><span class="muted">除了逛街與登塔，別錯過 <b>8F 千葉工大展示（免費，有機器人與宇宙科技）</b> 以及 <b>9F 郵政博物館</b>。</span></li>
+<li><span class="tag d">傍晚</span> <span class="time">17:30–19:30</span> <b>すみだ水族館（墨田水族館）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sumida+Aquarium" target="_blank">📍地圖</a>
+  <br><span class="muted">位於晴空塔 5F/6F。傍晚後館內燈光會變換為夜間模式，氣氛極佳。必看企鵝池、金魚展示區與藝術造景。</span></li>
+</ul>
+</details>
+</div>
+</section>
+
+<section id="d3">
+<h2>Day 3｜原宿・澀谷・新宿（潮流與百萬夜景）</h2>
+<div class="card">
+<p class="muted">西半部經典逛街與高空夜景日。將澀谷與新宿的觀景台一網打盡。</p>
+<details open>
+<summary>行程時間表</summary>
+<ul>
+<li><span class="tag b">上午</span> <span class="time">10:00–13:00</span> <b>原宿／WEGO</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=WEGO+Harajuku" target="_blank">📍地圖</a>
+  <br><span class="muted">趁早上人潮較少時逛竹下通、表參道，體驗年輕潮流與服飾採購。</span></li>
+<li><span class="tag l">下午</span> <span class="time">14:00–17:30</span> <b>澀谷 LOFT + 澀谷SKY（SHIBUYA SKY）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA+SKY" target="_blank">📍地圖</a>
+  <br><span class="muted">先逛文具雜貨天堂 LOFT。接著前往澀谷 SKY（務必提前一個月搶黃昏時段的票），欣賞東京最美日落與夜景。</span></li>
+<li><span class="tag d">傍晚</span> <span class="time">18:00–19:00</span> 前往新宿，參觀一樓 <b>「東京觀光情報中心」</b>，接著上 <b>東京都廳 免費展望台</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Metropolitan+Government+Building" target="_blank">📍地圖</a>。</li>
+<li><span class="tag d">晚上</span> <span class="time">19:30 起</span> <b>新宿都廳光雕秀</b>
+  <br><span class="muted">在都廳前廣場欣賞免費的大型投影光雕秀（建議看 19:30 或之後的場次），看完在新宿周邊吃晚餐。</span></li>
+</ul>
+</details>
+</div>
+</section>
+
+<section id="d4">
+<h2>Day 4｜豐洲・葛西・東京車站（灣岸藝術與海洋）</h2>
+<div class="card">
+<p class="muted">灣岸線一日遊。結合沉浸式藝術、海洋生態與百年車站建築。</p>
+<details open>
+<summary>行程時間表</summary>
+<ul>
+<li><span class="tag b">上午</span> <span class="time">09:30–12:00</span> <b>豐洲 teamLab Planets</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab+Planets+Tokyo" target="_blank">📍地圖</a>
+  <br><span class="muted">建議預約早場，體驗水與光影的互動藝術（需涉水，建議穿容易捲起褲管的衣物）。</span></li>
+<li><span class="tag l">下午</span> <span class="time">13:30–16:30</span> <b>葛西臨海水族園</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kasai+Rinkai+Aquarium" target="_blank">📍地圖</a>
+  <br><span class="muted">從豐洲搭車過去很順。必看壯觀的「黑鮪魚群大水槽」與標誌性的玻璃圓頂建築。</span></li>
+<li><span class="tag d">晚上</span> <span class="time">17:30 起</span> <b>東京車站周邊</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Station" target="_blank">📍地圖</a>
+  <br><span class="muted">逛東京車站一番街（動漫人物街、拉麵街），吃晚餐，並到丸之內站前廣場欣賞點燈後的紅磚車站建築。</span></li>
+</ul>
+</details>
+</div>
+</section>
+
+<section id="d5">
+<h2>Day 5｜高輪・戶越銀座・品川（新博物館與在地生活）</h2>
+<div class="card">
+<p class="muted">深入品川周邊的在地與藝文氣息，體驗 2026 最新實驗性博物館與充滿人情味的商店街。</p>
+<details open>
+<summary>行程時間表</summary>
+<ul>
+<li><span class="tag b">上午</span> <span class="time">10:00–12:30</span> <b>MoN Takanawa 博物館</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=MoN+Takanawa" target="_blank">📍地圖</a>
+  <br><span class="muted">2026 年 3 月開幕的全新文化地標（位於高輪 Gateway 站），由隈研吾設計。融合藝術、科技與傳統文化的沉浸式展覽。</span></li>
+<li><span class="tag l">午餐</span> <span class="time">13:00–15:00</span> <b>戶越銀座商店街</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Togoshi+Ginza+Shopping+Street" target="_blank">📍地圖</a>
+  <br><span class="muted">東京最長的商店街！體驗在地氛圍，邊走邊吃可樂餅、炸物、烤肉串當作午餐。</span></li>
+<li><span class="tag l">下午</span> <span class="time">15:30–18:00</span> <b>しながわ水族館（品川水族館）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shinagawa+Aquarium" target="_blank">📍地圖</a>
+  <br><span class="muted">位於大森海岸站。與 Day 1 的 Aqua Park 不同，這間更偏向在地親民風格，擁有很棒的海底隧道與海獅表演。</span></li>
+</ul>
+</details>
+</div>
+</section>
+
+<section id="d6">
+<h2>Day 6｜吉祥寺・池袋（雜貨與天空綠洲）</h2>
+<div class="card">
+<p class="muted">東京西北邊的悠閒與購物。上午逛雜貨吃美食，下午前往池袋的天空水族館。</p>
+<details open>
+<summary>行程時間表</summary>
+<ul>
+<li><span class="tag b">上午</span> <span class="time">10:00–14:00</span> <b>吉祥寺逛街景點</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kichijoji" target="_blank">📍地圖</a>
+  <br><span class="muted">逛 Sunroad 商店街、吃著名的 SATOU 炸肉餅、買生活雜貨，天氣好也可順遊井之頭公園。</span></li>
+<li><span class="tag l">下午</span> <span class="time">15:00–18:00</span> <b>サンシャイン水族館（Sunshine 水族館）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sunshine+Aquarium" target="_blank">📍地圖</a>
+  <br><span class="muted">位於池袋 Sunshine City 頂樓。最大亮點是戶外區的「天空企鵝」與「陽光環形水槽」，彷彿企鵝在城市高空中游泳。</span></li>
+<li><span class="tag d">晚上</span> <span class="time">18:30 起</span> <b>池袋周邊</b>
+  <br><span class="muted">在 Sunshine City 或池袋車站周邊享用晚餐，並可逛動漫店、扭蛋店或家電量販店。</span></li>
+</ul>
+</details>
+</div>
+</section>
+
+<section id="d7">
+<h2>Day 7｜神谷町・秋葉原・上野（經典地標與最後採購）</h2>
+<div class="card">
+<p class="muted">回程前的採購與經典打卡。將新舊東京鐵塔與次文化聖地一次收集。</p>
+<details open>
+<summary>行程時間表</summary>
+<ul>
+<li><span class="tag b">上午</span> <span class="time">09:30–12:30</span> <b>麻布台之丘 + 東京鐵塔</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Azabudai+Hills" target="_blank">📍地圖</a>
+  <br><span class="muted">兩者距離很近。先逛麻布台之丘欣賞現代建築美學，再步行至東京鐵塔，感受新舊東京地標的交替。</span></li>
+<li><span class="tag l">下午</span> <span class="time">13:30–16:00</span> <b>秋葉原 K-BOOKS／ラジオ会館</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Akihabara+Radio+Kaikan" target="_blank">📍地圖</a>
+  <br><span class="muted">動漫與次文化巡禮！在 Radio Kaikan 尋找模型與周邊，K-BOOKS 購買同人誌與二手精品。</span></li>
+<li><span class="tag d">傍晚</span> <span class="time">16:30 起</span> <b>上野多慶屋 1 館</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Takeya+Ueno" target="_blank">📍地圖</a>
+  <br><span class="muted">回程前最後的零食、藥妝、伴手禮大採購（可退稅）。買完直接回飯店打包，或搭乘 Skyliner 前往機場。</span></li>
+</ul>
+</details>
+</div>
+</section>
+
+<section id="tips">
+<h2>💡 行程備註與彈性調整</h2>
+<div class="okbox">
+  <ul>
+    <li><b>水族館疲勞對策：</b> 行程中包含了 5 間水族館。如果走到一半覺得太多，可以把 <code>しながわ水族館</code> 或 <code>葛西臨海水族園</code> 當作彈性備案，視當天的體力與心情決定是否前往，改為在周邊多逛街或喝下午茶。</li>
+    <li><b>交通票券建議：</b> 由於行程跨度大（涵蓋 JR、地鐵、私鐵），建議全程使用 <b>Suica / PASMO (Apple Pay)</b> 最具彈性。若某天全搭乘 Tokyo Metro，可考慮購買地鐵 24 小時券。</li>
+    <li><b>住宿地點推薦：</b> 綜合此行程，強烈建議住在 <b>品川 / 大井町</b>（離南區新景點與羽田機場近）或是 <b>上野</b>（交通樞紐，去秋葉原、晴空塔方便，且搭 Skyliner 去成田機場最快）。</li>
+  </ul>
+</div>
+</section>
+
+</div>
+
+<div class="footer">
+  &copy; 2026 東京之旅規劃指南 | Generated for Next Trip
+</div>
+
+</body>
+</html>

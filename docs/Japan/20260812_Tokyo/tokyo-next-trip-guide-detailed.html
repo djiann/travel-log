@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>東京 7 日超詳細深度行・全日完整版（含午晚餐多備案）</title>
+<style>
+  :root{
+    --bg:#f6f4f0; --card:#ffffff; --card2:#faf8f5; --ink:#2a3238; --mut:#6b7a88;
+    --acc:#d4566a; --acc2:#3a8f9f; --ok:#2d8a62; --warn:#b87820; --line:#e6e1da;
+    --shadow:0 2px 12px rgba(42,50,56,.06); --shadow-lg:0 8px 28px rgba(42,50,56,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,"PingFang TC","Noto Sans TC","Hiragino Sans GB","Microsoft JhengHei",system-ui,sans-serif;
+    background:var(--bg);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 100% -10%, rgba(212,86,106,.07), transparent),
+      radial-gradient(ellipse 60% 40% at 0% 100%, rgba(58,143,159,.06), transparent);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    padding:32px 20px 24px;
+    background:linear-gradient(145deg,#fff 0%,#fdf6f4 45%,#f0f7f8 100%);
+    border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  h1{margin:0 0 8px;font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+  .sub{color:var(--mut);font-size:14px;line-height:1.55}
+  .wrap{max-width:960px;margin:0 auto;padding:0 16px 80px}
+  nav.toc{
+    position:sticky;top:0;z-index:20;
+    background:rgba(246,244,240,.92);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    padding:10px 0;margin:0 -16px 20px;
+    overflow-x:auto;white-space:nowrap;
+    box-shadow:0 1px 0 rgba(255,255,255,.8);
+  }
+  nav.toc a{
+    display:inline-block;color:var(--acc2);text-decoration:none;font-size:13px;font-weight:500;
+    padding:6px 12px;background:#fff;border:1px solid var(--line);
+    border-radius:20px;margin:4px;box-shadow:0 1px 3px rgba(0,0,0,.04);
+    transition:background .15s,border-color .15s;
+  }
+  nav.toc a:hover{background:#f0f7f8;border-color:#b8d4da}
+  section{margin:24px 0}
+  h2{
+    font-size:19px;font-weight:700;
+    border-left:4px solid var(--acc);
+    padding-left:12px;margin:28px 0 14px;
+    scroll-margin-top:64px;color:var(--ink);
+  }
+  h3{font-size:16px;font-weight:600;color:var(--acc2);margin:18px 0 8px}
+  details{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:14px;margin:10px 0;padding:0 16px;
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  details[open]{padding-bottom:14px}
+  summary{
+    cursor:pointer;font-weight:600;padding:14px 0;
+    list-style:none;font-size:15px;color:var(--ink);
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▸ ";color:var(--acc);font-size:13px}
+  details[open]>summary::before{content:"▾ "}
+  .card{
+    background:var(--card2);border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .pill{
+    display:inline-block;background:#eef2f5;color:var(--mut);
+    font-size:12px;padding:2px 10px;border-radius:20px;margin:2px 4px 2px 0;
+  }
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;display:block;overflow-x:auto;border-radius:10px}
+  th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;min-width:200px;}
+  th{background:#f0f4f6;color:var(--acc2);font-weight:600;white-space:nowrap}
+  tr:nth-child(even) td{background:#fafafa}
+  a{color:var(--acc2);text-decoration:none;border-bottom:1px solid rgba(58,143,159,.25)}
+  a:hover{color:#2a6f7d;border-bottom-color:currentColor}
+  ul{padding-left:20px;margin:8px 0}
+  li{margin:5px 0}
+  .tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px;letter-spacing:.02em}
+  .b{background:#e3f0f3;color:#2a6f7d}
+  .l{background:#e5f3eb;color:#2d7a55}
+  .d{background:#fce8ec;color:#b84a5c}
+  .warnbox{
+    background:#fff9ee;border:1px solid #f0ddb8;border-left:4px solid var(--warn);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .okbox{
+    background:#f0faf4;border:1px solid #c5e6d4;border-left:4px solid var(--ok);
+    border-radius:12px;padding:14px 16px;margin:10px 0;
+  }
+  .time{color:var(--acc);font-weight:700;font-variant-numeric:tabular-nums}
+  .muted{color:var(--mut);font-size:13px;display:block;margin-top:4px;}
+  .rest-title{font-weight:700;color:var(--ink);font-size:14px;}
+  .meal-grid{display:grid;gap:10px;margin:8px 0 14px}
+  @media(min-width:760px){.meal-grid.two{grid-template-columns:1fr 1fr}}
+  .meal-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 1px 4px rgba(42,50,56,.04)}
+  .meal-card h4{margin:0 0 8px;font-size:14px;color:var(--acc2)}
+  .meal-card ul{padding-left:18px;margin:6px 0}
+  .meal-card li{margin:8px 0}
+  .meta{display:block;color:var(--mut);font-size:12.5px;margin-top:3px}
+  .price{color:var(--ok);font-weight:700}
+  a.gmap{
+    display:inline-block;font-size:12px;font-weight:600;
+    color:#d4566a;text-decoration:none;
+    border:1px solid rgba(212,86,106,.35);border-radius:6px;
+    padding:0 6px;margin-left:6px;white-space:nowrap;
+    vertical-align:middle;line-height:1.5;
+  }
+  a.gmap:hover{border-color:var(--acc);background:#fdf4f6}
+  .footer{
+    color:var(--mut);font-size:12px;text-align:center;
+    padding:32px 0 16px;border-top:1px solid var(--line);margin-top:48px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🗼 東京 7 日超詳細深度行・全日完整版</h1>
+  <div class="sub">以「抵達東京的隔天」為 Day 1 開始安排，每天皆為早出晚歸的完整行程。早餐保留三選，午餐與晚餐擴充為海鮮、壽司、燒肉、蕎麥麵、拉麵、定食等多備案，並附距離、前往時間、價格與排隊提醒。</div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <a href="#prep">🎒 行前準備</a>
+  <a href="tokyo-next-trip-narita-access-guide.html">✈️ 成田交通</a>
+  <a href="tokyo-next-trip-stay-shopping-guide.html">🏪 住宿補給</a>
+  <a href="#d1">Day1 品川・大井町</a>
+  <a href="#d2">Day2 兩國・晴空塔</a>
+  <a href="#d3">Day3 原宿・澀谷・新宿</a>
+  <a href="#d4">Day4 豐洲・葛西・東京車站</a>
+  <a href="#d5">Day5 戶越銀座・大森</a>
+  <a href="#d6">Day6 吉祥寺・池袋</a>
+  <a href="#d7">Day7 神谷町・秋葉原・上野</a>
+</nav>
+
+<div class="okbox">
+  ✈️ <b>成田機場進市區：</b> 第一次到成田或行李多，先看 <a href="tokyo-next-trip-narita-access-guide.html"><b>成田機場 → 東京市區交通指南</b></a>（第一/第二航廈動線、Skyliner/N'EX/巴士購票、票價與注意事項）。<br>
+  🏪 <b>住宿周邊補給指南：</b> 已另外整理 <a href="tokyo-next-trip-stay-shopping-guide.html"><b>上野 / 品川 / 大井町住宿周邊超市、購物中心、美食、必買與伴手禮清單</b></a>，適合抵達日、晚上回飯店前、最後採買時使用。
+</div>
+
+<!-- ============ 行前準備 ============ -->
+<section id="prep">
+<h2>🎒 1. 行前準備與預約提醒</h2>
+<div class="card">
+  <ul>
+    <li><b>📅 預約超級警報（出發前 1 個月）：</b>
+      <ul>
+        <li><code>澀谷SKY (SHIBUYA SKY)</code>：務必提前 4 週上網搶「日落時段」（約 16:30-17:30 視季節而定）。</li>
+        <li><code>豐洲 teamLab Planets</code>：建議提前 1-2 個月購票，並選擇早場以避開人潮。</li>
+        <li><code>MoN Takanawa 博物館</code>：2026 年新開幕，請提前至官網確認當期展覽是否需預約時段。</li>
+      </ul>
+    </li>
+    <li><b>🚇 交通票券建議：</b> 本行程跨越 JR、地鐵與私鐵，強烈建議全程使用 <b>Apple Pay Suica / PASMO</b>，隨逼隨進，省去買票時間，彈性最高。</li>
+  </ul>
+</div>
+</section>
+
+<!-- ============ Day 1 ============ -->
+<section id="d1">
+<h2>Day 1｜品川・大井町（新文化地標與夜間水族館）</h2>
+<div class="card">
+  <h3>🗺️ 行程總覽與備案</h3>
+  <p><b>主線行程：</b> MoN Takanawa 博物館 → マクセル Aqua Park 品川 → 大井町 TRACKS。<br>
+  <b>B 計畫（博物館休館）：</b> 改為早上先逛品川 ecute 或高輪周邊，下午再進水族館。</p>
+
+  <details open>
+  <summary>🕒 每日詳細行程與交通</summary>
+  <ul>
+    <li><span class="tag b">早餐</span> <span class="time">08:00–09:00</span> <b>品川 / 高輪周邊早餐</b>
+      <br><span class="muted">今天主軸集中在高輪、品川、大井町，全部都在 JR 京濱東北線/山手線南側，動線短、第一天不會太累。早餐建議直接在品川站或高輪 Gateway 附近吃，避免一早跨區。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:00–09:30</span> <b>前往高輪 Gateway → 進入 TAKANAWA GATEWAY CITY</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Takanawa+Gateway+City" target="_blank">📍地圖</a>
+      <br><span class="muted">【串連理由】先去最北的高輪，再一路往南到品川、大井町，避免午後回頭。建議 09:20 前抵達高輪 Gateway，先找好出口、廁所與置物櫃。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:30–12:15</span> <b>MoN Takanawa 博物館</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=MoN+Takanawa" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 2.5 小時。先看當期主展，再保留 20–30 分鐘逛建築公共空間與商店。這裡是 2026 新地標，重點不是只打卡，而是把展覽、建築、Takanawa Gateway City 一起看。</span></li>
+    <li><span class="tag l">午餐</span> <span class="time">12:15–13:30</span> <b>高輪 / 品川午餐</b>
+      <br><span class="muted">【轉場】從高輪 Gateway 搭 JR 到品川約 2 分鐘，或沿新開發區慢慢步行到品川約 15–20 分。午餐放品川最順，吃完直接接 Aqua Park。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:30–14:00</span> <b>品川站高輪口 → Aqua Park 入場準備</b>
+      <br><span class="muted">【重點】先在品川站補水、上洗手間，水族館內外人多時動線較擠。若有行李或購物袋，先用站內置物櫃。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">14:00–17:15</span> <b>マクセル Aqua Park 品川</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Maxell+Aqua+Park+Shinagawa" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 3 小時。建議路線：入口水母區 → 小型展缸 → 海底隧道 → 企鵝/海豹區 → 海豚秀場。海豚秀開始前 20–30 分鐘進場找位置，傍晚燈光效果更漂亮。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">17:15–17:45</span> <b>品川 → 大井町</b>
+      <br><span class="muted">【交通】JR 京濱東北線 1 站，車程約 3 分鐘；含走路等車抓 20–30 分鐘。這段是全日最短轉場，所以適合第一天安排。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">17:45–20:30</span> <b>大井町 TRACKS（OIMACHI TRACKS）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=OIMACHI+TRACKS" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 2–3 小時。先走 2–4F 商業區，確認想吃的餐廳排隊狀況，再決定晚餐。吃完可逛生活雜貨、咖啡甜點或屋外公共空間。若當天體力不足，20:00 前回飯店整理行李。</span></li>
+  </ul>
+  </details>
+
+  <h3>🍱 飲食提案（早餐 3 選 + 午晚餐多備案）</h3>
+  <table>
+    <tr>
+      <th>餐別</th>
+      <th>🌟 必吃排隊名店</th>
+      <th>🏮 在地人推薦名店</th>
+      <th>⚡ 免排隊/快速備案</th>
+    </tr>
+    <tr>
+      <td><b>早餐</b></td>
+      <td><span class="rest-title">PAUL 品川駅店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=PAUL+Shinagawa" target="_blank">📍地圖</a><span class="muted">超人氣法國麵包名店，可內用享受精緻早午餐。</span></td>
+      <td><span class="rest-title">喫茶室ルノアール 品川高輪口店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Cafe+Renoir+Shinagawa+Takanawa" target="_blank">📍地圖</a><span class="muted">日本上班族最愛的復古連鎖咖啡，點飲料送早餐。</span></td>
+      <td><span class="rest-title">麥當勞 品川站前店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=McDonalds+Shinagawa" target="_blank">📍地圖</a><span class="muted">出餐極快，適合想趕快走行程的早晨。</span></td>
+    </tr>
+  </table>
+
+  <div class="meal-grid two">
+    <div class="meal-card">
+      <h4>午餐｜高輪・品川站周邊（MoN Takanawa → Aqua Park 前）</h4>
+      <ul>
+        <li><b>麵屋 翔 品川店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Menya+Sho+Shinagawa" target="_blank">📍地圖</a>
+          <span class="meta">類型：拉麵｜位置：品川站高輪口周邊，從 Aqua Park 步行約 5–8 分｜價格：<span class="price">¥1,100–1,600/人</span>｜注意：午餐尖峰常排 20–40 分；想穩定吃到請 11:00 開店前後到。</span></li>
+        <li><b>つばめグリル 品川駅前店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tsubame+Grill+Shinagawa" target="_blank">📍地圖</a>
+          <span class="meta">類型：洋食漢堡排｜位置：品川站前，Aqua Park 步行約 6 分｜價格：<span class="price">¥1,800–3,000/人</span>｜注意：在地人也常吃，鋁箔包漢堡排安全不踩雷，排隊比拉麵可控。</span></li>
+        <li><b>築地玉壽司 品川店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Tamasushi+Shinagawa" target="_blank">📍地圖</a>
+          <span class="meta">類型：壽司/海鮮｜位置：品川站商場內或周邊，轉場方便｜價格：<span class="price">午間套餐約 ¥1,800–3,500/人</span>｜注意：比豐洲名店好排，適合想吃壽司但不想犧牲水族館時間。</span></li>
+        <li><b>利久 牛舌 品川</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Rikyu+Gyutan+Shinagawa" target="_blank">📍地圖</a>
+          <span class="meta">類型：牛舌定食｜位置：品川站商場，Aqua Park 前後都順｜價格：<span class="price">¥1,800–3,200/人</span>｜注意：熱門時段排 20 分以上，11:00 前到最穩。</span></li>
+        <li><b>ecute 品川 熟食便當區</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=ecute+Shinagawa" target="_blank">📍地圖</a>
+          <span class="meta">類型：免排隊便當/熟食｜位置：品川站內｜價格：<span class="price">¥800–1,800/人</span>｜注意：趕時間首選，買完可回飯店或找站內座位快速吃。</span></li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <h4>晚餐｜大井町 TRACKS・大井町站周邊</h4>
+      <ul>
+        <li><b>麵屋 蕾</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Ramen+Tsubomi+Oimachi" target="_blank">📍地圖</a>
+          <span class="meta">類型：拉麵/沾麵｜位置：大井町站步行約 5 分｜價格：<span class="price">¥1,000–1,500/人</span>｜注意：濃厚魚介系名店，晚餐尖峰會排；不想排就改商場內餐廳。</span></li>
+        <li><b>磯丸水產 大井町店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Isomaru+Suisan+Oimachi" target="_blank">📍地圖</a>
+          <span class="meta">類型：海鮮居酒屋｜位置：大井町站步行約 3 分｜價格：<span class="price">¥2,500–4,000/人</span>｜注意：平板點餐，烤蟹膏/貝類適合分享；晚間菸味與酒客較多，帶小孩建議早場。</span></li>
+        <li><b>牛角 大井町店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Gyu-Kaku+Oimachi" target="_blank">📍地圖</a>
+          <span class="meta">類型：燒肉｜位置：大井町站周邊，從 TRACKS 步行約 5–8 分｜價格：<span class="price">¥3,000–5,500/人</span>｜注意：連鎖但穩定，可線上訂位；適合想吃燒肉又不追求高級和牛。</span></li>
+        <li><b>大井町 TRACKS SHOPS & RESTAURANTS</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=OIMACHI+TRACKS" target="_blank">📍地圖</a>
+          <span class="meta">類型：新商場多餐廳｜位置：大井町站直結｜價格：<span class="price">¥1,200–3,500/人</span>｜注意：最省腳力；若拉麵/海鮮排太久，直接回商場找定食、義麵、咖啡廳。</span></li>
+        <li><b>蕎麥切り 山形田 大井町周邊搜尋</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Soba+Oimachi" target="_blank">📍地圖</a>
+          <span class="meta">類型：蕎麥麵｜位置：以大井町站附近當日營業店為主｜價格：<span class="price">¥900–1,800/人</span>｜注意：想吃清爽晚餐時找「そば/蕎麦」，避開居酒屋油膩感。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warnbox">☔ <b>雨天/緊急備案：</b> 本日行程幾乎全為室內設施，且離車站極近，是完美的雨天行程，不需特別更動！</div>
+  <div class="okbox">
+    <b>🔥 酷暑 / 深度備案：</b>
+    <ul>
+      <li><b>太熱版：</b> MoN Takanawa 看完後不要走戶外，直接搭 JR 到品川，午餐改品川站內 ecute / Atre，14:00 再進 Aqua Park 吹冷氣。</li>
+      <li><b>上午戶外版：</b> 若早上天氣涼，可在 MoN 前加 30–45 分鐘 <b>高輪 Gateway City 公共空間散步</b>；若超過 30°C，取消散步。</li>
+      <li><b>體力不足版：</b> Aqua Park 只看水母區、主展缸、海豚秀，約 2 小時出館；大井町 TRACKS 只吃晚餐不逛街。</li>
+      <li><b>在地生活版：</b> 晚上大井町不要只逛新商場，可加走 <b>大井町站周邊商店街</b>，看上班族下班後的餐飲街氣氛。</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ============ Day 2 ============ -->
+<section id="d2">
+<h2>Day 2｜兩國・晴空塔（下町文化與天空水族館）</h2>
+<div class="card">
+  <h3>🗺️ 行程總覽與備案</h3>
+  <p><b>主線行程：</b> 江戶東京博物館 → 東京晴空塔/Solamachi → すみだ水族館。<br>
+  <b>B 計畫（對歷史沒興趣）：</b> 將上午改為淺草寺與雷門，下午再前往晴空塔。</p>
+
+  <details open>
+  <summary>🕒 每日詳細行程與交通</summary>
+  <ul>
+    <li><span class="tag b">早餐</span> <span class="time">08:00–09:00</span> <b>兩國站周邊早餐</b>
+      <br><span class="muted">今天主軸在東京東側：兩國 → 錦糸町/押上 → 晴空塔。早餐放兩國，是為了 09:30 準時進江戶東京博物館，避開上午團客人潮。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:00–09:30</span> <b>抵達兩國站 → 江戶東京博物館外觀拍照</b>
+      <br><span class="muted">【交通】JR 總武線「兩國站」西口步行約 3 分。建議先在兩國國技館外側與博物館建築拍照，再進館。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:30–12:20</span> <b>江戶東京博物館</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Edo-Tokyo+Museum" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 2.5–3 小時。建議路線：常設展入口 → 日本橋模型 → 江戶街區模型 → 明治/昭和東京 → 商店/紀念品。若帶小孩，模型區與互動展示優先。</span></li>
+    <li><span class="tag l">午餐</span> <span class="time">12:20–13:30</span> <b>兩國午餐：相撲火鍋 / 炸豬排 / 壽司</b>
+      <br><span class="muted">【安排理由】兩國午餐選擇比押上更有地方特色，吃完再移動去晴空塔。若午餐排隊超過 30 分鐘，直接改江戶NOREN 或車站附近定食，避免壓縮下午。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:30–14:00</span> <b>兩國 → 押上 / 晴空塔</b>
+      <br><span class="muted">【交通】建議 JR 兩國 → 錦糸町，轉半藏門線到押上；全程約 20–30 分。若不想轉車，可搭計程車約 10–15 分，適合多人或下雨。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">14:00–15:30</span> <b>Solamachi 低樓層購物與休息</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Solamachi" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 1.5 小時。先逛 2–4F 伴手禮、角色商品、甜點，順便找椅子休息。這段安排在登塔前，是為了等下午光線變柔和。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">15:30–16:30</span> <b>晴空塔 8F 千葉工大展示 + 9F 郵政博物館</b>
+      <br><span class="muted">【停留】約 60 分。8F 千葉工大展示免費，適合看機器人/宇宙科技；9F 郵政博物館小而精緻，當作室內冷氣休息點。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">16:30–17:30</span> <b>東京晴空塔展望台</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree+Tembo+Deck" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 60–75 分。若天氣好，這個時段可以看到白天到夕色轉換；若雲層太厚，直接把登塔改成 Solamachi 深逛。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">17:45–19:30</span> <b>すみだ水族館（墨田水族館）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sumida+Aquarium" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 1.5–2 小時。建議路線：水母/藝術缸 → 企鵝池 → 金魚區 → 紀念品店。傍晚夜間燈光比白天有氣氛，跟晴空塔夜景順路。</span></li>
+    <li><span class="tag d">晚餐</span> <span class="time">19:30–21:00</span> <b>Solamachi 晚餐</b>
+      <br><span class="muted">【安排理由】水族館與餐廳同棟，吃完可直接搭押上站回飯店，不需要再跨區。若壽司/燒肉排太久，直接改美食街。</span></li>
+  </ul>
+  </details>
+
+  <h3>🍱 飲食提案（早餐 3 選 + 午晚餐多備案）</h3>
+  <table>
+    <tr>
+      <th>餐別</th>
+      <th>🌟 必吃排隊名店</th>
+      <th>🏮 在地人推薦名店</th>
+      <th>⚡ 免排隊/快速備案</th>
+    </tr>
+    <tr>
+      <td><b>早餐</b></td>
+      <td><span class="rest-title">喫茶 ニューストン (New Stone)</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kissa+New+Stone+Ryogoku" target="_blank">📍地圖</a><span class="muted">兩國在地老字號喫茶店，厚片吐司與咖啡的經典日式早餐。</span></td>
+      <td><span class="rest-title">文殊 兩國站前店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Monju+Ryogoku" target="_blank">📍地圖</a><span class="muted">立食蕎麥麵名店，在地人上班前必吃，便宜又道地。</span></td>
+      <td><span class="rest-title">松屋 兩國店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Matsuya+Ryogoku" target="_blank">📍地圖</a><span class="muted">24小時營業，點餐機點餐，日式定食快速上桌。</span></td>
+    </tr>
+  </table>
+
+  <div class="meal-grid two">
+    <div class="meal-card">
+      <h4>午餐｜兩國・江戶東京博物館周邊</h4>
+      <ul>
+        <li><b>割烹吉葉</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kappo+Yoshiba" target="_blank">📍地圖</a><span class="meta">類型：相撲火鍋｜距離：博物館步行約 8–10 分｜價格：<span class="price">午間 ¥2,000–4,000/人</span>｜注意：真實土俵很有特色，熱門日建議訂位或 11:30 前到。</span></li>
+        <li><b>とんかつ いちかつ</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tonkatsu+Ichikatsu+Ryogoku" target="_blank">📍地圖</a><span class="meta">類型：炸豬排｜距離：兩國站步行約 2 分｜價格：<span class="price">¥1,000–1,800/人</span>｜注意：在地高 CP 名店，翻桌快但尖峰會排。</span></li>
+        <li><b>つきぢ神樂壽司 両国江戸NOREN店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Kagura+Sushi+Ryogoku+Edo+Noren" target="_blank">📍地圖</a><span class="meta">類型：壽司｜距離：兩國站旁，博物館步行約 5 分｜價格：<span class="price">¥1,800–4,000/人</span>｜注意：比熱門壽司名店更好進，適合想吃海鮮又要接晴空塔的人。</span></li>
+        <li><b>蕎肆 穂乃香</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Soba+Honoka+Ryogoku" target="_blank">📍地圖</a><span class="meta">類型：蕎麥麵｜距離：兩國/森下周邊，搭車或步行約 10–15 分｜價格：<span class="price">¥1,200–2,500/人</span>｜注意：想吃清爽午餐可選，適合熱天。</span></li>
+        <li><b>兩國 江戶NOREN</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Ryogoku+Edo+Noren" target="_blank">📍地圖</a><span class="meta">類型：複合餐飲｜距離：兩國站旁｜價格：<span class="price">¥1,000–3,000/人</span>｜注意：免排隊備案，館內有多家餐廳，雨天也方便。</span></li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <h4>晚餐｜晴空塔 Solamachi 周邊</h4>
+      <ul>
+        <li><b>叙々苑 東京スカイツリータウン・ソラマチ店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Jojoen+Tokyo+Skytree" target="_blank">📍地圖</a><span class="meta">類型：燒肉｜距離：Solamachi 30F，水族館同棟移動 5–8 分｜價格：<span class="price">¥5,000–10,000/人</span>｜注意：景觀席熱門，建議提早訂位；預算高但最有儀式感。</span></li>
+        <li><b>回転寿し トリトン Solamachi店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Toriton+Sushi+Solamachi" target="_blank">📍地圖</a><span class="meta">類型：北海道迴轉壽司｜距離：水族館搭電梯約 5 分｜價格：<span class="price">¥2,500–4,500/人</span>｜注意：大排隊名店，先抽號再逛；若等待超過 60 分改美食街。</span></li>
+        <li><b>六厘舍 TOKYO Solamachi</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Rokurinsha+Solamachi" target="_blank">📍地圖</a><span class="meta">類型：沾麵｜距離：Solamachi 6F｜價格：<span class="price">¥1,100–1,600/人</span>｜注意：濃厚魚介系，排隊但翻桌快；不適合怕重口味者。</span></li>
+        <li><b>牛たん炭焼 利久 東京ソラマチ店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Rikyu+Gyutan+Solamachi" target="_blank">📍地圖</a><span class="meta">類型：牛舌定食｜距離：Solamachi 6F｜價格：<span class="price">¥1,800–3,200/人</span>｜注意：比叙々苑便宜，晚餐尖峰仍可能排 20–30 分。</span></li>
+        <li><b>Solamachi 3F Food Court</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Solamachi+Food+Court" target="_blank">📍地圖</a><span class="meta">類型：免排隊美食街｜距離：同棟｜價格：<span class="price">¥800–1,800/人</span>｜注意：水族館結束太晚或小孩累了就選這裡，座位多、品項分散。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warnbox">☔ <b>雨天/緊急備案：</b> 若晴空塔因雲層太厚看不到風景，可取消登塔，把時間留給 Solamachi 購物與水族館（全室內）。</div>
+  <div class="okbox">
+    <b>🔥 酷暑 / 深度備案：</b>
+    <ul>
+      <li><b>太熱版：</b> 兩國午餐後不要走戶外，直接搭車到押上，整個下午都放 Solamachi、8F 千葉工大展示、9F 郵政博物館與墨田水族館。</li>
+      <li><b>上午戶外版：</b> 若 09:00 前還不熱，可加 <b>隅田川兩國橋短散步 20–30 分鐘</b>；一熱就直接進博物館。</li>
+      <li><b>深度下町版：</b> 對博物館很有興趣可把江戶東京博物館延長到 13:00，午餐改兩國江戶NOREN，晴空塔只逛 Solamachi + 水族館，不登塔。</li>
+      <li><b>在地生活版：</b> 押上晚餐前加逛 <b>東京ソラマチ食品街 / 超市區</b>，看日本家庭買熟食與甜點的日常。</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ============ Day 3 ============ -->
+<section id="d3">
+<h2>Day 3｜原宿・澀谷・新宿（潮流與百萬夜景）</h2>
+<div class="card">
+  <h3>🗺️ 行程總覽與備案</h3>
+  <p><b>主線行程：</b> 原宿/WEGO → 澀谷 LOFT & SKY → 新宿觀光情報中心 → 東京都廳光雕秀。<br>
+  <b>B 計畫（人潮太多/下雨）：</b> 取消原宿戶外逛街，直接前往澀谷的宮下公園 (MIYASHITA PARK) 或 PARCO 室內商場。</p>
+
+  <details open>
+  <summary>🕒 每日詳細行程與交通</summary>
+  <ul>
+    <li><span class="tag b">早餐</span> <span class="time">08:30–09:30</span> <b>表參道 / 原宿早餐</b>
+      <br><span class="muted">今天從原宿一路往南到澀谷，再往北到新宿。早餐放表參道或原宿，可避開 10:30 後竹下通人潮。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:30–10:00</span> <b>明治神宮前 / 原宿站集合與動線確認</b>
+      <br><span class="muted">【安排理由】先定位 JR 原宿站與東京 Metro 明治神宮前站，回程或下雨時比較好切換路線。若想加明治神宮，可用 09:00–10:00 短走參道。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">10:00–11:15</span> <b>竹下通 + 原宿 WEGO</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=WEGO+Harajuku" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 75 分。建議先逛 WEGO，再挑 1–2 家小物/服飾店，不要把整條竹下通逛到滿，避免午後體力下降。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">11:15–12:00</span> <b>表參道散步：Tokyu Plaza / Cat Street 入口</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyu+Plaza+Omotesando+Harajuku" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 45 分。Tokyu Plaza 鏡面入口與屋上花園適合拍照休息；若天氣太熱，直接進商場冷氣。</span></li>
+    <li><span class="tag l">午餐</span> <span class="time">12:00–13:15</span> <b>原宿 / 表參道午餐</b>
+      <br><span class="muted">【安排理由】午餐放原宿表參道，不用餓著去澀谷排隊。若要吃邁泉，最好 11:00–11:30 就提前入座，並把表參道散步後移。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:15–13:35</span> <b>原宿 → 澀谷</b>
+      <br><span class="muted">【交通】JR 山手線 1 站約 3 分鐘；含走路等車抓 20 分鐘。若想逛 Cat Street，可步行到澀谷約 30–40 分，但夏天不建議。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:40–15:00</span> <b>澀谷 LOFT + 周邊雜貨</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shibuya+Loft" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 80 分。主攻文具、生活雜貨、旅行小物。若買太多，可先不要買大型物，避免帶上 SHIBUYA SKY 不方便。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">15:00–15:45</span> <b>Shibuya Scramble Square / PARCO 彈性休息</b>
+      <br><span class="muted">【重點】這段是 SKY 前緩衝，順便上廁所、補水、確認入場 QR Code。若 SKY 票是 16:00 場，15:45 前要到入口。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">16:00–17:30</span> <b>澀谷 SKY（SHIBUYA SKY）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA+SKY" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 90 分。建議搶 16:00 前後場次：先室內迴廊 → 屋頂 Sky Stage → 拍澀谷十字路口與東京鐵塔方向。若風雨導致屋頂關閉，改室內迴廊後提早晚餐。</span></li>
+    <li><span class="tag d">晚餐1</span> <span class="time">17:30–18:30</span> <b>澀谷早晚餐 / 抽號用餐</b>
+      <br><span class="muted">【安排理由】若想吃魚べい或澀谷熱門店，這個時間比 19:00 後好排。吃完再去新宿看光雕秀，避免光雕秀後餓到找不到座位。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">18:30–19:05</span> <b>澀谷 → 新宿都廳</b>
+      <br><span class="muted">【交通】JR 山手線到新宿約 7 分，從新宿站西口步行至都廳約 10–15 分；含人潮抓 35 分鐘。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">19:05–20:15</span> <b>東京都廳展望台 + 一樓東京觀光情報中心 + 光雕秀</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Metropolitan+Government+Building" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 70 分。先去 1F 觀光情報中心拿資料/上廁所，再視排隊狀況上展望台。光雕秀建議鎖定 19:30 場，開演前 10–15 分鐘到都民廣場。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">20:15–21:15</span> <b>新宿晚餐備案 / 回飯店</b>
+      <br><span class="muted">若澀谷已吃飽，直接回飯店；若只吃小點，光雕秀後在新宿站周邊吃拉麵、地下街或定食，避免再排太久。</span></li>
+  </ul>
+  </details>
+
+  <h3>🍱 飲食提案（早餐 3 選 + 午晚餐多備案）</h3>
+  <table>
+    <tr>
+      <th>餐別</th>
+      <th>🌟 必吃排隊名店</th>
+      <th>🏮 在地人推薦名店</th>
+      <th>⚡ 免排隊/快速備案</th>
+    </tr>
+    <tr>
+      <td><b>早餐</b></td>
+      <td><span class="rest-title">Bills 表參道</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Bills+Omotesando" target="_blank">📍地圖</a><span class="muted">號稱世界第一的美味鬆餅，建議提前上網訂位以免久候。</span></td>
+      <td><span class="rest-title">麵包田島 (パンの田島) 原宿店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Pan+no+Tajima+Harajuku" target="_blank">📍地圖</a><span class="muted">在地人超愛的復古熱狗堡/夾心麵包店，甜鹹口味都有。</span></td>
+      <td><span class="rest-title">星巴克 東急廣場表參道原宿店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Starbucks+Tokyu+Plaza+Omotesando" target="_blank">📍地圖</a><span class="muted">擁有絕美空中花園座位，買杯咖啡配麵包快速解決。</span></td>
+    </tr>
+  </table>
+
+  <div class="meal-grid two">
+    <div class="meal-card">
+      <h4>午餐｜原宿・表參道・青山（WEGO 後最順）</h4>
+      <ul>
+        <li><b>AFURI 原宿</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=AFURI+Harajuku" target="_blank">📍地圖</a><span class="meta">類型：柚子鹽拉麵｜距離：WEGO/竹下通步行約 5–8 分｜價格：<span class="price">¥1,200–1,800/人</span>｜注意：觀光客與日本人都愛，12:00–13:30 常排隊；11:30 前到較穩。</span></li>
+        <li><b>まい泉 青山本店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Maisen+Aoyama" target="_blank">📍地圖</a><span class="meta">類型：炸豬排｜距離：表參道站步行約 5 分，原宿走路約 15 分｜價格：<span class="price">¥2,000–4,000/人</span>｜注意：必吃名店，建議訂位或 11:00 前到；澡堂改建空間很有特色。</span></li>
+        <li><b>権八 NORI-TEMAKI 原宿</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Gonpachi+Nori+Temaki+Harajuku" target="_blank">📍地圖</a><span class="meta">類型：手卷壽司/海鮮｜距離：原宿/明治神宮前站周邊｜價格：<span class="price">¥1,500–3,000/人</span>｜注意：想吃壽司但不想坐很久可選，翻桌速度比正統壽司店快。</span></li>
+        <li><b>玉笑</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tamawarai+Soba+Tokyo" target="_blank">📍地圖</a><span class="meta">類型：手打蕎麥麵｜距離：表參道/明治神宮前周邊，步行約 10–15 分｜價格：<span class="price">¥1,800–3,000/人</span>｜注意：蕎麥名店，可能排隊且份量偏精緻；熱天很舒服。</span></li>
+        <li><b>GYRE / 表參道 Hills 餐廳樓層</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Omotesando+Hills+Restaurants" target="_blank">📍地圖</a><span class="meta">類型：免排隊商場備案｜距離：表參道主街｜價格：<span class="price">¥1,500–3,500/人</span>｜注意：暑熱或下雨時優先選商場冷氣餐廳，吃完可直接往澀谷。</span></li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <h4>晚餐｜澀谷 SKY 後 / 新宿都廳前後</h4>
+      <ul>
+        <li><b>魚べい 澀谷道玄坂店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Uobei+Shibuya" target="_blank">📍地圖</a><span class="meta">類型：平價壽司｜距離：SHIBUYA SKY 步行約 8–10 分｜價格：<span class="price">¥1,200–2,500/人</span>｜注意：熱門排隊店，建議 16:45 前 App/現場抽號；若號碼太後改壽司郎。</span></li>
+        <li><b>焼肉ライク 渋谷宇田川町店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yakiniku+Like+Shibuya" target="_blank">📍地圖</a><span class="meta">類型：一人燒肉/快速燒肉｜距離：澀谷站步行約 5–8 分｜價格：<span class="price">¥1,200–2,500/人</span>｜注意：不想排高級燒肉時的快速解法，翻桌快。</span></li>
+        <li><b>新宿つな八 總本店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tsunahachi+Shinjuku" target="_blank">📍地圖</a><span class="meta">類型：天婦羅｜距離：都廳搭地鐵/步行至新宿三丁目約 15–20 分｜價格：<span class="price">¥3,000–6,000/人</span>｜注意：老字號名店，想吃正式日式晚餐可選，尖峰建議訂位。</span></li>
+        <li><b>麵屋海神 新宿店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Menya+Kaijin+Shinjuku" target="_blank">📍地圖</a><span class="meta">類型：鮮魚鹽味拉麵｜距離：新宿站東南口步行約 2 分，都廳搭車約 15 分｜價格：<span class="price">¥1,000–1,600/人</span>｜注意：清爽湯頭，適合看完光雕秀後不想吃太重。</span></li>
+        <li><b>新宿地下街 京王 Mall / NEWoMan 美食區</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Keio+Mall+Shinjuku" target="_blank">📍地圖</a><span class="meta">類型：免排隊備案｜距離：新宿站內外連通｜價格：<span class="price">¥900–2,500/人</span>｜注意：晚間天氣差或小孩累了直接進地下街，定食、咖哩、蕎麥麵都有。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warnbox">☔ <b>雨天/緊急備案：</b> 若遇大雨，<b>澀谷 SKY 的頂樓露天停機坪會關閉</b>。原宿戶外逛街可改至澀谷 Scramble Square 或 PARCO 室內商場。</div>
+  <div class="okbox">
+    <b>🔥 酷暑 / 深度備案：</b>
+    <ul>
+      <li><b>太熱版：</b> 竹下通縮短為 45 分鐘，表參道戶外散步取消，改走 <b>東急プラザ表參道、Omotesando Hills、澀谷 PARCO、Scramble Square</b> 室內接力。</li>
+      <li><b>上午戶外版：</b> 若早上舒服，09:00–10:00 加走 <b>明治神宮參道</b>，10:00 後再進原宿；中午前務必轉室內。</li>
+      <li><b>體力不足版：</b> LOFT 與 PARCO 二選一，保留 SHIBUYA SKY 與都廳光雕秀；避免一天逛太多商場。</li>
+      <li><b>深度生活版：</b> 不想走觀光人潮時，原宿改 <b>Cat Street 咖啡/選物店</b>，澀谷改 <b>宮下公園屋上短散步 + 超市/熟食區</b>。</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ============ Day 4 ============ -->
+<section id="d4">
+<h2>Day 4｜豐洲・葛西・東京車站（灣岸藝術與海洋）</h2>
+<div class="card">
+  <h3>🗺️ 行程總覽與備案</h3>
+  <p><b>主線行程：</b> 豐洲 teamLab → 葛西臨海水族園 → 東京車站周邊。<br>
+  <b>B 計畫（teamLab 玩太久）：</b> 取消葛西臨海水族園，改去銀座逛街，傍晚再接續東京車站行程。</p>
+
+  <details open>
+  <summary>🕒 每日詳細行程與交通</summary>
+  <ul>
+    <li><span class="tag b">早餐</span> <span class="time">08:00–08:45</span> <b>豐洲 / 新豐洲周邊早餐</b>
+      <br><span class="muted">今天是灣岸線，交通重點是「豐洲 → 新木場 → 葛西 → 東京站」。早餐不要排太重，teamLab 會涉水，建議穿容易捲褲管的衣物。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">08:45–09:20</span> <b>前往 teamLab Planets</b>
+      <br><span class="muted">【交通】百合海鷗線「新豐洲站」步行 1 分。建議預約 09:30 或 10:00 早場，早場人較少、拍照更好看。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:30–12:00</span> <b>豐洲 teamLab Planets</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab+Planets+Tokyo" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 2–2.5 小時。建議路線跟著官方單向動線：水面區 → 光之庭園 → 鏡面/花卉空間。入場前先上廁所，館內拍照會花時間，不要安排太趕。</span></li>
+    <li><span class="tag l">午餐</span> <span class="time">12:00–13:15</span> <b>豐洲午餐：千客萬來 / LaLaport / UZU</b>
+      <br><span class="muted">【安排理由】teamLab 結束後先吃，避免到葛西後只剩園區簡餐。若要吃豐洲市場名店壽司，需改成清晨特攻，不建議放中午。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:15–14:00</span> <b>豐洲 → 葛西臨海公園</b>
+      <br><span class="muted">【交通】有樂町線到新木場，轉 JR 京葉線到葛西臨海公園；含等車約 35–45 分。這樣比先進市區再出去順。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">14:00–14:15</span> <b>葛西臨海公園站 → 水族園入口</b>
+      <br><span class="muted">【重點】車站到水族園需步行約 8–12 分，夏天很曬；先補水再走。下大雨時這段最不舒服，可啟動銀座備案。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">14:15–16:30</span> <b>葛西臨海水族園</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kasai+Rinkai+Aquarium" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 2–2.5 小時。建議路線：玻璃圓頂入口 → 黑鮪魚大水槽 → 世界海洋區 → 東京灣區 → 企鵝區。黑鮪魚大水槽是核心，不要最後才去。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">16:30–17:10</span> <b>公園短散步 / 摩天輪外觀拍照</b>
+      <br><span class="muted">【彈性】若體力足，可到海邊或摩天輪外拍照 20–30 分；若太熱或下雨，直接回車站。摩天輪可當臨時加碼，不列主線以免晚餐太晚。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">17:10–17:45</span> <b>葛西臨海公園 → 東京站</b>
+      <br><span class="muted">【交通】JR 京葉線直達東京站，約 15 分；但京葉線月台離東京站主體很遠，走到一番街/丸之內請再抓 10–15 分。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">17:45–19:00</span> <b>東京車站一番街 / Character Street / 拉麵街</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Station+Ichibangai" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 75 分。先逛角色街、伴手禮、拉麵街排隊狀況。若要吃根室花丸，先去 KITTE 抽號，再回車站逛。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">19:00–20:30</span> <b>東京站晚餐 + 丸之內紅磚站舍夜景</b>
+      <br><span class="muted">【收尾】晚餐後從丸之內口出站，拍東京站紅磚建築與站前廣場夜景。若走累，買駅弁回飯店吃也是很好的收尾。</span></li>
+  </ul>
+  </details>
+
+  <h3>🍱 飲食提案（早餐 3 選 + 午晚餐多備案）</h3>
+  <table>
+    <tr>
+      <th>餐別</th>
+      <th>🌟 必吃排隊名店</th>
+      <th>🏮 在地人推薦名店</th>
+      <th>⚡ 免排隊/快速備案</th>
+    </tr>
+    <tr>
+      <td><b>早餐</b></td>
+      <td><span class="rest-title">豐洲市場 壽司大</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sushi+Dai+Toyosu" target="_blank">📍地圖</a><span class="muted">神級排隊壽司，需極早起（清晨）去排隊拿號碼牌。</span></td>
+      <td><span class="rest-title">豐洲 千客萬來 小吃街</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Toyosu+Senkyaku+Banrai" target="_blank">📍地圖</a><span class="muted">2024年開幕的江戶風情街，早上就能吃到玉子燒與海鮮串。</span></td>
+      <td><span class="rest-title">Tully's Coffee 豐洲店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tullys+Coffee+Toyosu" target="_blank">📍地圖</a><span class="muted">車站旁的連鎖咖啡，提供熱壓吐司與咖啡，快速方便。</span></td>
+    </tr>
+  </table>
+
+  <div class="meal-grid two">
+    <div class="meal-card">
+      <h4>午餐｜豐洲 teamLab 後 / 前往葛西前</h4>
+      <ul>
+        <li><b>豐洲 千客萬來 海鮮丼/小吃街</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Toyosu+Senkyaku+Banrai" target="_blank">📍地圖</a><span class="meta">類型：海鮮/江戶風美食街｜距離：teamLab 搭百合海鷗線/步行轉乘約 10–15 分｜價格：<span class="price">¥1,500–4,000/人</span>｜注意：觀光熱點，餐廳選擇多；比豐洲市場清晨壽司名店更適合中午。</span></li>
+        <li><b>大和壽司 / 壽司大（豐洲市場）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sushi+Dai+Toyosu" target="_blank">📍地圖</a><span class="meta">類型：頂級壽司｜距離：teamLab 搭車約 15 分｜價格：<span class="price">¥5,000–8,000+/人</span>｜注意：清晨排隊名店，中午多半已收或排到崩潰；本行程只列為「超早起特攻」而非主線。</span></li>
+        <li><b>Vegan Ramen UZU Tokyo</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Vegan+Ramen+UZU+Tokyo" target="_blank">📍地圖</a><span class="meta">類型：藝術拉麵｜距離：teamLab 附近｜價格：<span class="price">¥1,500–2,500/人</span>｜注意：跟展覽調性很搭，但座位有限；適合不想移動太遠。</span></li>
+        <li><b>LaLaport 豐洲 美食街</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=LaLaport+Toyosu" target="_blank">📍地圖</a><span class="meta">類型：免排隊商場備案｜距離：teamLab 搭車/步行約 10–15 分｜價格：<span class="price">¥900–2,000/人</span>｜注意：冷氣、廁所、座位都穩，適合親子和雨天。</span></li>
+        <li><b>葛西臨海公園 展望餐廳</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kasai+Rinkai+Park+Restaurant" target="_blank">📍地圖</a><span class="meta">類型：咖哩/定食｜距離：葛西臨海水族園步行約 5–10 分｜價格：<span class="price">¥900–1,800/人</span>｜注意：若想先到葛西再吃，這是最順的簡單午餐。</span></li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <h4>晚餐｜東京車站・丸之內・八重洲</h4>
+      <ul>
+        <li><b>根室花丸 KITTE 丸之內店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Nemuro+Hanamaru+KITTE" target="_blank">📍地圖</a><span class="meta">類型：北海道迴轉壽司｜距離：東京站丸之內南口步行約 3 分｜價格：<span class="price">¥2,500–5,000/人</span>｜注意：大排隊名店，先抽號再逛 KITTE；等待超過 60 分改駅弁或拉麵街。</span></li>
+        <li><b>東京車站拉麵街 斑鳩 / 六厘舍</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Ramen+Street" target="_blank">📍地圖</a><span class="meta">類型：拉麵/沾麵｜距離：東京站八重洲地下街內｜價格：<span class="price">¥1,100–1,800/人</span>｜注意：六厘舍排最久，斑鳩較穩；晚餐尖峰仍需等。</span></li>
+        <li><b>Yakiniku a Five 徳 東京八重洲</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yakiniku+a+Five+Toku+Tokyo+Yaesu" target="_blank">📍地圖</a><span class="meta">類型：和牛燒肉｜距離：東京站八重洲口步行約 5–8 分｜價格：<span class="price">¥5,000–9,000/人</span>｜注意：想吃燒肉的高級選，建議訂位；預算比美食街高。</span></li>
+        <li><b>本家あべや KITTE GRANCHE店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Honke+Abeya+KITTE+Tokyo" target="_blank">📍地圖</a><span class="meta">類型：比內地雞親子丼/烤雞｜距離：KITTE 地下，東京站步行約 3 分｜價格：<span class="price">¥1,500–3,000/人</span>｜注意：在地上班族也愛，翻桌比壽司快。</span></li>
+        <li><b>駅弁屋 祭</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Ekibenya+Matsuri+Tokyo+Station" target="_blank">📍地圖</a><span class="meta">類型：全日本鐵路便當｜距離：東京站改札內｜價格：<span class="price">¥900–1,800/人</span>｜注意：完全免排隊，適合已經走累、想回飯店吃的人。</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warnbox">☔ <b>雨天/緊急備案：</b> 葛西臨海公園從車站走到水族館有一段無遮蔽戶外路程。若雨勢太大，建議取消葛西，直接從豐洲前往銀座逛街。</div>
+  <div class="okbox">
+    <b>🔥 酷暑 / 深度備案：</b>
+    <ul>
+      <li><b>太熱版：</b> teamLab 後取消葛西臨海水族園，改 <b>LaLaport 豐洲 + 豐洲千客萬來 + 銀座地下街</b>，全程室內/半室內。</li>
+      <li><b>上午戶外版：</b> 若很想看海，可 08:30 前先到 <b>豐洲ぐるり公園</b> 看灣岸景色 30 分鐘，再進 teamLab；高溫日不要午後走公園。</li>
+      <li><b>體力不足版：</b> teamLab 玩滿後直接進東京車站，取消葛西；晚上提早逛一番街與買駅弁回飯店。</li>
+      <li><b>深度生活版：</b> 把葛西改成 <b>月島もんじゃ街</b> 或 <b>佃島下町散步</b>，體驗東京灣岸老街與在地飲食。</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ============ Day 5 ============ -->
+<section id="d5">
+<h2>Day 5｜戶越銀座・大森（在地生活與親民水族館）</h2>
+<div class="card">
+  <h3>🗺️ 行程總覽與備案</h3>
+  <p><b>主線行程：</b> 戶越銀座商店街 → しながわ水族館 → 大森/品川晚餐。<br>
+  <b>B 計畫（下大雨）：</b> 商店街無全段遮雨棚，若下雨改去品川 Atre 商場或 ecute 品川室內逛街。</p>
+
+  <details open>
+  <summary>🕒 每日詳細行程與交通</summary>
+  <ul>
+    <li><span class="tag b">早餐</span> <span class="time">08:30–09:30</span> <b>戶越銀座周邊早餐 / 咖啡</b>
+      <br><span class="muted">今天是「在地商店街 + 親民水族館」日，節奏可以比前幾天慢。早餐可在戶越銀座或五反田先吃，避開商店街 11:30 後人潮。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:30–10:15</span> <b>前往戶越銀座</b>
+      <br><span class="muted">【交通】若從山手線出發，建議到五反田轉東急池上線到「戶越銀座站」。這樣比從品川硬轉更直覺，也能體驗東京私鐵。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">10:15–11:15</span> <b>戶越銀座商店街東側散步</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Togoshi+Ginza+Shopping+Street" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 60 分。先從車站附近向人潮較少的方向慢慢逛，拍商店街招牌、找第一輪小吃。重點不是趕景點，而是看在地生活。</span></li>
+    <li><span class="tag l">午前</span> <span class="time">11:15–12:30</span> <b>戶越銀座小吃巡禮</b>
+      <br><span class="muted">【建議吃法】後藤蒲鉾店關東煮/可樂餅 → 炸雞/烤串 → 麵包店或甜點。每家只買小份，避免午餐前太飽。</span></li>
+    <li><span class="tag l">午餐</span> <span class="time">12:30–13:30</span> <b>戶越銀座坐下吃午餐 / 商店街收尾</b>
+      <br><span class="muted">若想完整午餐，選豚丼或蕎麥麵；若已經小吃吃飽，就找咖啡店休息 30 分鐘。13:30 左右要準備往水族館移動。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:30–14:30</span> <b>戶越銀座 → 大森 / しながわ水族館</b>
+      <br><span class="muted">【交通】戶越銀座 → 五反田 → JR 京濱東北線到大森，再步行或搭水族館接駁車；含轉車抓 45–60 分。若帶小孩或天氣熱，建議大森站搭接駁。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">14:30–17:30</span> <b>しながわ水族館（品川水族館）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shinagawa+Aquarium" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 2.5–3 小時。建議路線：海底隧道 → 東京灣魚類 → 海獅/海豹表演 → 企鵝區 → 紀念品。這間比 Aqua Park 更親民，重點是慢慢看生物。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">17:30–18:10</span> <b>水族館周邊公園短休 / 回大森站</b>
+      <br><span class="muted">若天氣好，水族館外公園可休息拍照；若下雨或熱，直接搭接駁車回大森站。不要拖太晚，否則大森熱門店會排隊。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">18:10–20:30</span> <b>大森晚餐 / 品川站回程備案</b>
+      <br><span class="muted">【串連理由】水族館結束後在大森吃最順，不必回市中心找餐廳。若想更穩定或怕居酒屋菸味，直接回品川站商場吃。</span></li>
+  </ul>
+  </details>
+
+  <h3>🍱 飲食提案（早餐 3 選 + 午晚餐多備案）</h3>
+  <table>
+    <tr>
+      <th>餐別</th>
+      <th>🌟 必吃排隊名店</th>
+      <th>🏮 在地人推薦名店</th>
+      <th>⚡ 免排隊/快速備案</th>
+    </tr>
+    <tr>
+      <td><b>早餐</b></td>
+      <td><span class="rest-title">ヨリミチカフェ (Yorimichi Cafe)</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yorimichi+Cafe+Togoshi" target="_blank">📍地圖</a><span class="muted">戶越銀座超可愛的北歐風咖啡廳，手作司康與咖啡極佳。</span></td>
+      <td><span class="rest-title">パンのハリマヤ (Harimaya Bakery)</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Harimaya+Bakery+Togoshi" target="_blank">📍地圖</a><span class="muted">在地老字號麵包店，買個咖哩麵包當作邊走邊吃的開端。</span></td>
+      <td><span class="rest-title">車站旁 Doutor Coffee</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Doutor+Coffee+Togoshi" target="_blank">📍地圖</a><span class="muted">到處都有的羅多倫咖啡，熱狗堡便宜好吃免排隊。</span></td>
+    </tr>
+  </table>
+
+  <div class="meal-grid two">
+    <div class="meal-card">
+      <h4>午餐｜戶越銀座商店街（邊逛邊吃 / 坐下吃）</h4>
+      <ul>
+        <li><b>後藤蒲鉾店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Goto+Kamaboko+Togoshi" target="_blank">📍地圖</a><span class="meta">類型：關東煮/炸物小吃｜距離：戶越銀座站步行約 3–5 分｜價格：<span class="price">¥200–800/人</span>｜注意：可樂餅與關東煮很在地，適合邊走邊吃；下雨較不方便。</span></li>
+        <li><b>帶廣豚丼 炭火燒</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Obihiro+Butadon+Togoshi" target="_blank">📍地圖</a><span class="meta">類型：炭火豚丼｜距離：商店街內，戶越銀座站步行約 5–8 分｜價格：<span class="price">¥1,000–1,800/人</span>｜注意：香氣很強、份量足，午餐尖峰會排；排太久改蕎麥麵。</span></li>
+        <li><b>蕎麥麵 百々亭</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Momotei+Togoshi" target="_blank">📍地圖</a><span class="meta">類型：蕎麥麵/定食｜距離：商店街內｜價格：<span class="price">¥900–1,800/人</span>｜注意：坐下休息首選，熱天推薦冷蕎麥。</span></li>
+        <li><b>中津からあげ 渓 戶越銀座店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Nakatsu+Karaage+Kei+Togoshi+Ginza" target="_blank">📍地圖</a><span class="meta">類型：炸雞小吃｜距離：商店街內｜價格：<span class="price">¥400–1,000/人</span>｜注意：日本人也常買，適合跟可樂餅組成散步午餐。</span></li>
+        <li><b>戶越銀座商店街 當日人氣店搜尋</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Togoshi+Ginza+Lunch" target="_blank">📍地圖</a><span class="meta">類型：免排隊彈性備案｜距離：整條商店街｜價格：<span class="price">¥800–2,000/人</span>｜注意：當天看哪家有座位就進，重點是保留 15:00 前移動到水族館。</span></li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <h4>晚餐｜大森站 / 品川站（水族館後）</h4>
+      <ul>
+        <li><b>大森 鳥城</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yakitori+Torijo+Omori" target="_blank">📍地圖</a><span class="meta">類型：烤鳥居酒屋｜距離：大森站步行約 3–6 分，水族館接駁回站後最順｜價格：<span class="price">¥3,000–5,000/人</span>｜注意：熱門在地店，晚間菸酒氣氛較濃；帶小孩建議早點入座。</span></li>
+        <li><b>洋食亭おおむら</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yoshokutei+Omura+Omori" target="_blank">📍地圖</a><span class="meta">類型：昭和洋食｜距離：大森站周邊｜價格：<span class="price">¥1,200–2,500/人</span>｜注意：蛋包飯/炸蝦類適合家庭，排隊壓力比居酒屋小。</span></li>
+        <li><b>壽司居酒屋 や台ずし 大森海岸駅前町</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yataizushi+Omorikaigan" target="_blank">📍地圖</a><span class="meta">類型：壽司/海鮮居酒屋｜距離：大森海岸站附近，水族館步行或接駁轉乘方便｜價格：<span class="price">¥2,500–4,500/人</span>｜注意：想吃壽司又不想進高級店可選，晚間較熱鬧。</span></li>
+        <li><b>焼肉ライク 大森西口店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yakiniku+Like+Omori" target="_blank">📍地圖</a><span class="meta">類型：快速燒肉｜距離：大森站周邊｜價格：<span class="price">¥1,200–2,500/人</span>｜注意：不想排、不想吃太久的燒肉備案，點餐快。</span></li>
+        <li><b>Atre 大森 餐廳樓層</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Atre+Omori+Restaurants" target="_blank">📍地圖</a><span class="meta">類型：免排隊商場｜距離：大森站直結｜價格：<span class="price">¥900–2,500/人</span>｜注意：雨天/小孩累了最穩，吃完直接搭 JR 回飯店。</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="okbox">
+    <b>🔥 酷暑 / 雨天 / 深度備案：</b>
+    <ul>
+      <li><b>太熱版：</b> 戶越銀座只保留 10:15–12:00 小吃短走，12:00 後改品川 Atre / ecute 吃午餐與休息，14:30 再去水族館。</li>
+      <li><b>雨天版：</b> 商店街無全段遮雨棚，下雨時取消戶外小吃巡禮，改 <b>五反田 TOC / 品川站商場 / 大森 Atre</b> 室內路線。</li>
+      <li><b>上午戶外版：</b> 若早上涼爽，戶越銀座可以延伸到 <b>武藏小山 Palm 商店街</b>，體驗更大型的在地商店街；中午前回室內。</li>
+      <li><b>在地生活版：</b> 不急著去水族館時，可在戶越銀座找菜店、惣菜店、老麵包店與小型超市，觀察日本家庭採買節奏，午餐用小吃組合完成。</li>
+      <li><b>體力不足版：</b> 取消しながわ水族館，改在品川站商場喝咖啡、採買伴手禮；這天作為洗衣/補貨/整理行李日。</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ============ Day 6 ============ -->
+<section id="d6">
+<h2>Day 6｜吉祥寺・池袋（雜貨與天空綠洲）</h2>
+<div class="card">
+  <h3>🗺️ 行程總覽與備案</h3>
+  <p><b>主線行程：</b> 吉祥寺逛街/井之頭公園 → 池袋 Sunshine 水族館 → 池袋周邊晚餐。<br>
+  <b>B 計畫（水族館疲勞）：</b> 取消 Sunshine 水族館，改為在吉祥寺待一整天，或去池袋逛動漫/家電量販店。</p>
+
+  <details open>
+  <summary>🕒 每日詳細行程與交通</summary>
+  <ul>
+    <li><span class="tag b">早餐</span> <span class="time">08:30–09:30</span> <b>吉祥寺早餐 / 井之頭公園前咖啡</b>
+      <br><span class="muted">今天橫跨東京西側到池袋，先去最遠的吉祥寺，再回到池袋，動線像往市中心收回，晚上回飯店也比較容易。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:30–10:15</span> <b>前往吉祥寺</b>
+      <br><span class="muted">【交通】JR 中央線或京王井之頭線到「吉祥寺站」。若住宿在上野/東京站側，可搭 JR 中央線從御茶之水/新宿轉乘。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">10:15–11:15</span> <b>井之頭恩賜公園散步</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Inokashira+Park" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 60 分。早上先走公園最舒服，湖邊、橋邊與綠蔭都適合拍照。若下雨，取消公園，改 Sunroad 商店街。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">11:15–12:15</span> <b>吉祥寺 Sunroad / Harmonica 橫丁外圍</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kichijoji+Sunroad" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 60 分。先逛商店街主線、藥妝、生活雜貨；Harmonica 橫丁白天可短走拍照，晚上才是居酒屋氣氛。</span></li>
+    <li><span class="tag l">午餐</span> <span class="time">12:15–13:30</span> <b>吉祥寺午餐</b>
+      <br><span class="muted">若要挽肉と米，需提前處理整理券；拿不到就改 SATOU、蕎麥麵或 Atre。不要為一間店排到 14:00，會壓縮池袋水族館。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:30–14:15</span> <b>吉祥寺收尾採買 / 移動準備</b>
+      <br><span class="muted">建議把戰利品集中，避免帶太多進水族館。若買太多，可考慮用置物櫃或直接刪減池袋逛街時間。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">14:15–15:00</span> <b>吉祥寺 → 池袋 Sunshine City</b>
+      <br><span class="muted">【交通】吉祥寺 → 新宿 → 池袋，JR 約 30–40 分；池袋站到 Sunshine City 步行約 10–15 分。含人潮抓 45 分鐘。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">15:00–17:30</span> <b>サンシャイン水族館（Sunshine 水族館）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sunshine+Aquarium" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 2.5 小時。建議路線：室內大水槽 → 水母/熱帶魚 → 戶外天空企鵝 → 海獅/環形水槽。戶外區傍晚光線較柔和，拍企鵝效果好。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">17:30–18:15</span> <b>Sunshine City 休息 / 寶可夢中心或扭蛋區</b>
+      <br><span class="muted">【彈性】水族館出來不用立刻吃飯，可先逛 Sunshine City 內部，順便觀察餐廳排隊狀況。若水族館疲勞，這段直接找咖啡坐下。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">18:15–20:30</span> <b>池袋晚餐 + Animate / BIC CAMERA 選配</b>
+      <br><span class="muted">晚餐可在 Sunshine City 解決最省力，也可走回池袋站周邊吃壽司/燒肉/拉麵。若還有體力，飯後逛 Animate 總店或 BIC CAMERA；累了就直接回飯店。</span></li>
+  </ul>
+  </details>
+
+  <h3>🍱 飲食提案（早餐 3 選 + 午晚餐多備案）</h3>
+  <table>
+    <tr>
+      <th>餐別</th>
+      <th>🌟 必吃排隊名店</th>
+      <th>🏮 在地人推薦名店</th>
+      <th>⚡ 免排隊/快速備案</th>
+    </tr>
+    <tr>
+      <td><b>早餐</b></td>
+      <td><span class="rest-title">Chai Break (吉祥寺)</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Chai+Break+Kichijoji" target="_blank">📍地圖</a><span class="muted">井之頭公園旁的超人氣印度奶茶與瑪芬早餐，假日必排隊。</span></td>
+      <td><span class="rest-title">多奈加亭 (吉祥寺本店)</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tanakatei+Kichijoji" target="_blank">📍地圖</a><span class="muted">在地老字號紅茶與蛋糕店，提供優雅的日式洋風早餐。</span></td>
+      <td><span class="rest-title">吉祥寺 車站 Doutor Coffee</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Doutor+Coffee+Kichijoji" target="_blank">📍地圖</a><span class="muted">車站內連鎖咖啡，隨買隨吃，快速補充體力。</span></td>
+    </tr>
+  </table>
+
+  <div class="meal-grid two">
+    <div class="meal-card">
+      <h4>午餐｜吉祥寺（商店街・井之頭公園前後）</h4>
+      <ul>
+        <li><b>挽肉と米 吉祥寺本店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Hikiniku+to+Kome+Kichijoji" target="_blank">📍地圖</a><span class="meta">類型：炭火漢堡排｜距離：吉祥寺站步行約 5 分｜價格：<span class="price">¥1,800–2,500/人</span>｜注意：超級排隊名店，需早上抽整理券；拿不到就不要硬等。</span></li>
+        <li><b>肉のさとう 吉祥寺店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SATOU+Kichijoji" target="_blank">📍地圖</a><span class="meta">類型：炸肉餅/和牛排｜距離：Sunroad 商店街旁｜價格：<span class="price">外帶 ¥300–600，內用 ¥2,000–5,000/人</span>｜注意：外帶排隊快，二樓內用較正式。</span></li>
+        <li><b>美舟</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Mifune+Kichijoji" target="_blank">📍地圖</a><span class="meta">類型：海鮮/居酒屋定食｜距離：吉祥寺站周邊｜價格：<span class="price">¥1,200–2,500/人</span>｜注意：在地感較強，午餐若有營業可吃魚定食，晚上更像居酒屋。</span></li>
+        <li><b>吉祥寺 砂場</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sunaba+Soba+Kichijoji" target="_blank">📍地圖</a><span class="meta">類型：蕎麥麵｜距離：吉祥寺站步行約 5–10 分｜價格：<span class="price">¥1,000–2,000/人</span>｜注意：熱天或水族館前想吃清爽，蕎麥麵比拉麵更適合。</span></li>
+        <li><b>一蘭 吉祥寺店 / アトレ吉祥寺</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Atre+Kichijoji+Restaurants" target="_blank">📍地圖</a><span class="meta">類型：免排隊備案｜距離：吉祥寺站直結或步行數分｜價格：<span class="price">¥1,000–2,000/人</span>｜注意：若整理券失敗，直接用商場/連鎖店保行程節奏。</span></li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <h4>晚餐｜池袋 Sunshine City / 池袋站周邊</h4>
+      <ul>
+        <li><b>麵創房 無敵家</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Mutekiya+Ikebukuro" target="_blank">📍地圖</a><span class="meta">類型：豚骨拉麵｜距離：池袋站東口步行約 5 分，水族館步行約 10–15 分｜價格：<span class="price">¥1,200–1,800/人</span>｜注意：排隊 45–90 分很常見，若太累請跳過。</span></li>
+        <li><b>牛かつ もと村 池袋店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Gyukatsu+Motomura+Ikebukuro" target="_blank">📍地圖</a><span class="meta">類型：炸牛排｜距離：池袋站周邊，水族館後步行約 10–15 分｜價格：<span class="price">¥1,800–3,000/人</span>｜注意：也會排，但翻桌比拉麵快，適合肉食系。</span></li>
+        <li><b>活美登利 西武池袋店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Katsumidori+Seibu+Ikebukuro" target="_blank">📍地圖</a><span class="meta">類型：迴轉壽司｜距離：池袋站直結，水族館步行/搭車約 10 分｜價格：<span class="price">¥2,000–4,000/人</span>｜注意：高 CP 壽司，尖峰會排；抽號後可逛百貨。</span></li>
+        <li><b>焼肉トラジ 池袋西口店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yakiniku+Toraji+Ikebukuro" target="_blank">📍地圖</a><span class="meta">類型：燒肉｜距離：池袋站周邊｜價格：<span class="price">¥4,000–8,000/人</span>｜注意：品質穩定，想吃正式燒肉建議訂位。</span></li>
+        <li><b>Sunshine City Alpa 餐廳街</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sunshine+City+Alpa+Restaurants" target="_blank">📍地圖</a><span class="meta">類型：免排隊商場備案｜距離：水族館樓下｜價格：<span class="price">¥900–2,500/人</span>｜注意：最省腳力，有蛋包飯、義大利麵、烏龍麵、定食。</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="okbox">
+    <b>🔥 酷暑 / 雨天 / 深度備案：</b>
+    <ul>
+      <li><b>太熱版：</b> 井之頭公園只走 30 分鐘，11:00 後全改 <b>吉祥寺 Sunroad、Atre、PARCO、Loft</b> 室內逛街，下午照常去 Sunshine City。</li>
+      <li><b>雨天版：</b> 取消井之頭公園，吉祥寺改商店街與百貨；池袋 Sunshine City 本身全室內，可完整承接下午與晚上。</li>
+      <li><b>上午戶外版：</b> 若天氣涼，可把井之頭公園延長到 90 分鐘，加入湖邊散步與咖啡；午餐延後到 12:45，但需縮短池袋購物。</li>
+      <li><b>深度生活版：</b> 吉祥寺可加逛 <b>Harmonica 橫丁白天版、在地雜貨店、古著/二手店</b>，不用只逛大型商場。</li>
+      <li><b>水族館疲勞版：</b> 如果前幾天水族館太多，Sunshine 水族館改成 <b>Sunshine City 展望台 / 寶可夢中心 / 池袋 Animate 總店</b>。</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ============ Day 7 ============ -->
+<section id="d7">
+<h2>Day 7｜神谷町・秋葉原・上野（經典地標與最後採購）</h2>
+<div class="card">
+  <h3>🗺️ 行程總覽與備案</h3>
+  <p><b>主線行程：</b> 麻布台之丘/東京鐵塔 → 秋葉原次文化巡禮 → 上野多慶屋最後採購。<br>
+  <b>B 計畫（時間不夠）：</b> 放棄秋葉原，從東京鐵塔直接回上野/阿美橫町進行深度採購與打包。</p>
+
+  <details open>
+  <summary>🕒 每日詳細行程與交通</summary>
+  <ul>
+    <li><span class="tag b">早餐</span> <span class="time">08:30–09:15</span> <b>神谷町 / 麻布台早餐</b>
+      <br><span class="muted">最後一天安排「新東京地標 → ACG 採買 → 上野伴手禮」，由南往北收束到上野，方便最後整理行李或回飯店。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:15–09:45</span> <b>前往神谷町站 → 麻布台之丘</b>
+      <br><span class="muted">【交通】日比谷線「神谷町站」直結/步行可到。這裡與東京鐵塔距離近，先逛新地標，再走到經典地標最順。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">09:45–11:15</span> <b>麻布台之丘</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Azabudai+Hills" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 90 分。建議路線：中央廣場 → 商場公共空間 → 建築外觀拍照 → Market/甜點店。這裡主要看建築與新商業空間，不建議排太滿。</span></li>
+    <li><span class="tag b">上午</span> <span class="time">11:15–11:35</span> <b>麻布台之丘 → 東京鐵塔步行</b>
+      <br><span class="muted">【交通】步行約 10–15 分，路上可拍東京鐵塔逐漸靠近的畫面。若天氣太熱，可改搭計程車 5 分鐘。</span></li>
+    <li><span class="tag l">午前</span> <span class="time">11:35–12:20</span> <b>東京鐵塔外觀 / FootTown 短逛</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tokyo+Tower" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 45 分。若已去過其他展望台，這天不一定登塔；拍外觀、逛 FootTown 伴手禮即可。若想登塔，午餐與秋葉原時間各縮短 30–45 分。</span></li>
+    <li><span class="tag l">午餐</span> <span class="time">12:20–13:20</span> <b>麻布台 / 秋葉原午餐選擇</b>
+      <br><span class="muted">若想吃麻布台精緻餐廳，留在麻布台吃；若想把時間給秋葉原，直接搭日比谷線到秋葉原後吃丸五/肉之萬世/蕎麥麵。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:20–13:50</span> <b>神谷町 / 六本木一丁目周邊 → 秋葉原</b>
+      <br><span class="muted">【交通】最簡單是日比谷線到秋葉原，約 20–30 分（含走路等車）。這條線直接串起東京鐵塔區與秋葉原，不用繞山手線。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">13:50–15:10</span> <b>秋葉原 Radio Kaikan</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Akihabara+Radio+Kaikan" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 80 分。建議從高樓層往下逛：模型/角色周邊 → 扭蛋/小物 → 一樓快速收尾。先逛 Radio Kaikan 是因為離車站最近、方向清楚。</span></li>
+    <li><span class="tag l">下午</span> <span class="time">15:10–16:00</span> <b>K-BOOKS / 秋葉原周邊 ACG 店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=K-BOOKS+Akihabara" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 50 分。主攻二手精品、同人誌、角色周邊。若不熟分類，先看樓層指引，鎖定 1–2 類商品，不要全店慢慢翻。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">16:00–16:25</span> <b>秋葉原 → 御徒町 / 上野多慶屋</b>
+      <br><span class="muted">【交通】JR 山手線 1 站到御徒町，或日比谷線到仲御徒町；含走路約 15–25 分。這樣不用拖著戰利品長距離移動。</span></li>
+    <li><span class="tag d">傍晚</span> <span class="time">16:25–18:15</span> <b>上野多慶屋 1 館 + 周邊採買</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Takeya+Ueno" target="_blank">📍地圖</a>
+      <br><span class="muted">【停留】約 2 小時。採買順序：藥妝/日用品 → 零食伴手禮 → 退稅/結帳 → 最後確認行李重量。建議一開始就設定預算與行李空間，避免買超量。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">18:15–20:00</span> <b>御徒町 / 上野晚餐</b>
+      <br><span class="muted">【安排理由】採買完就近吃，不再跨區。想吃排隊名店選鴨 to 蔥，想坐久一點選燒肉或壽司，想快速回飯店就 PARCO_ya / 吉池食堂。</span></li>
+    <li><span class="tag d">晚上</span> <span class="time">20:00–21:00</span> <b>回飯店整理戰利品 / 行李打包</b>
+      <br><span class="muted">若這是回程前一天，務必把液體、藥妝、易碎品先分裝；若還有隔天行程，則把採買品放回飯店後早點休息。</span></li>
+  </ul>
+  </details>
+
+  <h3>🍱 飲食提案（早餐 3 選 + 午晚餐多備案）</h3>
+  <table>
+    <tr>
+      <th>餐別</th>
+      <th>🌟 必吃排隊名店</th>
+      <th>🏮 在地人推薦名店</th>
+      <th>⚡ 免排隊/快速備案</th>
+    </tr>
+    <tr>
+      <td><b>早餐</b></td>
+      <td><span class="rest-title">% ARABICA Tokyo (麻布台)</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Arabica+Tokyo+Azabudai" target="_blank">📍地圖</a><span class="muted">京都爆紅咖啡進駐東京，絕美純白裝潢，買杯拿鐵配可頌。</span></td>
+      <td><span class="rest-title">3381 麵包店 (麻布台之丘)</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=3381+Azabudai+Hills" target="_blank">📍地圖</a><span class="muted">商場內的高質感烘焙坊，在地貴婦最愛買的精緻麵包。</span></td>
+      <td><span class="rest-title">上島咖啡店 神谷町站前店</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Ueshima+Coffee+Kamiyacho" target="_blank">📍地圖</a><span class="muted">傳統日式黑糖牛奶咖啡配厚片吐司，座位多免排隊。</span></td>
+    </tr>
+  </table>
+
+  <div class="meal-grid two">
+    <div class="meal-card">
+      <h4>午餐｜麻布台之丘 / 秋葉原前後</h4>
+      <ul>
+        <li><b>とんかつ 丸五</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tonkatsu+Marugo+Akihabara" target="_blank">📍地圖</a><span class="meta">類型：炸豬排｜距離：秋葉原 Radio Kaikan 步行約 5–8 分｜價格：<span class="price">¥2,500–4,500/人</span>｜注意：米其林推薦排隊名店，通常需 45–90 分；時間不夠請改肉之萬世或 UDX。</span></li>
+        <li><b>肉の万世 秋葉原本店周邊</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Niku+no+Mansei+Akihabara" target="_blank">📍地圖</a><span class="meta">類型：漢堡排/牛排/燒肉｜距離：Radio Kaikan 步行約 8–10 分｜價格：<span class="price">¥1,800–6,000/人</span>｜注意：老牌肉料理，選擇多，比丸五更容易調整預算。</span></li>
+        <li><b>雛鮨 秋葉原UDX店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Hina+Sushi+Akihabara+UDX" target="_blank">📍地圖</a><span class="meta">類型：壽司｜距離：秋葉原站/UDX，Radio Kaikan 步行約 6–8 分｜價格：<span class="price">¥2,500–4,500/人</span>｜注意：想吃壽司又不跑築地/上野，可直接在秋葉原解決；尖峰仍可能排。</span></li>
+        <li><b>神田まつや</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kanda+Matsuya+Soba" target="_blank">📍地圖</a><span class="meta">類型：老字號蕎麥麵｜距離：秋葉原步行約 10–12 分｜價格：<span class="price">¥1,200–2,500/人</span>｜注意：東京代表性蕎麥名店，建築也很有味道；午餐尖峰排隊但翻桌快。</span></li>
+        <li><b>秋葉原 UDX 餐廳街</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Akihabara+UDX+Restaurant" target="_blank">📍地圖</a><span class="meta">類型：免排隊商場備案｜距離：秋葉原站步行約 3–5 分｜價格：<span class="price">¥900–2,800/人</span>｜注意：餐廳多、冷氣強，避開 12:00 上班族尖峰即可。</span></li>
+      </ul>
+    </div>
+    <div class="meal-card">
+      <h4>晚餐｜上野・御徒町（多慶屋採買後）</h4>
+      <ul>
+        <li><b>鴨 to 蔥（鴨と葱）御徒町</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Kamo+to+Negi+Okachimachi" target="_blank">📍地圖</a><span class="meta">類型：鴨湯拉麵｜距離：多慶屋步行約 5–8 分｜價格：<span class="price">¥1,000–1,500/人</span>｜注意：超人氣排隊店，湯頭漂亮；若隊伍超過店外轉角請改大山或PARCO_ya。</span></li>
+        <li><b>肉の大山 上野</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Niku+no+Ohyama+Ueno" target="_blank">📍地圖</a><span class="meta">類型：炸肉餅/洋食/肉料理｜距離：多慶屋步行約 10–12 分｜價格：<span class="price">外帶 ¥200–600，內用 ¥1,000–3,000/人</span>｜注意：上野名店，外帶最快；內用晚餐較熱鬧。</span></li>
+        <li><b>英鮨 御徒町店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Hidesushi+Okachimachi" target="_blank">📍地圖</a><span class="meta">類型：壽司/海鮮｜距離：多慶屋步行約 5–8 分｜價格：<span class="price">¥2,500–5,000/人</span>｜注意：比名店壽司好進，適合採買後想坐下來吃魚。</span></li>
+        <li><b>焼肉陽山道 上野広小路店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Yansando+Yakiniku+Ueno+Hirokoji" target="_blank">📍地圖</a><span class="meta">類型：燒肉/韓式燒肉｜距離：多慶屋步行約 5–8 分｜價格：<span class="price">¥4,000–8,000/人</span>｜注意：上野老牌燒肉，若想用一餐收尾很適合，建議訂位。</span></li>
+        <li><b>PARCO_ya 上野 / 御徒町吉池食堂</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=PARCO_ya+Ueno+Restaurants" target="_blank">📍地圖</a><span class="meta">類型：免排隊商場/定食/海鮮｜距離：多慶屋步行約 3–6 分｜價格：<span class="price">¥1,000–3,000/人</span>｜注意：買太多、走太累時最穩，吃完也方便回飯店整理行李。</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="okbox">
+    <b>🔥 酷暑 / 雨天 / 深度備案：</b>
+    <ul>
+      <li><b>太熱版：</b> 東京鐵塔只拍外觀 10 分鐘，不登塔也不長走；麻布台之丘與秋葉原 Radio Kaikan 都是室內，適合高溫日。</li>
+      <li><b>雨天版：</b> 取消麻布台到東京鐵塔步行，改搭計程車或只在麻布台之丘室內遠眺東京鐵塔；秋葉原與多慶屋照常。</li>
+      <li><b>上午戶外版：</b> 若早上天氣好，可從麻布台之丘走到 <b>芝公園</b> 拍東京鐵塔 30–45 分鐘；11:30 前回室內午餐。</li>
+      <li><b>深度生活版：</b> 秋葉原不要只逛動漫大樓，可加 <b>2k540 AKI-OKA ARTISAN</b> 職人工藝街，從秋葉原走向御徒町更順，也更有生活感。</li>
+      <li><b>採買加強版：</b> 若伴手禮還沒買齊，秋葉原縮短為 Radio Kaikan 1 小時，16:00 前到多慶屋，保留足夠退稅與打包時間。</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+</div>
+
+<div class="footer">
+  &copy; 2026 東京之旅規劃指南 | Generated for Next Trip
+</div>
+
+</body>
+</html>

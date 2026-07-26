@@ -10,23 +10,24 @@ travel-log/
 ├── docs/                          ← GitHub Pages（Settings → /docs）
 │   ├── index.html                 ← 旅程總索引
 │   └── Japan/
-│       └── 20260721_Tokyo/        ← 東京 2026 網站
+│       ├── 20260721_Tokyo/        ← 東京 2026/7 網站
+│       └── 20260812_Tokyo/        ← 東京 2026/8 + next-trip 網站
 └── Japan/
-    └── 20260721_Tokyo/            ← 東京行程原始檔與建置腳本
-        ├── tokyo-2026-guide-light.html   ← 唯一編輯來源
-        ├── build-guides.py
-        ├── build-site.py
-        └── assets/
+    ├── 20260721_Tokyo/            ← 七月行程原始檔
+    └── 20260812_Tokyo/            ← 八月行程 / next-trip 原始檔
 ```
 
 ## 網址（GitHub Pages）
 
-Repo 名稱設為 `travel-log` 時：
+帳號 `djiann`、Repo `travel-log`：
 
 | 頁面 | URL |
 |------|-----|
-| 總索引 | `https://你的帳號.github.io/travel-log/` |
-| 東京行程 | `https://你的帳號.github.io/travel-log/Japan/20260721_Tokyo/` |
+| 總索引 | `https://djiann.github.io/travel-log/` |
+| 東京 7 月 | `https://djiann.github.io/travel-log/Japan/20260721_Tokyo/` |
+| 東京 8 月索引 | `https://djiann.github.io/travel-log/Japan/20260812_Tokyo/` |
+| 八月完整指南 | `https://djiann.github.io/travel-log/Japan/20260812_Tokyo/tokyo-2026-08-guide.html` |
+| 下次深度行程 | `https://djiann.github.io/travel-log/Japan/20260812_Tokyo/tokyo-next-trip-guide-detailed.html` |
 
 ## 更新東京行程
 

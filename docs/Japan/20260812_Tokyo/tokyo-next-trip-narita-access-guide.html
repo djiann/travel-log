@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>成田機場進東京市區交通指南｜航廈動線・購票・費用</title>
+<style>
+  :root{
+    --bg:#f6f4f0; --card:#ffffff; --card2:#faf8f5; --ink:#2a3238; --mut:#6b7a88;
+    --acc:#d4566a; --acc2:#3a8f9f; --ok:#2d8a62; --warn:#b87820; --line:#e6e1da;
+    --shadow:0 2px 12px rgba(42,50,56,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,"PingFang TC","Noto Sans TC","Hiragino Sans GB","Microsoft JhengHei",system-ui,sans-serif;background:var(--bg);background-image:radial-gradient(ellipse 80% 50% at 100% -10%, rgba(212,86,106,.07), transparent),radial-gradient(ellipse 60% 40% at 0% 100%, rgba(58,143,159,.06), transparent);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  header{padding:32px 20px 24px;background:linear-gradient(145deg,#fff 0%,#fdf6f4 45%,#f0f7f8 100%);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  h1{margin:0 0 8px;font-size:23px;font-weight:700;letter-spacing:-.02em}
+  .sub{color:var(--mut);font-size:14px;line-height:1.55}
+  .wrap{max-width:960px;margin:0 auto;padding:0 16px 80px}
+  nav.toc{position:sticky;top:0;z-index:20;background:rgba(246,244,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 0;margin:0 -16px 20px;overflow-x:auto;white-space:nowrap}
+  nav.toc a{display:inline-block;color:var(--acc2);text-decoration:none;font-size:13px;font-weight:500;padding:6px 12px;background:#fff;border:1px solid var(--line);border-radius:20px;margin:4px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  section{margin:24px 0}
+  h2{font-size:19px;font-weight:700;border-left:4px solid var(--acc);padding-left:12px;margin:28px 0 14px;scroll-margin-top:64px}
+  h3{font-size:16px;font-weight:600;color:var(--acc2);margin:18px 0 8px}
+  .card{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+  .okbox{background:#f0faf4;border:1px solid #c5e6d4;border-left:4px solid var(--ok);border-radius:12px;padding:14px 16px;margin:10px 0}
+  .warnbox{background:#fff9ee;border:1px solid #f0ddb8;border-left:4px solid var(--warn);border-radius:12px;padding:14px 16px;margin:10px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;display:block;overflow-x:auto;border-radius:10px}
+  th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;min-width:170px}
+  th{background:#f0f4f6;color:var(--acc2);font-weight:600;white-space:nowrap}
+  tr:nth-child(even) td{background:#fafafa}
+  ul{padding-left:20px;margin:8px 0}
+  li{margin:5px 0}
+  a{color:var(--acc2);text-decoration:none;border-bottom:1px solid rgba(58,143,159,.25)}
+  .muted{color:var(--mut);font-size:13px}
+  .time{color:var(--acc);font-weight:700;font-variant-numeric:tabular-nums}
+  .price{color:var(--ok);font-weight:700}
+  code{background:#f0ece6;padding:2px 8px;border-radius:6px;font-size:13px;color:#8a5a18;border:1px solid #e8e0d4}
+  a.gmap{display:inline-block;font-size:12px;font-weight:600;color:#d4566a;text-decoration:none;border:1px solid rgba(212,86,106,.35);border-radius:6px;padding:0 6px;margin-left:6px;white-space:nowrap;vertical-align:middle;line-height:1.5}
+  .footer{color:var(--mut);font-size:12px;text-align:center;padding:32px 0 16px;border-top:1px solid var(--line);margin-top:48px}
+</style>
+</head>
+<body>
+<header>
+  <h1>✈️ 成田機場 → 東京市區交通指南</h1>
+  <div class="sub">下飛機後從成田第一航廈/第二航廈怎麼走、怎麼買票、費用多少、線上或現場如何購買，以及依住宿地選擇最順的交通方式。</div>
+</header>
+
+<div class="wrap">
+<nav class="toc">
+  <a href="tokyo-next-trip-guide-detailed.html">← 回主行程</a>
+  <a href="#quick">快速結論</a>
+  <a href="#terminal">航廈動線</a>
+  <a href="#compare">交通比較</a>
+  <a href="#skyliner">Skyliner</a>
+  <a href="#nex">N'EX</a>
+  <a href="#bus">機場巴士</a>
+  <a href="#local">一般電車</a>
+  <a href="#tips">注意事項</a>
+</nav>
+
+<section id="quick">
+<h2>① 快速結論：依住宿地這樣選</h2>
+<div class="okbox">
+  <ul>
+    <li><b>住上野 / 御徒町：</b> 首選 <b>京成 Skyliner</b> 到京成上野，最快、最簡單。約 41 分，現場普通票約 <span class="price">¥2,470–2,580</span>，線上折扣常見約 <span class="price">¥2,310</span>。</li>
+    <li><b>住品川：</b> 首選 <b>JR Narita Express（N'EX）</b> 直達品川，不用拖行李轉車。單程普通車約 <span class="price">¥3,330</span>；若成田進出都搭 N'EX，外國旅客可考慮 <b>N'EX TOKYO Round Trip Ticket</b> 約 <span class="price">¥5,200</span>。</li>
+    <li><b>住大井町：</b> 最省力是 <b>N'EX 到品川 → JR 京濱東北線 1 站到大井町</b>；想省錢可搭京成 Access Express/一般電車，但要看目的地與行李量。</li>
+    <li><b>住東京站 / 銀座：</b> 省錢首選 <b>TYO-NRT 機場巴士</b>，成人約 <span class="price">¥1,500</span>，但會受塞車影響。</li>
+  </ul>
+</div>
+</section>
+
+<section id="terminal">
+<h2>② 下飛機後怎麼走？第一航廈 / 第二航廈動線</h2>
+<div class="card">
+  <h3>抵達後共通流程</h3>
+  <ul>
+    <li><span class="time">Step 1</span> 下飛機 → 跟著 <b>Arrivals / 入境</b> 指標走。</li>
+    <li><span class="time">Step 2</span> 入境審查（Visit Japan Web QR / 護照）→ 領行李 → 海關申報。</li>
+    <li><span class="time">Step 3</span> 出海關後，先決定你要搭 <b>電車</b> 還是 <b>巴士</b>。</li>
+  </ul>
+</div>
+
+<h3>第一航廈 Terminal 1</h3>
+<table>
+  <tr><th>要搭什麼</th><th>怎麼走</th><th>在哪裡買票</th><th>注意</th></tr>
+  <tr>
+    <td><b>Skyliner / 京成線</b></td>
+    <td>出海關後跟著 <b>鉄道 / Train / Keisei Line</b> 指標，下到 <b>B1F 成田空港駅（Narita Airport Terminal 1 Station）</b>。</td>
+    <td>京成 Skyliner 售票櫃台、自動售票機、線上票券兌換機/櫃台。</td>
+    <td>要去上野/日暮里，認明 <b>Keisei / Skyliner</b>，不要走到 JR 櫃台。</td>
+  </tr>
+  <tr>
+    <td><b>N'EX / JR線</b></td>
+    <td>同樣下到 B1F 鐵道站，找 <b>JR EAST / Narita Express</b> 標示。</td>
+    <td>JR EAST Travel Service Center、綠色窗口、自動售票機（部分機器可掃護照取外國人票）。</td>
+    <td>要去東京/品川/澀谷/新宿，N'EX 比較省力。</td>
+  </tr>
+  <tr>
+    <td><b>TYO-NRT 巴士 / 利木津巴士</b></td>
+    <td>不要下 B1F，留在抵達層，找 <b>Bus Tickets / Bus Stop</b> 指標。</td>
+    <td>抵達大廳巴士售票櫃台，或依路線規則至乘車口排隊/刷 IC 卡。</td>
+    <td>TYO-NRT 前往東京站常見乘車處為 Terminal 1 巴士站，月台號碼請以現場電子看板為準。</td>
+  </tr>
+</table>
+
+<h3>第二航廈 Terminal 2（第三航廈旅客也多半使用這裡轉鐵道）</h3>
+<table>
+  <tr><th>要搭什麼</th><th>怎麼走</th><th>在哪裡買票</th><th>注意</th></tr>
+  <tr>
+    <td><b>Skyliner / 京成線</b></td>
+    <td>出海關後跟著 <b>鉄道 / Train / Keisei Line</b> 指標，下到 <b>B1F 空港第2ビル駅（Narita Airport Terminal 2・3 Station）</b>。</td>
+    <td>京成售票櫃台、自動售票機、線上票券兌換櫃台/機器。</td>
+    <td>第二/第三航廈共用這個鐵道站；第三航廈需走路或搭接駁到第二航廈。</td>
+  </tr>
+  <tr>
+    <td><b>N'EX / JR線</b></td>
+    <td>同樣前往 B1F 空港第2ビル駅，找 <b>JR EAST</b> 區域。</td>
+    <td>JR EAST Travel Service Center、指定席售票機、綠色窗口。</td>
+    <td>N'EX 全車指定席，買票時就要選班次與座位。</td>
+  </tr>
+  <tr>
+    <td><b>機場巴士</b></td>
+    <td>抵達層找 <b>Bus Tickets / Bus Stop</b>。不要下到 B1F 鐵道站。</td>
+    <td>巴士售票櫃台或乘車口依規定付款。</td>
+    <td>巴士月台常依目的地分線，務必看「Tokyo Station / Ginza / Hotel」方向。</td>
+  </tr>
+</table>
+</section>
+
+<section id="compare">
+<h2>③ 交通方式比較表</h2>
+<table>
+  <tr><th>方式</th><th>適合住宿地</th><th>時間</th><th>費用</th><th>優點</th><th>缺點</th></tr>
+  <tr>
+    <td><b>京成 Skyliner</b></td>
+    <td>上野、御徒町、秋葉原周邊</td>
+    <td>到日暮里約 36 分；到京成上野約 41 分</td>
+    <td><span class="price">現場約 ¥2,470–2,580；線上折扣約 ¥2,310</span></td>
+    <td>最快、全車指定席、行李架好用</td>
+    <td>只到日暮里/上野，住品川/新宿還要轉車</td>
+  </tr>
+  <tr>
+    <td><b>JR Narita Express（N'EX）</b></td>
+    <td>東京、品川、澀谷、新宿、橫濱</td>
+    <td>到東京約 50–60 分；品川/新宿約 70–90 分</td>
+    <td><span class="price">東京約 ¥3,140；品川/澀谷/新宿約 ¥3,330；外國人來回票 ¥5,200</span></td>
+    <td>直達大站，不用拖行李轉車</td>
+    <td>班距比一般電車長，單程較貴</td>
+  </tr>
+  <tr>
+    <td><b>TYO-NRT 機場巴士</b></td>
+    <td>東京站、銀座、丸之內</td>
+    <td>到東京站約 65–90 分，依路況</td>
+    <td><span class="price">成人 ¥1,500；深夜/清晨 ¥3,000</span></td>
+    <td>便宜、不用搬行李上下樓</td>
+    <td>會塞車，趕行程或轉新幹線要留緩衝</td>
+  </tr>
+  <tr>
+    <td><b>京成 Access Express / 一般電車</b></td>
+    <td>押上、淺草、日本橋、東銀座、部分品川方向</td>
+    <td>約 60–90 分</td>
+    <td><span class="price">約 ¥1,200–1,600 起，依目的地</span></td>
+    <td>便宜，可直通地鐵/都營淺草線方向</td>
+    <td>非指定席，行李多較累，班次目的地要看清楚</td>
+  </tr>
+</table>
+</section>
+
+<section id="skyliner">
+<h2>④ 京成 Skyliner：住上野最推薦</h2>
+<div class="card">
+  <h3>怎麼買？</h3>
+  <ul>
+    <li><b>線上購票：</b> 可先在京成 Skyliner 官網或合作平台購買，常見成人單程折扣約 <span class="price">¥2,310</span>，來回約 <span class="price">¥4,500</span>。到機場後仍需在櫃台/機器兌換指定班次車票。</li>
+    <li><b>現場購票：</b> 到 B1F 京成線站區，找 <b>Skyliner Ticket</b> 櫃台或售票機。成人單程約 <span class="price">¥2,470–2,580</span>（依路線與 IC/紙票差異）。</li>
+    <li><b>Suica/PASMO：</b> 可用 IC 卡支付基本運賃，但 Skyliner 的指定席特急券仍需另外購買。第一次搭建議直接買整張 Skyliner 車票，最不容易搞錯。</li>
+  </ul>
+  <h3>上車流程</h3>
+  <ul>
+    <li>買票/兌換票後，確認車票上的 <b>出發時間、車次、車廂、座位</b>。</li>
+    <li>進京成改札，跟著 <b>Skyliner</b> 月台指標走。</li>
+    <li>上車後把大行李放行李架，貴重物品隨身。</li>
+    <li>到 <b>日暮里</b> 可轉 JR 山手線；到 <b>京成上野</b> 最適合住上野/御徒町。</li>
+  </ul>
+</div>
+</section>
+
+<section id="nex">
+<h2>⑤ JR Narita Express（N'EX）：住品川、新宿、澀谷最省力</h2>
+<div class="card">
+  <h3>怎麼買？</h3>
+  <ul>
+    <li><b>現場買：</b> 到 B1F JR EAST 區域，在 JR EAST Travel Service Center、綠色窗口或指定席售票機購買。</li>
+    <li><b>外國人來回票：</b> <b>N'EX TOKYO Round Trip Ticket</b> 成人約 <span class="price">¥5,200</span>，兒童約 <span class="price">¥2,600</span>，14 天內一進一出，需非日本護照。</li>
+    <li><b>一般單程：</b> 到東京約 <span class="price">¥3,140</span>；到品川/澀谷/新宿約 <span class="price">¥3,330</span>。</li>
+    <li><b>線上：</b> 可透過 JR-EAST Train Reservation 預約/購買部分票券；到站可用售票機或櫃台取票。</li>
+  </ul>
+  <h3>搭乘提醒</h3>
+  <ul>
+    <li>N'EX 全車指定席，務必確認車廂與座位。</li>
+    <li>住大井町：建議 N'EX 到品川，下車後轉 JR 京濱東北線 1 站到大井町。</li>
+    <li>N'EX 班距不像山手線密集，若剛錯過一班，可能要等 30 分鐘左右；不趕時間可先買飲料/上廁所。</li>
+  </ul>
+</div>
+</section>
+
+<section id="bus">
+<h2>⑥ TYO-NRT 機場巴士：便宜到東京站/銀座</h2>
+<div class="card">
+  <h3>費用與購票</h3>
+  <ul>
+    <li>成人一般時段約 <span class="price">¥1,500</span>，兒童約 <span class="price">¥750</span>；深夜/清晨成人約 <span class="price">¥3,000</span>。</li>
+    <li>成田機場 → 東京站方向：通常需在各航廈巴士售票櫃台購買指定班次票，之後到指定巴士站排隊。</li>
+    <li>部分末班/特殊時段可能可直接到乘車口以現金或交通 IC 卡付款，請以現場公告為準。</li>
+  </ul>
+  <h3>適合誰？</h3>
+  <ul>
+    <li>住東京站、銀座、丸之內，且不趕時間的人。</li>
+    <li>行李很多、不想上下樓轉車的人。</li>
+    <li>預算優先的人。</li>
+  </ul>
+  <div class="warnbox">
+    <b>注意：</b> 巴士受高速公路與市區塞車影響。抵達日可以搭，回程去機場時請比電車多抓 30–60 分鐘緩衝。
+  </div>
+</div>
+</section>
+
+<section id="local">
+<h2>⑦ 一般電車 / Access Express：省錢但要看清楚方向</h2>
+<div class="card">
+  <ul>
+    <li><b>京成 Access Express：</b> 可能直通押上、淺草、日本橋、東銀座、羽田/品川方向，適合住東東京或淺草線沿線的人。</li>
+    <li><b>京成本線特急：</b> 比 Skyliner 慢，但便宜，適合預算優先且行李不多的人。</li>
+    <li><b>JR 總武快速線：</b> 可到東京/錦糸町等方向，但速度與舒適度不如 N'EX。</li>
+  </ul>
+  <div class="warnbox">
+    <b>第一次到東京不建議一開始就挑戰一般電車：</b> 行李多、車廂擁擠、目的地分歧多，容易上錯方向。除非你熟悉日本鐵道或住宿剛好在直通線上。
+  </div>
+</div>
+</section>
+
+<section id="tips">
+<h2>⑧ 下飛機後注意事項 Checklist</h2>
+<div class="okbox">
+  <ul>
+    <li><b>先上廁所再買票：</b> 售票/兌換/搭車可能需要 20–40 分鐘，尤其暑假與傍晚航班。</li>
+    <li><b>不要急著衝最近一班：</b> 入境、領行李、海關時間不穩。線上票若需指定班次，請保守抓抵達後 90–120 分鐘。</li>
+    <li><b>確認航廈：</b> Terminal 1 用「成田空港駅」，Terminal 2/3 用「空港第2ビル駅」。不要搭錯站。</li>
+    <li><b>大行李：</b> Skyliner/N'EX 都比一般電車適合大行李。一般電車尖峰時段拖大箱會很累。</li>
+    <li><b>付款：</b> 準備信用卡 + 現金 + Suica/PASMO。部分巴士時段或小櫃台可能不支援全部支付方式。</li>
+    <li><b>手機網路：</b> 先啟用 eSIM / Wi-Fi，再出海關找交通。沒有網路時，跟著實體指標 <code>Train</code>、<code>Keisei</code>、<code>JR</code>、<code>Bus</code> 走。</li>
+  </ul>
+</div>
+</section>
+
+</div>
+
+<div class="footer">
+  &copy; 2026 成田機場交通指南 | <a href="tokyo-next-trip-guide-detailed.html">回主行程</a>
+</div>
+</body>
+</html>
