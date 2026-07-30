@@ -151,6 +151,27 @@
     vertical-align:baseline;line-height:1.5;
   }
   a.gmap:hover{border-color:var(--acc2);background:#eef7f9}
+  .map-link{
+    display:flex;justify-content:center;align-items:center;
+    line-height:0;margin:14px auto;max-width:960px;
+  }
+  .map-img{
+    display:block;width:100%;max-width:960px;height:auto;
+    border-radius:16px;box-shadow:var(--shadow-lg);background:#fff;
+  }
+  @media(max-width:720px){
+    .map-link{
+      margin:10px auto;padding:0;
+      max-height:calc(100dvh - 120px);
+      max-height:calc(100svh - 120px);
+    }
+    .map-img{
+      width:auto;max-width:100%;
+      max-height:calc(100dvh - 120px);
+      max-height:calc(100svh - 120px);
+      height:auto;object-fit:contain;border-radius:12px;
+    }
+  }
 
 </style>
 </head>
