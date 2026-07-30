@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>成田機場 T1/T2 → 上野站交通手把手教學｜Skyliner・JR・巴士・計程車</title>
+<style>
+  :root{--bg:#f6f4f0;--card:#fff;--card2:#faf8f5;--ink:#2a3238;--mut:#6b7a88;--acc:#d4566a;--acc2:#3a8f9f;--ok:#2d8a62;--warn:#b87820;--line:#e6e1da;--shadow:0 2px 12px rgba(42,50,56,.06)}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,"PingFang TC","Noto Sans TC","Hiragino Sans GB","Microsoft JhengHei",system-ui,sans-serif;background:var(--bg);background-image:radial-gradient(ellipse 80% 50% at 100% -10%,rgba(212,86,106,.07),transparent),radial-gradient(ellipse 60% 40% at 0% 100%,rgba(58,143,159,.06),transparent);color:var(--ink);line-height:1.72;font-size:16px;-webkit-font-smoothing:antialiased}
+  header{padding:32px 20px 24px;background:linear-gradient(145deg,#fff 0%,#fdf6f4 45%,#f0f7f8 100%);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  h1{margin:0 0 8px;font-size:23px;font-weight:800;letter-spacing:-.02em}.sub{color:var(--mut);font-size:14px;line-height:1.55}.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+  nav.toc{position:sticky;top:0;z-index:20;background:rgba(246,244,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 0;margin:0 -16px 20px;overflow-x:auto;white-space:nowrap}
+  nav.toc a{display:inline-block;color:var(--acc2);text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;background:#fff;border:1px solid var(--line);border-radius:20px;margin:4px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  section{margin:24px 0} h2{font-size:19px;font-weight:800;border-left:4px solid var(--acc);padding-left:12px;margin:28px 0 14px;scroll-margin-top:70px} h3{font-size:16px;font-weight:700;color:var(--acc2);margin:18px 0 8px}
+  .card{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}.okbox{background:#f0faf4;border:1px solid #c5e6d4;border-left:4px solid var(--ok);border-radius:12px;padding:14px 16px;margin:10px 0}.warnbox{background:#fff9ee;border:1px solid #f0ddb8;border-left:4px solid var(--warn);border-radius:12px;padding:14px 16px;margin:10px 0}.accbox{background:linear-gradient(135deg,#fdf4f6,#f4f9fa);border:1px solid #e8d4d8;border-left:4px solid var(--acc);border-radius:12px;padding:14px 16px;margin:10px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;display:block;overflow-x:auto;border-radius:10px} th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;min-width:155px} th{background:#f0f4f6;color:var(--acc2);font-weight:700;white-space:nowrap} tr:nth-child(even) td{background:#fafafa}
+  ul{padding-left:20px;margin:8px 0} li{margin:5px 0} a{color:var(--acc2);text-decoration:none;border-bottom:1px solid rgba(58,143,159,.25)}.muted{color:var(--mut);font-size:13px}.time{color:var(--acc);font-weight:800;font-variant-numeric:tabular-nums}.price{color:var(--ok);font-weight:800}.tag{font-size:12px;font-weight:800;padding:2px 8px;border-radius:7px;margin-right:6px}.b{background:#e3f0f3;color:#2a6f7d}.l{background:#e5f3eb;color:#2d7a55}.d{background:#fce8ec;color:#b84a5c} code{background:#f0ece6;padding:2px 8px;border-radius:6px;font-size:13px;color:#8a5a18;border:1px solid #e8e0d4}
+  .grid{display:grid;gap:10px}@media(min-width:720px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:1fr 1fr 1fr}}
+  .flow{display:grid;gap:8px;margin:10px 0}.step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px}.num{flex:0 0 34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--acc2);color:#fff;font-weight:900}.step b{display:block}.mini-map{background:#fffaf2;border:2px solid #eadbca;border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}.rail{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.station{background:#fff;border:2px solid #d8c7b6;border-radius:999px;padding:7px 12px;font-weight:800}.arrow{font-weight:900;color:var(--acc)}.note{font-size:12px;color:var(--mut);margin-top:4px}.kbd{display:inline-block;background:#fff;border:1px solid #d6c8bb;border-bottom-width:3px;border-radius:7px;padding:2px 7px;font-weight:800;color:#5c4033}.photo{background:#fff;border:1px dashed #cdb9aa;border-radius:14px;padding:12px;margin:8px 0}.figure{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;margin:12px 0;box-shadow:var(--shadow)}.guide-img{display:block;width:100%;height:auto;border-radius:12px}.caption{font-size:13px;color:var(--mut);padding:8px 4px 2px}.footer{color:var(--mut);font-size:12px;text-align:center;padding:32px 0 16px;border-top:1px solid var(--line);margin-top:48px}
+  @media print{nav.toc{display:none}body{background:#fff;background-image:none}header{box-shadow:none}.card,.okbox,.warnbox,.accbox,.mini-map{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <h1>✈️ 成田機場 T1/T2 → 上野站交通手把手教學</h1>
+  <div class="sub">從下飛機、入境、領行李後，怎麼走到京成 / JR / 巴士購票地點，如何操作售票機、費用多少、該搭哪一種，以及帶行李與小孩時的注意事項。主目標：<b>成田機場 → 京成上野 / JR 上野</b>。</div>
+</header>
+<div class="wrap">
+<nav class="toc">
+  <a href="tokyo-20260812-guide.html">← 回重排版主指南</a>
+  <a href="#quick">快速結論</a><a href="#landing">下機流程</a><a href="#terminal">T1/T2 動線</a><a href="#compare">交通比較</a><a href="#skyliner">Skyliner手把手</a><a href="#local">便宜電車</a><a href="#nex">N'EX</a><a href="#bus">巴士</a><a href="#taxi">計程車</a><a href="#mistakes">常見錯誤</a><a href="#return">回程</a><a href="#checklist">Checklist</a>
+</nav>
+
+<section id="quick">
+<h2>① 快速結論：住上野就搭京成 Skyliner</h2>
+<div class="okbox">
+  <b>本趟住宿在上野，最推薦：成田機場 → 京成 Skyliner → 京成上野站。</b><br>
+  優點是直達、全車指定席、有行李架，從機場站到京成上野約 41 分。下車後到上野飯店/阿美橫/御徒町一帶，比搭 N'EX 到東京站再轉 JR 更省力。
+</div>
+<table>
+<tr><th>排名</th><th>方式</th><th>到上野方式</th><th>時間</th><th>成人單程費用</th><th>推薦度</th></tr>
+<tr><td>1</td><td><b>京成 Skyliner</b></td><td>成田 T1/T2 → 京成上野，直達</td><td>約 41 分</td><td>現場約 <span class="price">¥2,580</span>；IC 票價組合約 <span class="price">¥2,567</span>；網路折扣常見 <span class="price">¥2,310</span></td><td>★★★★★ 住上野首選</td></tr>
+<tr><td>2</td><td><b>京成本線特急 / 快特</b></td><td>成田 → 京成上野，普通電車</td><td>約 75–90 分</td><td>約 <span class="price">¥1,060–1,280</span>（依路線/IC/紙票）</td><td>★★★ 省錢但拖行李累</td></tr>
+<tr><td>3</td><td><b>N'EX + JR</b></td><td>N'EX 到東京站 → 山手線到上野</td><td>約 70–90 分含轉乘</td><td>N'EX 到東京約 <span class="price">¥3,140</span> + JR 市區短程</td><td>★★ 不直達上野</td></tr>
+<tr><td>4</td><td><b>TYO-NRT 巴士 + JR</b></td><td>巴士到東京站 → JR 到上野</td><td>約 90–120 分</td><td>巴士約 <span class="price">¥1,500</span> + JR 市區短程</td><td>★★ 便宜但繞路</td></tr>
+<tr><td>5</td><td><b>計程車/包車</b></td><td>門到門</td><td>約 60–90 分</td><td>約 <span class="price">¥22,000–30,000+</span>/車</td><td>★ 深夜或行李爆量才考慮</td></tr>
+</table>
+<div class="warnbox">價格、班次、櫃台時間會調整。出發前以 <a href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/" target="_blank" rel="noopener">京成 Skyliner 官方</a>、<a href="https://www.jreast.co.jp/en/multi/nex/" target="_blank" rel="noopener">JR East N'EX 官方</a> 與成田機場現場公告為準。</div>
+</section>
+
+<section id="landing">
+<h2>② 下飛機後共通流程：先完成入境，再找交通</h2>
+<div class="flow">
+  <div class="step"><div class="num">1</div><div><b>下飛機 → 跟著 Arrivals / 到着 / 入境 指標</b><span class="muted">不要一開始就找電車，先把入境、行李、海關完成。</span></div></div>
+  <div class="step"><div class="num">2</div><div><b>入境審查</b><span class="muted">準備護照、Visit Japan Web QR。小孩也各自要資料。</span></div></div>
+  <div class="step"><div class="num">3</div><div><b>領行李</b><span class="muted">看航班號碼找行李轉盤。先在這裡整理護照、手機、錢包，不要到售票機前才翻包。</span></div></div>
+  <div class="step"><div class="num">4</div><div><b>海關申報</b><span class="muted">掃 VJW 海關 QR 或走人工。完成後才會真正進入抵達大廳。</span></div></div>
+  <div class="step"><div class="num">5</div><div><b>抵達大廳：先判斷要搭電車還是巴士</b><span class="muted">去上野：跟著 <span class="kbd">Railways / 鉄道</span>、<span class="kbd">Keisei Line</span>、<span class="kbd">Skyliner</span> 到 B1F。</span></div></div>
+</div>
+<figure class="figure">
+  <img class="guide-img" src="assets/narita-ueno-01-arrival-flow.png" alt="成田機場入境後到 B1F 鐵道站流程圖" loading="lazy" decoding="async">
+  <figcaption class="caption">看圖記法：下飛機後先完成入境、領行李、海關；出到 1F 抵達大廳後，再跟著 Railways / 鉄道 指標下到 B1F。</figcaption>
+</figure>
+
+<div class="accbox"><b>本趟建議節奏</b>：12:25 抵達 → 13:20–14:00 左右出海關（視排隊）→ B1F 京成櫃台/售票機 → 選 14:00–14:40 之間的 Skyliner。行李多或小孩累時，寧可搭下一班，不要衝車。</div>
+</section>
+
+<section id="terminal">
+<h2>③ 第一航廈 / 第二航廈：出海關後怎麼走到買票地點</h2>
+<div class="grid two">
+<div class="card">
+<h3>Terminal 1 第一航廈</h3>
+<ul>
+<li><b>你會在 1F 抵達大廳出來。</b></li>
+<li>找藍/綠色交通指標：<b>Railways / 鉄道 / Train</b>。</li>
+<li>要搭 Skyliner：跟 <b>Keisei Line / 京成線 / Skyliner</b> 指標下到 <b>B1F 成田空港駅（Narita Airport Terminal 1 Station）</b>。</li>
+<li>到 B1F 後會看到京成與 JR 區域；去上野請找 <b>Keisei / Skyliner</b>，不要排到 JR N'EX。</li>
+<li>購票點：<b>SKYLINER & KEISEI INFORMATION CENTER</b>、Skyliner Ticket Counter、自動售票機。</li>
+</ul>
+</div>
+<div class="card">
+<h3>Terminal 2 第二航廈</h3>
+<ul>
+<li><b>你會在 1F 抵達大廳出來。</b></li>
+<li>找 <b>Railways / 鉄道 / Train</b> 指標，下到 B1F。</li>
+<li>要搭 Skyliner：前往 <b>空港第2ビル駅（Narita Airport Terminal 2・3 Station）</b> 的京成線區域。</li>
+<li>第二/第三航廈共用這個鐵道站；若你從第三航廈入境，需先走路或接駁到第二航廈。</li>
+<li>購票點同樣有京成櫃台、資訊中心、售票機。</li>
+</ul>
+</div>
+</div>
+<div class="mini-map">
+  <h3>插圖式動線：T1/T2 都是一樣的邏輯</h3>
+  <div class="rail"><span class="station">飛機下機</span><span class="arrow">→</span><span class="station">入境審查</span><span class="arrow">→</span><span class="station">領行李</span><span class="arrow">→</span><span class="station">海關</span><span class="arrow">→</span><span class="station">1F 抵達大廳</span><span class="arrow">↓</span><span class="station">B1F 鐵道站</span><span class="arrow">→</span><span class="station">Keisei / Skyliner</span></div>
+  <div class="note">看到「JR EAST / N'EX」是 JR 區域；看到「Keisei / Skyliner」才是去京成上野最快的區域。</div>
+</div>
+
+<figure class="figure">
+  <img class="guide-img" src="assets/narita-ueno-02-terminal-keisei.png" alt="成田機場 T1 T2 到京成 Skyliner 售票處示意圖" loading="lazy" decoding="async">
+  <figcaption class="caption">T1 與 T2 的邏輯相同：1F 抵達大廳出來後下 B1F，去上野請找藍色京成 / Skyliner 區域，不要排到 JR / N'EX。</figcaption>
+</figure>
+
+<div class="photo"><b>官方站內圖/照片參考</b>：現場配置可能更新，建議出發前開官方頁面看最新圖。京成購票地點：<a href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/findus/index.php" target="_blank" rel="noopener">How to Find Us</a>；Skyliner 購票教學：<a href="https://new-www.keisei.co.jp/keisei/tetudou/skyliner/us/skyliner/purchase.php" target="_blank" rel="noopener">How to Purchase Tickets</a>。</div>
+</section>
+
+<section id="compare">
+<h2>④ 交通工具詳細比較：上野目的地版</h2>
+<table>
+<tr><th>方式</th><th>路線</th><th>換乘</th><th>行李友善</th><th>何時選</th><th>何時不要選</th></tr>
+<tr><td><b>Skyliner</b></td><td>NRT T1/T2 → 日暮里 → 京成上野</td><td>去京成上野不換</td><td>高：指定席+行李架</td><td>住上野/御徒町/阿美橫；第一次到東京；帶小孩行李</td><td>住新宿/澀谷/品川且不想轉車</td></tr>
+<tr><td><b>京成本線特急</b></td><td>NRT → 京成上野</td><td>多數可直達或少轉</td><td>低：一般車廂</td><td>想省錢、不趕時間、行李少</td><td>大型行李多、尖峰時間、小孩累</td></tr>
+<tr><td><b>Access Express</b></td><td>NRT → 押上/淺草/日本橋/東銀座方向，部分需青砥轉上野</td><td>看目的地</td><td>中低：一般車廂</td><td>住淺草、東銀座、日本橋、都營淺草線沿線</td><td>目的地是上野且第一次來，容易搭錯方向</td></tr>
+<tr><td><b>N'EX</b></td><td>NRT → 東京 → JR 山手線 → 上野</td><td>至少 1 次</td><td>高到東京，但東京站轉乘路長</td><td>住東京/品川/澀谷/新宿；有 N'EX 來回票需求</td><td>住上野，因為不直達且較貴</td></tr>
+<tr><td><b>巴士</b></td><td>NRT → 東京站/銀座 → JR/地鐵 → 上野</td><td>至少 1 次</td><td>高：行李放車底</td><td>住東京站/銀座，想便宜</td><td>趕時間、怕塞車、要直接到上野</td></tr>
+</table>
+</section>
+
+<section id="skyliner">
+<h2>⑤ Skyliner 手把手：從買票到上車</h2>
+<div class="okbox"><b>你要說的目的地</b>：<code>Keisei Ueno</code> / <code>京成上野</code>。如果飯店在 JR 上野站附近也可以到京成上野下車，兩站步行約 5–10 分，拖行李看飯店位置。</div>
+<h3>A. 已先在 Klook/KKday/京成官網買電子票</h3>
+<div class="flow">
+<div class="step"><div class="num">1</div><div><b>到 B1F 京成線區域</b>找 <span class="kbd">Skyliner</span>、<span class="kbd">Ticket</span>、<span class="kbd">Voucher Exchange</span> 類標示。</div></div>
+<div class="step"><div class="num">2</div><div><b>打開手機 QR / 憑證</b>，到指定售票機或櫃台兌換。櫃台可直接說：<code>I have an online Skyliner voucher to Keisei Ueno.</code></div></div>
+<div class="step"><div class="num">3</div><div><b>選班次</b>：看最近一班是否太趕。拖行李+小孩建議至少留 <b>10–15 分鐘</b> 找月台。</div></div>
+<div class="step"><div class="num">4</div><div><b>拿到實體/QR 車票</b>，確認 <b>車次、出發時間、車廂、座位</b>。</div></div>
+</div>
+
+<h3>B. 現場用售票機/櫃台買 Skyliner</h3>
+<figure class="figure">
+  <img class="guide-img" src="assets/narita-ueno-03-ticket-machine.png" alt="京成 Skyliner 售票機操作步驟圖" loading="lazy" decoding="async">
+  <figcaption class="caption">售票機重點：語言 → Skyliner → Keisei Ueno → 班次/座位 → 人數 → 付款 → 確認車廂座位。新手選「乘車券 + Skyliner券」最不容易出錯。</figcaption>
+</figure>
+
+<table>
+<tr><th>畫面/步驟</th><th>按什麼</th><th>注意</th></tr>
+<tr><td>語言</td><td>選 <b>English / 中文 / 한국어</b></td><td>不確定就選英文，站名較不會翻譯錯。</td></tr>
+<tr><td>票種</td><td>選 <b>Skyliner</b> 或 <b>Liner Ticket + Boarding Ticket</b></td><td>第一次搭、沒有 Suica 時，選「乘車券+Skyliner券」最穩。</td></tr>
+<tr><td>目的地</td><td><b>Keisei Ueno</b> 或 <b>Ueno</b></td><td>不要選 JR Ueno；這是京成上野。</td></tr>
+<tr><td>班次</td><td>選出發時間</td><td>若距離出發少於 10 分鐘，建議下一班。</td></tr>
+<tr><td>人數</td><td>Adult / Child</td><td>6–11 歲通常兒童票；未滿 6 歲規則依佔位/同行成人數而定，現場確認。</td></tr>
+<tr><td>付款</td><td>現金或信用卡</td><td>京成官方列示主要信用卡可購買 Skyliner 票或組合票；一般普通票可能需現金。</td></tr>
+<tr><td>出票</td><td>取票與收據</td><td>確認有沒有兩張票：基本乘車券 + Skyliner 指定席券，或整合式票券。</td></tr>
+</table>
+
+<h3>C. 用 Suica/PASMO + 只買 Skyliner 特急券</h3>
+<div class="card">
+<ul>
+<li>若每人手機已綁 Suica，可用 Suica 付基本運賃，再另外買 Skyliner 指定席券（特急券）。</li>
+<li>費用概念：基本運賃 IC 約 <span class="price">¥1,267</span> + Skyliner 特急券 <span class="price">¥1,300</span> = 約 <span class="price">¥2,567</span>。</li>
+<li>新手不建議第一次就拆票操作；最簡單是買「乘車券 + Skyliner券」整包。</li>
+</ul>
+</div>
+
+<h3>上車與抵達</h3>
+<figure class="figure">
+  <img class="guide-img" src="assets/narita-ueno-04-platform-ueno.png" alt="搭乘 Skyliner 到京成上野與出站方向示意圖" loading="lazy" decoding="async">
+  <figcaption class="caption">上車前看月台電子看板與車票；車上大行李放行李架。抵達京成上野後，再依飯店位置步行往 JR 上野、上野公園或阿美橫。</figcaption>
+</figure>
+
+<div class="mini-map">
+  <div class="rail"><span class="station">成田 T1/T2 京成站</span><span class="arrow">→</span><span class="station">Skyliner 指定席</span><span class="arrow">→</span><span class="station">日暮里</span><span class="arrow">→</span><span class="station">京成上野</span><span class="arrow">→</span><span class="station">飯店/阿美橫</span></div>
+</div>
+<ul>
+<li>進站後看電子看板：車次、時間、月台。</li>
+<li>月台上排隊時不要離行李太遠；上車後大型行李放行李架，貴重物品隨身。</li>
+<li>到日暮里時很多人會下車轉 JR；你住上野可繼續坐到終點 <b>京成上野</b>。</li>
+<li>京成上野站出站後，若要 JR 上野/飯店，可跟 <b>Ueno Park / JR Ueno / Shinobazu Exit</b> 等指標走，或直接開 Google Maps 步行。</li>
+</ul>
+<div class="warnbox"><b>最常見錯誤</b>：只買了 Skyliner 特急券，卻沒有基本乘車券/IC 卡餘額；或買到下一站/錯方向普通票。新手請直接櫃台說「Skyliner to Keisei Ueno, adult/child, next available train」。</div>
+</section>
+
+<section id="local">
+<h2>⑥ 省錢電車：京成本線 / Access Express</h2>
+<div class="grid two">
+<div class="card"><h3>京成本線特急 / 快特到上野</h3><ul><li>最便宜，約 ¥1,060–1,280 級距，依 IC/紙票與路線而定。</li><li>時間約 75–90 分，普通車廂，沒有指定座位。</li><li>行李多時不舒服；尖峰可能站著。</li><li>適合：背包客、行李少、想省錢。</li></ul></div>
+<div class="card"><h3>Access Express</h3><ul><li>常往押上、淺草、日本橋、東銀座、羽田方向直通。</li><li>若目的地是上野，不一定是最直覺；可能需青砥/日暮里等轉乘。</li><li>適合住淺草/東銀座/日本橋，不是本趟上野主選。</li></ul></div>
+</div>
+<div class="warnbox">普通電車售票機請看清楚「目的地」與「經由」。如果班次寫往 <b>羽田空港 / 西馬込 / 押上</b>，通常不是直達京成上野的車。</div>
+</section>
+
+<section id="nex">
+<h2>⑦ N'EX：為什麼去上野不推薦，但仍要知道</h2>
+<div class="card">
+<ul>
+<li>N'EX 直達東京、品川、澀谷、新宿、橫濱等，但<b>不直達上野</b>。</li>
+<li>若用 N'EX 到上野：成田 → 東京站，然後轉 JR 山手線/京濱東北線到上野。</li>
+<li>東京站轉乘距離長，拖行李與小孩會比較累。</li>
+<li>票價：成田到東京普通車約 <span class="price">¥3,140</span>；外國旅客可買 N'EX TOKYO Round Trip Ticket 約 <span class="price">¥5,200</span>（14 天內一進一出）。</li>
+</ul>
+</div>
+<h3>如果真的要搭 N'EX，售票機怎麼操作？</h3>
+<ol>
+<li>到 B1F 找 <b>JR EAST / Narita Express</b> 區域。</li>
+<li>選指定席售票機或 JR EAST Travel Service Center。</li>
+<li>選語言 → <b>Reserved Seat</b> / <b>Narita Express</b> → destination <b>Tokyo</b>（去上野需轉車）。</li>
+<li>選班次、座位、人數、付款。</li>
+<li>到東京站後跟 <b>JR Yamanote Line / Keihin-Tohoku Line</b> 指標到上野方向月台。</li>
+</ol>
+</section>
+
+<section id="bus">
+<h2>⑧ 機場巴士：便宜到東京站，但去上野要再轉</h2>
+<div class="card">
+<ul>
+<li><b>TYO-NRT Airport Bus</b>：成田 → 東京站/銀座，成人一般時段約 <span class="price">¥1,500</span>，深夜/清晨約 <span class="price">¥3,000</span>。</li>
+<li>到東京站後再轉 JR 山手線/京濱東北線到上野，整體時間容易 90–120 分。</li>
+<li>優點：便宜，行李放巴士底艙，不用自己拖著上下電車月台。</li>
+<li>缺點：路況不可控，班次/乘車口要現場看清楚；不是上野最直接路線。</li>
+</ul>
+</div>
+<h3>巴士購票與乘車</h3>
+<ol>
+<li>出海關後留在抵達層，不要下 B1F。</li>
+<li>找 <b>Bus Tickets / Bus Stop</b> 櫃台。</li>
+<li>告知目的地：<code>Tokyo Station</code> 或 <code>Ginza</code>，選最近可搭班次。</li>
+<li>拿票後到指定巴士站；把大行李交給工作人員放車底。</li>
+<li>到東京站後，開 Google Maps 找 JR 上野方向，或搭計程車到飯店。</li>
+</ol>
+</section>
+
+<section id="taxi">
+<h2>⑨ 計程車 / 包車：深夜、多人、行李爆量時才考慮</h2>
+<table>
+<tr><th>方式</th><th>費用概念</th><th>優點</th><th>注意</th></tr>
+<tr><td>一般計程車</td><td>到上野約 <span class="price">¥25,000–30,000+</span>，依路況與夜間加成</td><td>門到門</td><td>非常貴；尖峰塞車也會跳表</td></tr>
+<tr><td>事前預約包車</td><td>常見約 <span class="price">¥18,000–30,000+</span>/車，依車型</td><td>適合多人/嬰兒車/深夜</td><td>需提前預約，確認等候時間與航班延誤規則</td></tr>
+<tr><td>共乘接送</td><td>約 <span class="price">¥6,000+</span>/人起</td><td>比包車便宜</td><td>可能等其他旅客，時間不可控</td></tr>
+</table>
+</section>
+
+<section id="mistakes">
+<h2>⑩ 常見錯誤與現場求救句</h2>
+<div class="grid two">
+<div class="warnbox"><b>錯誤 1：排錯公司</b><br>去上野首選是 <b>Keisei / Skyliner</b>，不是 JR N'EX。看到 JR EAST 就先停下來確認。</div>
+<div class="warnbox"><b>錯誤 2：只買特急券</b><br>Skyliner 需要基本乘車券 + 指定席特急券。新手直接買組合票。</div>
+<div class="warnbox"><b>錯誤 3：想衝最近班次</b><br>出發前不到 10 分鐘，不要帶小孩拖行李衝月台；下一班更安全。</div>
+<div class="warnbox"><b>錯誤 4：京成上野與 JR 上野混淆</b><br>Skyliner 終點是京成上野。出站後再步行到 JR 上野或飯店。</div>
+</div>
+<h3>給櫃台看的句子</h3>
+<ul>
+<li><code>Skyliner to Keisei Ueno, next available train, please.</code></li>
+<li><code>Two adults and one child. We have large luggage.</code></li>
+<li><code>I have an online voucher. Where can I exchange it?</code></li>
+<li><code>Can I use a credit card?</code></li>
+<li><code>Which platform should we go to?</code></li>
+</ul>
+</section>
+
+<section id="return">
+<h2>⑪ 回程：上野 → 成田機場反向操作</h2>
+<div class="okbox">本趟 Day7 建議：<b>Day6 晚上先在京成上野站劃位/買好 Skyliner</b>，Day7 拖行李時就不用排隊。</div>
+<div class="flow">
+<div class="step"><div class="num">1</div><div><b>京成上野站找 Skyliner 售票機/櫃台</b><span class="muted">買 8/18 回成田機場的指定席。</span></div></div>
+<div class="step"><div class="num">2</div><div><b>確認航廈</b><span class="muted">航空公司在 Terminal 1 還是 Terminal 2/3，一定要選對下車站。</span></div></div>
+<div class="step"><div class="num">3</div><div><b>Day7 最晚 16:00–16:30 左右離開上野</b><span class="muted">20:40 起飛，抓 17:00–17:20 抵成田較穩。</span></div></div>
+</div>
+<div class="warnbox">回程若買錯航廈站，Terminal 1 與 Terminal 2/3 雖可移動，但拖行李會浪費時間。出發前用航空公司訂位資料確認航廈。</div>
+</section>
+
+<section id="checklist">
+<h2>⑫ 抵達日 Checklist</h2>
+<div class="card">
+<ul>
+<li>☐ Visit Japan Web 全員 QR 準備好，手機有網路/電量。</li>
+<li>☐ 每人護照、機票、飯店地址截圖。</li>
+<li>☐ 決定主路線：<b>Skyliner → 京成上野</b>。</li>
+<li>☐ 若有線上票券：QR/憑證可離線打開。</li>
+<li>☐ 若現場買：信用卡 + 少量日幣現金備用。</li>
+<li>☐ 大行李先綁好吊牌，貴重物品隨身小包。</li>
+<li>☐ 不衝最近班次；買票後先上廁所/買水，再進站。</li>
+</ul>
+</div>
+</section>
+
+<div class="footer">
+成田 T1/T2 → 上野手把手教學｜整理於 2026/7/30<br>
+票價、營業時間、班次、櫃台位置以京成、JR East、成田機場與現場公告為準。
+</div>
+</div>
+</body>
+</html>

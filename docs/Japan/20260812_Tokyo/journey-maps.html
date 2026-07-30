@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<title>東京 7 日旅程地圖｜2026</title>
+<title>東京 7 日旅程地圖｜20260812 重排版</title>
 <style>
   :root {
     --bg: #f6f4f0;
@@ -84,8 +84,8 @@
 </head>
 <body>
 <header>
-  <h1>🗺️ 東京 7 日旅程地圖</h1>
-  <p>日系插畫風路線圖 · 蜿蜒彩虹道路 · 2026/8/12–8/18｜上野基地</p>
+  <h1>🗺️ 東京 7 日旅程地圖（重排版）</h1>
+  <p>日系插畫風路線圖 · 新版每日動線與總覽 · 2026/8/12–8/18｜上野基地</p>
 </header>
 
 <nav class="tabs" id="tabs"></nav>
@@ -94,23 +94,23 @@
   <button class="btn-png" id="btnPngAll">📥 全部存 PNG (8張)</button>
   <button class="btn-png" id="btnPng">📥 儲存目前 PNG</button>
   <button class="btn-pdf" id="btnPdf">📄 列印 / PDF</button>
-  <a href="tokyo-2026-08-guide.html" style="text-decoration:none"><button class="btn-guide">📖 完整指南</button></a>
+  <a href="tokyo-20260812-guide.html" style="text-decoration:none"><button class="btn-guide">📖 完整指南（重排版）</button></a>
 </div>
 
 <div id="maps-container"></div>
 
-<footer>插畫風冒險地圖 · 主線實線 / 備案虛線 · 與完整指南同步</footer>
+<footer>20260812 重排版插畫地圖 · 主線實線 / 備案虛線 · 與完整指南同步</footer>
 
 <script>
 const MAPS = [
-  { label: '總覽', src: 'assets/overview.png', alt: '旅程總覽地圖', file: 'tokyo-journey-overview.png' },
-  { label: 'Day 1', src: 'assets/day-01.png', alt: 'Day 1 旅程地圖', file: 'tokyo-journey-day-01.png' },
-  { label: 'Day 2', src: 'assets/day-02.png', alt: 'Day 2 旅程地圖', file: 'tokyo-journey-day-02.png' },
-  { label: 'Day 3', src: 'assets/day-03.png', alt: 'Day 3 旅程地圖', file: 'tokyo-journey-day-03.png' },
-  { label: 'Day 4', src: 'assets/day-04.png', alt: 'Day 4 旅程地圖', file: 'tokyo-journey-day-04.png' },
-  { label: 'Day 5', src: 'assets/day-05.png', alt: 'Day 5 旅程地圖', file: 'tokyo-journey-day-05.png' },
-  { label: 'Day 6', src: 'assets/day-06.png', alt: 'Day 6 旅程地圖', file: 'tokyo-journey-day-06.png' },
-  { label: 'Day 7', src: 'assets/day-07.png', alt: 'Day 7 旅程地圖', file: 'tokyo-journey-day-07.png' }
+  { label: '總覽', src: 'assets/overview-20260812.png', alt: '20260812 重排版旅程總覽地圖', file: 'tokyo-journey-overview-20260812.png' },
+  { label: 'Day 1', src: 'assets/day-01-20260812.png', alt: 'Day 1 抵達上野旅程地圖', file: 'tokyo-journey-day-01-20260812.png' },
+  { label: 'Day 2', src: 'assets/day-02-20260812.png', alt: 'Day 2 葛西豐洲teamLab旅程地圖', file: 'tokyo-journey-day-02-20260812.png' },
+  { label: 'Day 3', src: 'assets/day-03-20260812.png', alt: 'Day 3 原宿澀谷旅程地圖', file: 'tokyo-journey-day-03-20260812.png' },
+  { label: 'Day 4', src: 'assets/day-04-20260812.png', alt: 'Day 4 晴空塔淺草燈籠流旅程地圖', file: 'tokyo-journey-day-04-20260812.png' },
+  { label: 'Day 5', src: 'assets/day-05-20260812.png', alt: 'Day 5 MoN Aqua Park TRACKS旅程地圖', file: 'tokyo-journey-day-05-20260812.png' },
+  { label: 'Day 6', src: 'assets/day-06-20260812.png', alt: 'Day 6 兩國東京站麻布台東京鐵塔旅程地圖', file: 'tokyo-journey-day-06-20260812.png' },
+  { label: 'Day 7', src: 'assets/day-07-20260812.png', alt: 'Day 7 上野返家旅程地圖', file: 'tokyo-journey-day-07-20260812.png' }
 ];
 
 function buildUI() {

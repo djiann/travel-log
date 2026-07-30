@@ -3,12 +3,271 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="0; url=../docs/Japan/">
-<title>日本行程總索引</title>
+<meta name="theme-color" content="#fff3df">
+<meta name="description" content="日系可愛插畫風日本城市旅遊地圖，從東京開始瀏覽七月、八月與下一次旅行規劃。">
+<title>日本城市旅遊地圖 · Travel Log</title>
+<style>
+  :root{
+    --cream:#fff3df;--paper:#fffaf0;--card:#fffdf8;--ink:#263d3c;--muted:#667873;
+    --jade:#2f766e;--jade-dark:#1f5952;--mint:#dff2ea;
+    --sakura:#e87368;--sakura-soft:#ffe2da;--sun:#f6c767;--sky:#cfeaf2;--violet:#c9c1ec;
+    --line:rgba(46,86,79,.16);--shadow:0 22px 60px rgba(51,71,65,.14);
+    --font-sans:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic","PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+    --font-display:"Kaisei Decol","Yuji Syuku","Hiragino Mincho ProN","Songti TC","Noto Serif TC",serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;color:var(--ink);line-height:1.7;font-family:var(--font-sans);overflow-x:hidden;
+    background:
+      radial-gradient(circle at 12% 12%,rgba(232,115,104,.18),transparent 17rem),
+      radial-gradient(circle at 86% 20%,rgba(47,118,110,.16),transparent 22rem),
+      radial-gradient(circle at 50% 0,rgba(246,199,103,.22),transparent 31rem),
+      linear-gradient(180deg,var(--cream),var(--paper) 58%,#f8ead7);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  :focus-visible{outline:3px solid rgba(221,116,105,.5);outline-offset:4px}
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;opacity:.44;
+    background-image:
+      radial-gradient(circle at 20px 20px,rgba(47,118,110,.12) 1.5px,transparent 1.6px),
+      radial-gradient(circle at 42px 42px,rgba(232,115,104,.11) 1.5px,transparent 1.6px);
+    background-size:58px 58px;z-index:-1;
+  }
+  .site-header{
+    width:min(1240px,calc(100% - 34px));height:72px;margin:auto;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .back,.all-trips{
+    display:inline-flex;align-items:center;gap:8px;color:var(--jade-dark);
+    font-size:.84rem;font-weight:800;text-decoration:none;
+  }
+  .back::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--sakura);box-shadow:15px 0 0 var(--sun),30px 0 0 var(--jade)}
+  .all-trips{padding:.58rem .96rem;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,248,.8);box-shadow:0 7px 18px rgba(51,71,65,.08)}
+  .hero{
+    width:min(1280px,calc(100% - 28px));margin:18px auto 72px;text-align:center;position:relative;
+  }
+  .seal{
+    position:absolute;left:5%;top:82px;z-index:4;width:66px;height:66px;display:grid;place-items:center;
+    border:1px solid rgba(221,116,105,.45);color:var(--sakura);border-radius:18px;
+    font-family:var(--font-display);font-size:.78rem;line-height:1.1;text-align:center;
+    background:rgba(255,253,248,.82);box-shadow:0 12px 28px rgba(51,71,65,.12);transform:rotate(-7deg);
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;margin:0 0 12px;padding:.48rem .82rem;
+    color:var(--jade);font-size:.72rem;font-weight:900;letter-spacing:.18em;
+    background:rgba(255,253,248,.72);border:1px solid var(--line);border-radius:999px;
+  }
+  h1,h2,h3{font-family:var(--font-display)}
+  h1{margin:0;font-size:clamp(3.4rem,9vw,8.4rem);line-height:.88;letter-spacing:-.055em;text-shadow:0 8px 0 rgba(246,199,103,.18)}
+  h1 small{display:block;margin-top:20px;color:var(--sakura);font-size:.17em;letter-spacing:.2em}
+  .hero-copy{max-width:760px;margin:24px auto 28px;color:var(--muted);font-size:clamp(1rem,1.4vw,1.12rem)}
+  .hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+  .hero-meta span{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,248,.76);font-size:.78rem;color:var(--jade-dark);box-shadow:0 6px 16px rgba(51,71,65,.07)}
+  .map-frame{
+    position:relative;max-width:1120px;margin:0 auto;padding:14px;border:1px solid var(--line);border-radius:42px;
+    background:linear-gradient(135deg,#fffdf8,#fff8ea);box-shadow:var(--shadow);transform:rotate(-.35deg);
+  }
+  .map-frame::before{
+    content:"";position:absolute;inset:16px;border:2px dashed rgba(232,115,104,.32);
+    border-radius:30px;pointer-events:none;z-index:2;
+  }
+  .map-frame::after{
+    content:"";position:absolute;right:6%;top:-24px;width:110px;height:44px;
+    background:rgba(246,199,103,.55);transform:rotate(7deg);border-radius:6px;box-shadow:0 8px 18px rgba(51,71,65,.08);
+  }
+  .map-stage{position:relative;overflow:hidden;border-radius:30px;background:#f5ead6}
+  .map-stage>img{display:block;width:100%;height:auto}
+  .sticker{
+    position:absolute;z-index:5;padding:9px 14px;border:1px solid var(--line);border-radius:16px;
+    background:rgba(255,253,248,.9);box-shadow:0 12px 28px rgba(51,71,65,.12);
+    font-size:.78rem;font-weight:900;color:var(--jade-dark);
+  }
+  .sticker.one{left:-15px;top:24%;transform:rotate(-7deg)}
+  .sticker.two{right:-13px;bottom:18%;transform:rotate(6deg);color:#9d514a}
+  .sticker.three{left:9%;bottom:-19px;transform:rotate(3deg);background:#fff4ca}
+  .city-pin{
+    position:absolute;z-index:3;transform:translate(-50%,-50%);display:flex;align-items:center;
+    border:0;background:transparent;text-decoration:none;padding:7px;white-space:nowrap;
+  }
+  .city-pin i{
+    width:20px;height:20px;display:block;border:4px solid #fff;border-radius:50%;
+    background:#9da9a4;box-shadow:0 3px 10px rgba(38,61,60,.28);
+  }
+  .city-pin span{
+    margin-left:6px;padding:5px 10px;border:1px solid rgba(46,86,79,.14);
+    border-radius:12px;background:rgba(255,253,248,.94);color:#61706c;
+    font-size:.72rem;font-weight:900;box-shadow:0 7px 18px rgba(38,61,60,.13);
+  }
+  .city-pin small{display:block;font-size:.54rem;font-weight:700;letter-spacing:.06em}
+  .city-pin.active{cursor:pointer}
+  .city-pin.active i{background:var(--sakura)}
+  .city-pin.active i::after{
+    content:"";display:block;width:20px;height:20px;margin:-4px;border:1px solid var(--sakura);
+    border-radius:50%;animation:pulse 2.2s ease-out infinite;
+  }
+  .city-pin.active span{background:var(--jade);color:#fff}
+  .city-pin.active:hover i{transform:scale(1.2)}
+  .kyoto span{transform:translateY(-14px)}.osaka span{transform:translateY(14px)}
+  .tokyo{left:72%;top:61%}.kyoto{left:49%;top:59%}.osaka{left:43%;top:68%}
+  .sapporo{left:73%;top:13%}.fukuoka{left:22%;top:77%}.okinawa{left:8%;top:91%}
+  @keyframes pulse{0%{transform:scale(.8);opacity:1}100%{transform:scale(2.2);opacity:0}}
+  .map-note{margin:14px 10px 2px;color:var(--muted);font-size:.8rem;text-align:center}
+  .content{width:min(1180px,calc(100% - 34px));margin:auto}
+  .section-head{text-align:center;max-width:760px;margin:0 auto 30px}
+  .kicker{margin:0 0 7px;color:var(--sakura);font-size:.7rem;font-weight:900;letter-spacing:.16em}
+  h2{margin:0;font-size:clamp(2rem,4vw,3.35rem);line-height:1.15;letter-spacing:-.03em}
+  .section-copy{margin:12px auto 0;color:var(--muted);font-size:.9rem}
+  .trip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .trip-card{
+    position:relative;min-height:270px;display:flex;flex-direction:column;padding:25px;border:1px solid var(--line);
+    border-radius:28px;background:var(--card);text-decoration:none;box-shadow:0 9px 28px rgba(51,71,65,.08);
+    transition:transform .2s,box-shadow .2s,border-color .2s;
+  }
+  .trip-card:nth-child(1){transform:rotate(-1.2deg)}
+  .trip-card:nth-child(2){transform:translateY(-10px) rotate(.8deg)}
+  .trip-card:nth-child(3){transform:rotate(1.3deg)}
+  .trip-card::before{
+    content:"";position:absolute;right:20px;top:17px;width:42px;height:42px;border-radius:50%;
+    background:var(--sky);opacity:.85;
+  }
+  .trip-card:nth-child(2)::before{background:var(--sakura-soft)}
+  .trip-card:nth-child(3)::before{background:#f8e5aa}
+  .trip-card:hover{transform:translateY(-5px);border-color:rgba(57,122,112,.38);box-shadow:var(--shadow)}
+  .tag{align-self:flex-start;padding:4px 8px;border-radius:999px;background:var(--sakura-soft);color:#a94842;font-size:.64rem;font-weight:900;letter-spacing:.08em}
+  .trip-card:nth-child(2) .tag{background:var(--jade-soft);color:var(--jade-dark)}
+  .trip-card:nth-child(3) .tag{background:#f3e7cc;color:#836124}
+  .trip-card h3{margin:26px 0 9px;font-size:1.65rem;line-height:1.25}
+  .trip-card p{margin:0;color:var(--muted);font-size:.84rem}
+  .trip-icon,.guide-icon{
+    width:44px;height:44px;display:grid;place-items:center;border-radius:16px;
+    background:var(--mint);color:var(--jade-dark);font-family:var(--font-display);
+    font-size:1.2rem;font-weight:900;box-shadow:0 7px 18px rgba(51,71,65,.08);
+  }
+  .trip-card:nth-child(2) .trip-icon{background:var(--sakura-soft);color:#a94842}
+  .trip-card:nth-child(3) .trip-icon{background:#f3e7cc;color:#836124}
+  .card-foot{margin-top:auto;padding-top:25px;display:flex;justify-content:space-between;align-items:center;color:var(--jade);font-size:.76rem;font-weight:900}
+  .arrow{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--jade);color:#fff}
+  .guides{margin:84px 0;padding:64px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,253,248,.38);border-radius:36px}
+  .guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .guide{
+    padding:19px;border:1px solid var(--line);border-radius:20px;background:rgba(255,253,248,.74);
+    text-decoration:none;transition:background .2s,transform .2s;
+  }
+  .guide:hover{background:var(--card);transform:translateY(-3px)}
+  .guide-icon{margin-bottom:12px;background:var(--sakura-soft);color:#a94842}
+  .guide b{display:block;margin-bottom:5px;font-size:.88rem}
+  .guide span{color:var(--muted);font-size:.73rem}
+  .coming{margin-bottom:88px}
+  .coming-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:23px}
+  .coming-city{padding:16px;border:1px dashed rgba(46,86,79,.25);border-radius:18px;text-align:center;color:var(--muted);background:rgba(255,253,248,.5)}
+  .coming-city b{display:block;color:var(--ink);font-family:var(--font-display)}
+  .coming-city small{font-size:.66rem}
+  footer{padding:30px 18px;background:var(--ink);color:#adc0bb;text-align:center;font-size:.75rem}
+  footer a{color:#fff;text-decoration:none}
+  @media(max-width:850px){
+    .trip-grid{grid-template-columns:1fr 1fr}.trip-card:last-child{grid-column:1/-1;min-height:220px}
+    .guide-grid{grid-template-columns:1fr 1fr}.coming-grid{grid-template-columns:repeat(3,1fr)}
+    .seal{display:none}.sticker.one,.sticker.two{display:none}
+  }
+  @media(max-width:600px){
+    .site-header,.hero,.content{width:min(100% - 24px,1180px)}
+    .site-header{height:64px}.all-trips span{display:none}.hero{margin:28px auto 48px;gap:34px}
+    h1{font-size:clamp(3.4rem,20vw,5.4rem)}.map-frame{padding:6px;border-radius:24px;transform:none}
+    .map-frame::before{inset:9px;border-radius:18px}.map-frame::after,.sticker{display:none}.map-stage{border-radius:18px}
+    .city-pin{padding:3px}.city-pin i{width:14px;height:14px;border-width:3px}
+    .city-pin span{padding:3px 6px;font-size:.6rem}.city-pin small{display:none}
+    .tokyo{left:72%;top:61%}.kyoto{left:49%;top:57%}.osaka{left:42%;top:70%}
+    .trip-grid,.guide-grid{grid-template-columns:1fr}.trip-card,.trip-card:last-child{grid-column:auto;min-height:225px}
+    .trip-card:nth-child(n){transform:none}
+    .guides{margin:58px 0;padding:48px 0}.coming-grid{grid-template-columns:1fr 1fr}.coming{margin-bottom:60px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  }
+</style>
 </head>
 <body>
-  <p>日本行程總索引已移至 GitHub Pages：</p>
-  <p><a href="../docs/Japan/">開啟 docs/Japan/</a></p>
-  <p>線上網址：<a href="https://djiann.github.io/travel-log/Japan/">https://djiann.github.io/travel-log/Japan/</a></p>
+<header class="site-header">
+  <a class="back" href="../docs/index.html"><span aria-hidden="true">←</span> 世界旅遊地圖</a>
+  <a class="all-trips" href="#tokyo-trips"><span>目前開放</span> 東京 · 3 組行程</a>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="page-title">
+    <div class="seal" aria-hidden="true">旅程<br>圖鑑</div>
+    <p class="eyebrow">KAWAII JAPAN TRAVEL MAP</p>
+    <h1 id="page-title">日本城市旅遊地圖<small>城市から、旅を選ぶ</small></h1>
+    <p class="hero-copy">把日本當成一張可收藏的旅行海報。中央地圖標出東京、大阪、京都、札幌、福岡與沖繩，點亮的東京可以直接進入完整行程。</p>
+    <div class="hero-meta"><span>東京已開放</span><span>大阪・京都準備中</span><span>日系手繪插畫風</span></div>
+    <div class="map-frame">
+      <span class="sticker one" aria-hidden="true">東京 OPEN</span>
+      <span class="sticker two" aria-hidden="true">旅のしおり</span>
+      <span class="sticker three" aria-hidden="true">Tap the red city pin</span>
+      <div class="map-stage">
+        <img src="assets/japan-map-kawaii.png" alt="日系可愛貼紙插畫風日本地圖，標示東京、大阪、京都、札幌、福岡與沖繩">
+        <a class="city-pin active tokyo" href="#tokyo-trips" aria-label="查看東京行程"><i aria-hidden="true"></i><span>東京<small>TOKYO · OPEN</small></span></a>
+        <span class="city-pin kyoto" title="京都行程準備中"><i aria-hidden="true"></i><span>京都<small>COMING SOON</small></span></span>
+        <span class="city-pin osaka" title="大阪行程準備中"><i aria-hidden="true"></i><span>大阪<small>COMING SOON</small></span></span>
+        <span class="city-pin sapporo" title="札幌行程準備中"><i aria-hidden="true"></i><span>札幌</span></span>
+        <span class="city-pin fukuoka" title="福岡行程準備中"><i aria-hidden="true"></i><span>福岡</span></span>
+        <span class="city-pin okinawa" title="沖繩行程準備中"><i aria-hidden="true"></i><span>沖繩</span></span>
+      </div>
+      <p class="map-note">紅色亮點為可開啟城市 · 灰色城市為未來規劃</p>
+    </div>
+  </section>
+
+  <div class="content">
+    <section id="tokyo-trips" aria-labelledby="tokyo-title">
+      <div class="section-head">
+        <div><p class="kicker">TOKYO · 東京</p><h2 id="tokyo-title">選擇旅行時間</h2></div>
+        <p class="section-copy">每組行程都包含每日路線、交通、飲食、雨天或酷暑備案，以及可在手機上直接開啟的實用資訊。</p>
+      </div>
+      <div class="trip-grid">
+        <a class="trip-card" href="20260721_Tokyo/tokyo-2026-guide.html">
+          <span class="trip-icon" aria-hidden="true">七</span><span class="tag">2026 JULY</span><h3>七月親子行</h3>
+          <p>7/21–7/27 · 東京 7 日<br>適合第一次帶孩子自由行的完整安排</p>
+          <div class="card-foot"><span>開啟完整指南</span><b class="arrow" aria-hidden="true">↗</b></div>
+        </a>
+        <a class="trip-card" href="20260812_Tokyo/tokyo-20260812-guide.html">
+          <span class="trip-icon" aria-hidden="true">八</span><span class="tag">LATEST · 2026 AUGUST</span><h3>八月東京行</h3>
+          <p>8/12–8/18 · 東京 7 日<br>燈籠流、品川新景點與東京城市夜景</p>
+          <div class="card-foot"><span>開啟重排行程</span><b class="arrow" aria-hidden="true">↗</b></div>
+        </a>
+        <a class="trip-card" href="20260812_Tokyo/tokyo-next-trip-guide-detailed.html">
+          <span class="trip-icon" aria-hidden="true">次</span><span class="tag">NEXT TRIP</span><h3>下一次東京</h3>
+          <p>深度街區與彈性企劃<br>收錄多種餐食選擇及酷暑替代方案</p>
+          <div class="card-foot"><span>查看未來提案</span><b class="arrow" aria-hidden="true">↗</b></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="guides" aria-labelledby="guide-title">
+      <div class="section-head">
+        <div><p class="kicker">TRAVEL TOOLKIT</p><h2 id="guide-title">東京實用手冊</h2></div>
+        <p class="section-copy">抵達、移動與住宿周邊資訊獨立整理，需要時可以更快找到。</p>
+      </div>
+      <div class="guide-grid">
+        <a class="guide" href="20260812_Tokyo/narita-to-ueno-access-guide.html"><span class="guide-icon" aria-hidden="true">空</span><b>成田機場 → 上野</b><span>T1／T2 購票與搭車教學</span></a>
+        <a class="guide" href="20260812_Tokyo/journey-maps.html"><span class="guide-icon" aria-hidden="true">地</span><b>七日旅程地圖</b><span>每日移動順序與注意事項</span></a>
+        <a class="guide" href="20260812_Tokyo/tokyo-2026-08-ueno-local-guide.html"><span class="guide-icon" aria-hidden="true">食</span><b>上野・阿美橫町</b><span>餐食、採買與周邊補給</span></a>
+        <a class="guide" href="20260812_Tokyo/tokyo-next-trip-stay-shopping-guide.html"><span class="guide-icon" aria-hidden="true">宿</span><b>住宿與購物指南</b><span>超市、伴手禮與生活機能</span></a>
+      </div>
+    </section>
+
+    <section class="coming" aria-labelledby="coming-title">
+      <p class="kicker">COMING DESTINATIONS</p><h2 id="coming-title">下一座日本城市</h2>
+      <div class="coming-grid">
+        <div class="coming-city"><b>京都</b><small>KYOTO</small></div>
+        <div class="coming-city"><b>大阪</b><small>OSAKA</small></div>
+        <div class="coming-city"><b>札幌</b><small>SAPPORO</small></div>
+        <div class="coming-city"><b>福岡</b><small>FUKUOKA</small></div>
+        <div class="coming-city"><b>沖繩</b><small>OKINAWA</small></div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer><a href="../docs/index.html">Travel Log</a> · 日本城市旅遊地圖</footer>
 </body>
 </html>
