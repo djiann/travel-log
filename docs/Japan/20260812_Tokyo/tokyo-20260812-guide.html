@@ -151,6 +151,45 @@
     vertical-align:baseline;line-height:1.5;
   }
   a.gmap:hover{border-color:var(--acc2);background:#eef7f9}
+
+  .flight-stack{display:grid;gap:12px;margin:14px 0 18px}
+  .flight-card{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);overflow:hidden;border-top:4px solid #c5a070;
+  }
+  .flight-head{
+    padding:12px 16px 10px;font-size:14px;font-weight:700;color:#3a454b;
+    border-bottom:1px solid #ece7e0;
+  }
+  .flight-body{
+    display:grid;grid-template-columns:1.4fr .7fr;gap:12px;padding:14px 16px 16px;align-items:center;
+  }
+  .flight-route{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:start}
+  .flight-time{font-size:28px;font-weight:800;line-height:1.1;color:#1f2a30;font-variant-numeric:tabular-nums}
+  .flight-code{margin-top:4px;font-size:22px;font-weight:800;color:#8a97a0;letter-spacing:.04em}
+  .flight-place{margin-top:4px;font-size:12px;color:var(--mut);line-height:1.45}
+  .flight-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:8px;min-width:72px}
+  .flight-direct{font-size:12px;font-weight:700;color:#8a97a0;margin-bottom:8px}
+  .flight-line{display:block;width:68px;height:0;border-top:2px dotted #c5ccd1}
+  .flight-leg.arrive{text-align:right}
+  .flight-meta{display:grid;gap:8px;justify-items:start;font-size:13px;color:#5b6770;border-left:1px solid #ece7e0;padding-left:14px}
+  .flight-meta .row{display:flex;align-items:center;gap:8px}
+  .flight-meta svg{width:16px;height:16px;flex:0 0 auto;color:#8a97a0}
+  .flight-cabin{color:#d4566a;font-weight:800}
+  .flight-airline{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .eva-badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:18px;height:18px;border-radius:50%;background:#0b6b4c;color:#fff;
+    font-size:10px;font-weight:800;line-height:1;
+  }
+  @media(max-width:720px){
+    .flight-body{grid-template-columns:1fr;gap:14px}
+    .flight-meta{border-left:none;border-top:1px solid #ece7e0;padding-left:0;padding-top:12px}
+    .flight-time{font-size:24px}
+    .flight-code{font-size:18px}
+    .flight-line{width:48px}
+  }
+
   .map-link{
     display:flex;justify-content:center;align-items:center;
     line-height:0;margin:14px auto;max-width:960px;
@@ -178,7 +217,7 @@
 <body>
 <header>
   <h1>🗼 東京 7 日親子深度行・完整指南（20260812 重排）</h1>
-  <div class="sub">2026/8/12(三) – 8/18(二)　住宿：上野　｜　重排：去橫濱八景島｜Day2=葛西/豐洲/teamLab｜Day4=晴空塔/淺草+燈籠流｜Day5=MoN/Aqua/TRACKS｜Day6=兩國/東京站/麻布台/鐵塔｜每餐備案與交通完整保留</div>
+  <div class="sub">2026/8/12(三) – 8/18(二)　住宿：上野　｜　Day2=葛西/豐洲/Borderless→麻布台附近｜Day3=都廳展望台＋光雕｜Day4=晴空塔/淺草+燈籠流｜Day5=深川選配＋兩國/東京站/鐵塔＋叙々苑｜Day6=LUFTBAUM→MoN＋Aqua｜Day7=上野半日＋返程</div>
 </header>
 
 <div class="wrap">
@@ -197,6 +236,7 @@
   <a href="narita-to-ueno-access-guide.html">✈️ 成田→上野</a>
   <a href="tokyo-2026-08-ueno-local-guide.html">🏮 上野手冊</a>
   <a href="tokyo-2026-08-agoda-card-discount-guide.html">💳 Agoda折扣</a>
+  <a href="#flights">✈️ 航班</a>
   <a href="#pre">行前必讀</a>
   <a href="#ticket">交通票券</a>
   <a href="#book">訂位預約清單</a>
@@ -208,6 +248,79 @@
 
 <div class="muted">匯率以 <b>¥100 ≈ NT$21</b>（NT$1≈¥4.76）估算，出發前用 APP 抓即時匯率。所有營業時間/價格/門票會變動，<b>出發前務必再用 Google Maps 或官網確認當日營業與公休</b>。</div>
 
+
+<!-- ============ 航班資訊 ============ -->
+<section id="flights">
+<h2>✈️ 航班資訊</h2>
+<div class="flight-stack">
+  <article class="flight-card" aria-label="去程航班 BR 184">
+    <div class="flight-head">台北 到 東京 · 2026年8月12日 星期三</div>
+    <div class="flight-body">
+      <div class="flight-route">
+        <div class="flight-leg">
+          <div class="flight-time">07:55</div>
+          <div class="flight-code">TPE</div>
+          <div class="flight-place">臺灣桃園機場<br>2航廈</div>
+        </div>
+        <div class="flight-mid">
+          <span class="flight-direct">直飛</span>
+          <span class="flight-line" aria-hidden="true"></span>
+        </div>
+        <div class="flight-leg arrive">
+          <div class="flight-time">12:25</div>
+          <div class="flight-code">NRT</div>
+          <div class="flight-place">成田國際機場<br>1航廈</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>飛行時間:3小時 30分</span>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 16l8-3 3-8 2 2-2 6 7 2-1 2-8-1-4 5H5l2-5-5-2z"/></svg>
+          <span class="flight-airline"><b>BR 184</b> <span class="eva-badge" title="EVA Air">長</span> <span>長榮航空</span></span>
+        </div>
+        <div class="flight-cabin">經濟艙</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="flight-card" aria-label="回程航班 BR 195">
+    <div class="flight-head">東京 到 台北 · 2026年8月18日 星期二</div>
+    <div class="flight-body">
+      <div class="flight-route">
+        <div class="flight-leg">
+          <div class="flight-time">20:40</div>
+          <div class="flight-code">NRT</div>
+          <div class="flight-place">成田國際機場<br>1航廈</div>
+        </div>
+        <div class="flight-mid">
+          <span class="flight-direct">直飛</span>
+          <span class="flight-line" aria-hidden="true"></span>
+        </div>
+        <div class="flight-leg arrive">
+          <div class="flight-time">23:20</div>
+          <div class="flight-code">TPE</div>
+          <div class="flight-place">臺灣桃園機場<br>2航廈</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>飛行時間:3小時 40分</span>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 16l8-3 3-8 2 2-2 6 7 2-1 2-8-1-4 5H5l2-5-5-2z"/></svg>
+          <span class="flight-airline"><b>BR 195</b> <span class="eva-badge" title="EVA Air">長</span> <span>長榮航空</span></span>
+        </div>
+        <div class="flight-cabin">經濟艙</div>
+      </div>
+    </div>
+  </article>
+</div>
+</section>
+
 <!-- ============ 出發當天速覽 ============ -->
 <section id="quick">
 <h2>🔍 0. 出發當天速覽（Day1–Day7 懶人表）</h2>
@@ -217,7 +330,7 @@
 <details open>
 <summary>Day1｜抵達東京・上野下午茶・多慶屋・阿美橫町</summary>
 <ul>
-<li><span class="time">12:25</span> 抵達成田機場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener" title="Google Maps：成田国際空港">📍地圖</a> → 依指示走 VJW 通關。<b>行李多、人多時不用急著衝車</b>。</li>
+<li><span class="time">07:55</span> 桃園 T2 起飛（BR 184）→ <span class="time">12:25</span> 抵達成田機場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener" title="Google Maps：成田国際空港">📍地圖</a> → 依指示走 VJW 通關。<b>行李多、人多時不用急著衝車</b>。</li>
 <li><span class="time">14:00–14:30</span> Skyliner 成田機場站<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E9%A7%85" target="_blank" rel="noopener" title="Google Maps：成田空港駅">📍地圖</a> → 京成上野站<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85" target="_blank" rel="noopener" title="Google Maps：京成上野駅">📍地圖</a>（建議現場直接買來回票）。</li>
 <li><span class="time">15:30–16:15</span> 上野下午茶：HARBS<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=HARBS%20PARCO_ya%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener" title="Google Maps：HARBS PARCO_ya 上野">📍地圖</a> 若排隊太長就直接改 <b>みはし<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%BF%E3%81%AF%E3%81%97%20%E4%B8%8A%E9%87%8E%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" title="Google Maps：みはし 上野本店">📍地圖</a> / otto e sette<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%BB%9A%20otto%20e%20sette%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener" title="Google Maps：廚 otto e sette 上野">📍地圖</a></b>。</li>
 <li><span class="time">16:15–17:15</span> <b>多慶屋快逛</b>（藥妝／食品／日用品先看價）→ <span class="time">17:15 起</span> 阿美橫町逛街＋晚餐 → 回飯店前買宵夜／明日早餐。</li>
@@ -225,22 +338,19 @@
 </details>
 
 <details>
-<summary>Day2｜葛西＋豐洲＋teamLab＋平日光雕秀</summary>
+<summary>Day2｜葛西＋豐洲＋Borderless＋麻布台附近／回上野</summary>
 <ul>
-<li>上午葛西臨海水族園 → 中午豐洲海鮮丼 → <span class="time">14:00–16:00</span> teamLab。</li>
-<li><span class="time">16:15</span> 豐洲→新宿都廳；<span class="time">17:15–19:00</span> 新宿晚餐。</li>
-<li>⭐ <span class="time">19:30+</span> 都民廣場光雕秀（平日對 TIMETABLE）；不訂陽山道。</li>
+<li>上午葛西臨海水族園 → 中午豐洲海鮮丼（13:20 前結束）→ <span class="time">15:00–17:00</span> teamLab Borderless（麻布台）。</li>
+<li>傍晚：<b>麻布台之丘附近散步／晚餐</b>，或備案直接回上野；<b>不排都廳光雕秀</b>（改 Day3）。</li>
+<li>無票備案：豐洲附近室內 → 回上野晚餐。</li>
 </ul>
 </details>
 
 <details>
-<summary>Day3｜明治神宮・原宿／表參道＋澀谷室內避暑＋平日光雕秀</summary>
+<summary>Day3｜明治神宮・WEGO・澀谷逛街・都廳展望台＋平日光雕秀</summary>
 <ul>
-<li>早上：明治神宮<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE" target="_blank" rel="noopener" title="Google Maps：明治神宮">📍地圖</a>短走＋原宿／WEGO；午餐放表參道・青山（邁泉或室內商場備案）。</li>
-<li><span class="time">13:00–18:35</span> 午後備案：午餐後直接往澀谷，逛 Hikarie／PARCO／Scramble Square＋SKY；若沒 SKY 票或太累，改提早進新宿西口／都廳展望室卡 19:30 光雕秀。</li>
-<li><span class="time">15:30–18:15</span> 澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a> ＋ 早晚餐（SKY 搶 15:30–16:00 場；晚餐 17:15–18:15）。</li>
-<li>晚餐：澀谷迴轉壽司（魚べい<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E3%81%B9%E3%81%84%20%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82" target="_blank" rel="noopener" title="Google Maps：魚べい 渋谷道玄坂">📍地圖</a> / 壽司郎<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%82%B7%E3%83%AD%E3%83%BC%20%E6%B8%8B%E8%B0%B7" target="_blank" rel="noopener" title="Google Maps：スシロー 渋谷">📍地圖</a>），<b>16:45 前用 App 抽號</b>，不然就改拉麵。</li>
-<li><span class="time">18:35–20:30</span> 澀谷 → 新宿都廳<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81" target="_blank" rel="noopener" title="Google Maps：東京都庁">📍地圖</a>，鎖定 <b>19:30</b> 光雕秀；看完直接回上野，避免太晚。</li>
+<li>09:00 神宮短走 → <b>10:30–11:20 WEGO 原宿本店</b> → 澀谷午餐 → <b>PARCO／Hikarie</b>（擇一）→ 路口快拍。</li>
+<li><span class="time">16:00</span> 前離澀谷 → <b>都廳展望台</b>（免費）→ 西口實用晚餐 → <b>19:30</b> 光雕秀。已有 SKY 票則縮短走選配。</li>
 </ul>
 </details>
 
@@ -254,20 +364,19 @@
 </details>
 
 <details>
-<summary>Day5｜MoN Takanawa→Aqua Park→大井町 TRACKS（夜間海豚／光雕二擇一）</summary>
+<summary>Day5｜（選配）深川水かけ・兩國・東京站・麻布台／鐵塔＋叙々苑</summary>
 <ul>
-<li>（選配）清晨深川水かけ快看 → 上午 MoN Takanawa。</li>
-<li>品川午餐 → Aqua Park 日間秀 → 傍晚 TRACKS。</li>
-<li>主線：夜間海豚秀再入場；備案 B：改都廳光雕秀。</li>
+<li>（選配）清晨深川水かけ → 上午 <b>江戶東京博物館</b>（週日開；避開週一休）→ 兩國午餐。</li>
+<li>午後東京駅一番街／KITTE → 麻布台之丘 → 東京鐵塔外觀。</li>
+<li><span class="time">19:00</span> 回上野 <b>叙々苑</b>。</li>
 </ul>
 </details>
 
 <details>
-<summary>Day6｜兩國・東京車站・麻布台之丘・東京鐵塔＋叙々苑</summary>
+<summary>Day6｜LUFTBAUM→MoN→Aqua Park→TRACKS（夜間海豚／光雕二擇一）</summary>
 <ul>
-<li>上午江戶東京博物館 → 兩國午餐。</li>
-<li>午後東京駅一番街／KITTE → 麻布台之丘 → 東京鐵塔外觀。</li>
-<li><span class="time">19:00</span> 回上野 <b>叙々苑</b>；劃 Day7 Skyliner。</li>
+<li>上午：<b>先 LUFTBAUM</b>（開館前）→ <b>MoN Takanawa</b> → NEWoMan 快閃 → 品川午餐 → Aqua（16:00／19:00）。</li>
+<li>備案 B：夜間改都廳光雕；晚劃 Day7 Skyliner。⚠️ <b>8/18（二）MoN 休館</b>，勿改 Day7 補。</li>
 </ul>
 </details>
 
@@ -278,7 +387,7 @@
 <li><span class="time">10:15–12:15</span> 主線：東京國立博物館<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener" title="Google Maps：東京国立博物館">📍地圖</a>常設展；不想逛館可改淺草寺<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%85%E8%8D%89%E5%AF%BA" target="_blank" rel="noopener" title="Google Maps：浅草寺">📍地圖</a>半日。</li>
 <li><span class="time">12:30–14:50</span> 上野午餐＋阿美橫町／PARCO_ya／ecute 最後採買；<span class="time">15:00</span> 回飯店取行李。</li>
 <li><span class="time">16:00–16:30</span> 搭 Skyliner（以當日班表選擇，<b>建議最晚 16:30 左右離開京成上野</b>）→ 約 17:00–17:20 抵成田機場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener" title="Google Maps：成田国際空港">📍地圖</a>。</li>
-<li><span class="time">20:40</span> 起飛返台；報到、托運、安檢後再吃晚餐／逛免稅店。</li>
+<li><span class="time">20:40</span> 成田 T1 起飛返台（BR 195）→ <span class="time">23:20</span> 抵桃園 T2；報到、托運、安檢後再吃晚餐／逛免稅店。</li>
 </ul>
 </details>
 
@@ -345,13 +454,15 @@
 <summary>⚠️ 本版重排後「必記」檢查</summary>
 <div class="warnbox">
 <ul>
-<li><b>已移除原 Day2 橫濱八景島</b>；原 Day4（葛西／豐洲／teamLab）改到 <a href="#d2">Day2 8/13</a>。</li>
+<li><b>已移除原 Day2 橫濱八景島</b>；Day2 改 <b>葛西→豐洲→Borderless（麻布台）</b>；傍晚留在麻布台附近或回上野，<b>不排都廳</b>。無票備案為豐洲室內＋回上野。</li>
 <li><b>Day4 8/15</b>：晴空塔／淺草＋<b>隅田川とうろう流し</b>（週末都廳秀不排）。燈籠請事前購買；墨田／淺草側不可混用。</li>
-<li><b>深川水かけ高潮在 8/16</b>：本版放 <a href="#d5">Day5</a> 清晨選配；白天主線是 MoN→Aqua→TRACKS。</li>
-<li><b>Day5</b>：Aqua Park 建議買含<b>夜間秀＋再入場</b>；夜間海豚與都廳光雕二擇一。</li>
-<li><b>Day6</b>：兩國／東京站／麻布台／鐵塔；<b>叙々苑改訂今晚 19:00</b>（不再排 Day4／Day5 與燈籠衝突）。</li>
+<li><b>深川水かけ高潮在 8/16</b>：本版放 <a href="#d5">Day5</a> 清晨選配；看完就近轉兩國博物館（不必再衝高輪）。</li>
+<li><b>Day5／Day6 已對調</b>：8/16＝兩國／東京站／鐵塔＋叙々苑；8/17＝<b>LUFTBAUM→MoN</b>＋Aqua。</li>
+<li><b>MoN 休館</b>：原則每月第 2 個星期二；<b>2026/8/18（二）休館</b>（8/17 一開館）。勿排 Day7。</li>
+<li><b>Day5</b>：<b>叙々苑訂 8/16（日）19:00</b>；江戶東京博物館確認開館。</li>
+<li><b>Day6</b>：Aqua Park 建議買含<b>夜間秀＋再入場</b>；日間主推 16:00、夜間主推 19:00。MoN ぐるぐる展建議出發前購票。夜間海豚與都廳光雕二擇一；晚劃 Skyliner。</li>
 <li><b>豐洲壽司大中午多半已收</b>：Day2 午餐以海鮮丼／定食為主。</li>
-<li><b>Day3 澀谷 SKY</b>：搶 15:30–16:00 場趕 19:30 光雕秀。</li>
+<li><b>Day3</b>：WEGO 10:30 開；午餐＋PARCO／Hikarie；午後改 <b>都廳展望台</b>＋西口晚餐＋19:30 光雕秀。SKY 改選配（有理想時段才走）。</li>
 <li><b>8 月 33–36°C</b>：每段戶外接室內避暑；風扇／涼感巾／鹽錠必備。</li>
 <li><b>Skyliner 回程</b>：建議 Day6 晚在京成上野劃位。</li>
 </ul>
@@ -388,11 +499,11 @@
 <p>各日地鐵/JR 嗶卡實際花費（估，IC 票價，單位日圓/人）：</p>
 <ul>
 <li>Day1：Skyliner 單程 2,580（來回票攤一半）+ 市區步行為主 → 當日約 <b>¥2,580</b></li>
-<li>Day2：上野→葛西→豐洲→新宿（光雕秀）→上野 ≈ <b>¥1,000–1,200</b></li>
+<li>Day2：上野→葛西→豐洲→麻布台（Borderless）→（附近／回上野）≈ <b>¥900–1,200</b></li>
 <li>Day3：上野⇄澀谷⇄新宿（光雕秀）⇄上野，混 JR/地鐵 ≈ <b>¥600–800</b></li>
 <li>Day4：上野⇄押上／淺草（燈籠）≈ <b>¥700–1,000</b></li>
-<li>Day5：上野⇄高輪／品川／大井町（±新宿備案）≈ <b>¥900–1,300</b></li>
-<li>Day6：上野⇄兩國⇄東京⇄神谷町／鐵塔⇄上野 ≈ <b>¥800–1,100</b></li>
+<li>Day5：上野⇄兩國⇄東京⇄神谷町／鐵塔⇄上野（±門前仲町）≈ <b>¥800–1,200</b></li>
+<li>Day6：上野⇄高輪／品川／大井町（±新宿備案）≈ <b>¥900–1,300</b></li>
 <li>Day7：Skyliner 單程 2,580（來回票另一半）→ 約 <b>¥2,580</b></li>
 </ul>
 <p>👉 若改買 Subway Ticket 72h（¥1,500），你 Day2／Day5／Day6 的 JR 段全不能用，仍要另付 JR。<b>Suica 嗶卡 = 花多少算多少，最省。</b></p>
@@ -424,13 +535,15 @@
 <summary>🔴 必須提前搶（行程確定立刻訂）</summary>
 <table>
 <tr><th>項目</th><th>提前多久</th><th>怎麼訂</th><th>備註</th></tr>
-<tr><td><b>澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a></b>（Day3）</td><td>參觀日 <b>28 天前</b>日本時間 00:00 開賣</td><td><a href="https://www.shibuya-scramble-square.com/sky/">官網</a> / Klook / KKday</td><td>為趕 <b>19:30</b> 光雕秀，改搶 <b>15:30–16:00</b> 場；17:00 前下樓吃早晚餐</td></tr>
-<tr><td><b>teamLab Planets 豐洲</b>（Day2）</td><td>至少 <b>1 個月</b></td><td><a href="https://www.teamlab.art/e/planets/">官網</a> 指定時段電子票</td><td>涉水體驗，穿短褲/可捲褲管；旺季易售完</td></tr>
-<tr><td><b>墨田水族館</b>（Day4 <b>選配</b>）</td><td>若去再買；可省略</td><td><a href="https://www.sumida-aquarium.com/">官網</a> / Klook</td><td>主線可不去（Day2 葛西＋Day5 Aqua）</td></tr>
-<tr><td><b>Aqua Park 品川（含夜間秀＋再入場）</b>（Day5）</td><td>建議出發前</td><td>Klook / KKday / 官網</td><td>入園確認再入場規則</td></tr>
-<tr><td><b>MoN Takanawa</b>（Day5）</td><td>出發前查是否需時段</td><td>官方／園區網站</td><td>2026 新館，確認公休與票種</td></tr>
+<tr><td><b>都廳展望台</b>（Day3 主線高空景）</td><td>免預約</td><td>現場排隊入場</td><td><b>免費</b>；南展望室約 9:30–22:00（最後入室約 21:30）。建議 <b>16:45–18:15</b>，再吃西口晚餐趕 19:30 光雕秀。出發前對 <a href="https://www.zaimu.metro.tokyo.lg.jp/tochousha/goannai/tenbou" target="_blank" rel="noopener">官方開室</a></td></tr>
+<tr><td><b>澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a></b>（Day3 選配）</td><td>有理想時段才用</td><td>電子票 QR</td><td>若已有票：縮短為約 60 分 → <b>16:00 前離澀谷</b>仍接展望台＋光雕秀。沒好時段則跳過，改主線展望台</td></tr>
+<tr><td><b>夜景／十字路口餐廳</b>（Day3 選配）</td><td>非主線</td><td>Hot Pepper／一休／官網</td><td>本版晚餐改新宿西口近都廳；窗邊 scramble 非必要</td></tr>
+<tr><td><b>teamLab Borderless 麻布台</b>（Day2）</td><td>至少 <b>2–4 週</b>（旺季盡早）</td><td><a href="https://www.teamlab.art/e/tokyo/">官網</a>／Klook 指定時段</td><td>搶 <b>15:00</b>（或 14:30）；約停留 2 小時，17:00 出場後改麻布台附近或回上野。<b>不趕新宿光雕秀</b></td></tr>
+<tr><td><b>墨田水族館</b>（Day4 <b>選配</b>）</td><td>若去再買；可省略</td><td><a href="https://www.sumida-aquarium.com/">官網</a> / Klook</td><td>主線可不去（Day2 葛西＋Day6 Aqua）</td></tr>
+<tr><td><b>Aqua Park 品川（含夜間秀＋再入場）</b>（Day6）</td><td>建議出發前</td><td>Klook / KKday / 官網</td><td>入園確認再入場。日間主推 <b>16:00</b>、夜間主推 <b>19:00</b>（以<a href="https://www.aqua-park.jp/aqua/event/index.html" target="_blank" rel="noopener">官網當日表</a>為準）</td></tr>
+<tr><td><b>MoN Takanawa／ぐるぐる展</b>（Day6）</td><td>建議出發前購票</td><td><a href="https://montakanawa.jp/programs/spiral/" target="_blank" rel="noopener">官網</a>／Fever</td><td>館內免費進；看展需票。一般 ¥2,500。⚠️ <b>8/18 休館</b></td></tr>
 <tr><td><b>隅田川とうろう流し燈籠</b>（Day4）</td><td><b>盡早</b>（網路約至 8/6–8/7）</td><td>淺草／墨田官方通路</td><td>當日現場較貴且易完售；側別不可混用</td></tr>
-<tr><td><b>江戶東京博物館</b>（Day6）</td><td>出發前確認</td><td>官網</td><td>確認開館／票價／預約</td></tr>
+<tr><td><b>江戶東京博物館</b>（Day5）</td><td>出發前確認</td><td>官網</td><td>排 <b>8/16（日）</b>；原則週一休，勿改回 8/17</td></tr>
 </table>
 </details>
 
@@ -439,14 +552,14 @@
 <table>
 <tr><th>餐廳</th><th>哪天</th><th>訂位方式</th><th>最熱門時段</th></tr>
 <tr><td><b>迴轉壽司 トリトン Solamachi</b></td><td>Day4 午餐</td><td><b>不訂位</b>；<b>10:45–11:00 前取號</b></td><td>約 11:00–12:30</td></tr>
-<tr><td><b>邁泉炸豬排<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%BE%E3%81%84%E6%B3%89%20%E9%9D%92%E5%B1%B1%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" title="Google Maps：まい泉 青山本店">📍地圖</a> 青山本店</b>（まい泉）</td><td>Day3 午餐</td><td><a href="https://www.mai-sen.com/">官網</a> / TableCheck，提前 1–2 週；否則 <b>11:00 前到</b>排隊</td><td>11:30–13:00</td></tr>
-<tr><td><b>味街道 五十三次</b>（品川王子）</td><td>Day5 午餐備案</td><td>Hot Pepper / 一休；怕利久排隊時改訂</td><td>11:30–13:00</td></tr>
-<tr><td><b>焼肉陽山道 上野本店</b></td><td>Day2／Day4 不排（光雕／燈籠）；可作 Day6 叙々苑備案</td><td>Hot Pepper／一休</td><td>優先叙々苑</td></tr>
-<tr><td><b>叙々苑 上野</b></td><td>Day6 8/17(一) 晚餐（鐵塔後回上野）</td><td>Hot Pepper / <a href="https://www.jojoen.co.jp/">官網</a>；<b>先訂</b></td><td><b>19:00</b></td></tr>
-<tr><td><b>焼肉陽山道 上野本店</b>（備案）</td><td>叙々苑訂不到時改 Day6</td><td>同上 Hot Pepper</td><td>19:00</td></tr>
-<tr><td><b>高輪格蘭王子 Lounge Momiji</b></td><td>Day5 雨天／低體力選配</td><td><a href="https://www.princehotels.co.jp/takanawa/">官網</a> / 一休</td><td>14:00–16:00</td></tr>
-<tr><td><b>T.Y.HARBOR</b>（天王洲）</td><td>Day5 午餐非主線選配</td><td><a href="https://www.tysons.jp/tyharbor/">官網</a> / TableCheck</td><td>午餐 12:00</td></tr>
-<tr><td>迴轉壽司 <b>壽司郎<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%82%B7%E3%83%AD%E3%83%BC%20%E6%B8%8B%E8%B0%B7" target="_blank" rel="noopener" title="Google Maps：スシロー 渋谷">📍地圖</a> / 魚べい<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E3%81%B9%E3%81%84%20%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82" target="_blank" rel="noopener" title="Google Maps：魚べい 渋谷道玄坂">📍地圖</a></b>（澀谷）</td><td>Day3 早晚餐（19:30 光雕秀前）</td><td>官方 App 抽號（<b>16:45 前抽</b>）；排太久改博多風龍／美食街</td><td><b>17:15–18:15</b></td></tr>
+<tr><td><b>邁泉炸豬排<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%BE%E3%81%84%E6%B3%89%20%E9%9D%92%E5%B1%B1%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" title="Google Maps：まい泉 青山本店">📍地圖</a> 青山本店</b>（まい泉）</td><td>Day3 <b>非主線</b>選配</td><td>本版午餐改澀谷</td><td>與 SKY 14:40 同塞不建議</td></tr>
+<tr><td><b>味街道 五十三次</b>（品川王子）</td><td>Day6 午餐備案</td><td>Hot Pepper / 一休；怕利久排隊時改訂</td><td>11:30–13:00</td></tr>
+<tr><td><b>焼肉陽山道 上野本店</b></td><td>Day2／Day4 不排；可作 Day5 叙々苑備案</td><td>Hot Pepper／一休</td><td>優先叙々苑</td></tr>
+<tr><td><b>叙々苑 上野</b></td><td>Day5 8/16(日) 晚餐（鐵塔後回上野）</td><td>Hot Pepper / <a href="https://www.jojoen.co.jp/">官網</a>；<b>先訂</b></td><td><b>19:00</b></td></tr>
+<tr><td><b>焼肉陽山道 上野本店</b>（備案）</td><td>叙々苑訂不到時改 Day5</td><td>同上 Hot Pepper</td><td>19:00</td></tr>
+<tr><td><b>高輪格蘭王子 Lounge Momiji</b></td><td>Day6 雨天／低體力選配</td><td><a href="https://www.princehotels.co.jp/takanawa/">官網</a> / 一休</td><td>14:00–16:00</td></tr>
+<tr><td><b>T.Y.HARBOR</b>（天王洲）</td><td>Day6 午餐非主線選配</td><td><a href="https://www.tysons.jp/tyharbor/">官網</a> / TableCheck</td><td>午餐 12:00</td></tr>
+<tr><td>迴轉壽司／拉麵／定食（<b>新宿西口</b>）</td><td>Day3 晚餐主線</td><td>現場看隊；展望台後機動</td><td><b>18:20–19:05</b>；19:10 前到都民廣場</td></tr>
 </table>
 </details>
 
@@ -455,16 +568,16 @@
 <div class="card">
 <ul>
 <li><b>Day1</b>：HARBS、みはし、鳥貴族、山家炸豬排、天丼てんや — <b>現場排</b>；HARBS <b>14:30 前到</b>。</li>
-<li><b>Day2</b>：豐洲海鮮丼午餐；新宿秀前晚餐（思い出橫丁等）。</li>
-<li><b>Day3</b>：邁泉青山本店、東急プラザ／青山周邊室內餐廳、澀谷魚べい／壽司郎、博多風龍；19:30 光雕秀後直接回上野。</li>
+<li><b>Day2</b>：豐洲午餐多店機動；晚餐優先麻布台 Hills／希須林／Sta.／神谷町・六本木連鎖，或回上野阿美橫／てんや／山家。</li>
+<li><b>Day3</b>：WEGO 原宿本店 10:30 開；午餐澀谷；晚餐改新宿西口（展望台後、光雕秀前）；19:30 光雕秀後回上野。</li>
 <li><b>Day4</b>：Solamachi トリトン／利久；燈籠後淺草或上野快速晚餐。</li>
-<li><b>Day5</b>：利久品川／ecute；TRACKS／大井町晚餐。</li>
-<li><b>Day6</b>：兩國いちかつ／江戸NOREN；晚餐訂叙々苑。</li>
+<li><b>Day5</b>：兩國いちかつ／江戸NOREN；晚餐訂叙々苑（8/16 日 19:00）。</li>
+<li><b>Day6</b>：利久品川／ecute；TRACKS／大井町輕食趕夜間海豚。</li>
 <li><b>Day7</b>：Andersen、富士そば<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%90%8D%E4%BB%A3%E5%AF%8C%E5%A3%AB%E3%81%9D%E3%81%B0" target="_blank" rel="noopener" title="Google Maps：名代富士そば">📍地圖</a> 24h、便利商店。</li>
 </ul>
 <p class="muted">共通策略：熱門午餐 <b>開店前 15–30 分鐘到</b>；晚餐 18:00 前入座較穩；帶小孩優先選<b>連鎖定食/迴轉壽司/牛丼</b>，翻桌快、不需訂位。</p>
 <ul>
-<li><b>寶可夢光雕秀（都廳）</b>：免費、免預約（Day2 平日、Day3、Day5 備案 B）。8/15 週末晚上改燈籠流，不排都廳。</li>
+<li><b>寶可夢光雕秀（都廳）</b>：免費、免預約（<b>Day3 主看</b>；Day6 備案 B）。Day2 已不排都廳。8/15 週末晚上改燈籠流。</li>
 <li>想加的體驗：<b>和服體驗（淺草<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%85%E8%8D%89" target="_blank" rel="noopener" title="Google Maps：浅草">📍地圖</a>）</b>建議線上預約（VASARA<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=VASARA%20%E6%B5%85%E8%8D%89" target="_blank" rel="noopener" title="Google Maps：VASARA 浅草">📍地圖</a> / 七緒），夏天可選浴衣。茶道體驗提前 3–7 天網路報名。</li>
 </ul>
 </div>
@@ -473,7 +586,7 @@
 
 <!-- ============ 寶可夢光雕秀 ============ -->
 <section id="poke">
-<h2>④ 🟡 寶可夢光雕秀（Day2／Day3 平日＋Day5 備案；8/15 週末改燈籠流）</h2>
+<h2>④ 🟡 寶可夢光雕秀（Day3 主看＋Day6 備案；8/15 週末改燈籠流）</h2>
 <div class="accbox">
 <b>「ポケモンカードゲーム TOKYO LUMINOUS NIGHT」</b>（寶可夢卡 30 週年光雕秀）<br>
 📍 東京都廳第一本廳舍<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%E7%AC%AC%E4%B8%80%E6%9C%AC%E5%BA%81%E8%88%8E" target="_blank" rel="noopener" title="Google Maps：東京都庁第一本庁舎">📍地圖</a> 東側壁面 ／ 觀賞點：<b>都民廣場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：東京都庁 都民広場">📍地圖</a></b>（新宿區西新宿 2-8-1）<br>
@@ -484,8 +597,8 @@
 </div>
 <div class="warnbox">
 ⚠️ 寶可夢只是<b>輪播作品之一</b>，並非每個整點都播。多份資料顯示寶可夢場偏 <b>六日／祝日</b>。<br>
-本版 <b>8/15（六）晚上優先燈籠流</b>，無法同時看週末都廳寶可夢場。請以 <b>Day3（五）</b> 與 <b>Day5 備案 B（日）</b> 對 TIMETABLE；Day2（四）為平日加看場。<br>
-若只想看一次寶可夢：優先 Day3 或 Day5 備案 B。
+本版 <b>8/15（六）晚上優先燈籠流</b>，無法同時看週末都廳寶可夢場。請以 <b>Day3（五）</b> 為主看場，Day6 備案 B 對 TIMETABLE。<b>Day2（四）已取消都廳</b>，Borderless 後改麻布台附近或回上野。<br>
+若只想看一次寶可夢：優先 Day3。
 </div>
 </section>
 
@@ -498,7 +611,7 @@
 <details open>
 <summary>🕒 時間表 + 交通路線</summary>
 <div class="card">
-<p><span class="time">12:25</span> 成田機場 T1/T2<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener" title="Google Maps：成田国際空港">📍地圖</a> 抵達，入境、領行李、過海關（VJW 掃碼）。<br>
+<p><span class="time">07:55</span> 桃園 T2 起飛（BR 184 長榮／經濟艙）→ <span class="time">12:25</span> 成田機場 T1<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener" title="Google Maps：成田国際空港">📍地圖</a> 抵達，入境、領行李、過海關（VJW 掃碼）。<br>
 <span class="muted">↳ 抓 90–120 分鐘緩衝：暑假人潮 + 領李 + 買 Skyliner 票，<b>14:00–14:30 上車</b>較合理。</span></p>
 <p><span class="time">~14:10–14:30</span> <b>京成 Skyliner</b>：成田機場站<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E9%A7%85" target="_blank" rel="noopener" title="Google Maps：成田空港駅">📍地圖</a> → 京成上野站<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E%E9%A7%85" target="_blank" rel="noopener" title="Google Maps：京成上野駅">📍地圖</a>，<b>直達不轉車 41 分</b>，¥2,580（建議買來回 ¥4,480）。<br>
 <span class="muted">↳ Skyliner 對號座，行李架夠大。</span></p>
@@ -575,198 +688,305 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 
 <!-- ============================= DAY 2 ============================= -->
 <section id="d2">
-<h2>Day 2｜8/13(四)　葛西水族園<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%91%9B%E8%A5%BF%E8%87%A8%E6%B5%B7%E6%B0%B4%E6%97%8F%E5%9C%92" target="_blank" rel="noopener" title="Google Maps：葛西臨海水族園">📍地圖</a>・豐洲市場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E6%B4%B2%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：豊洲市場">📍地圖</a>・teamLab<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab%20Planets%20TOKYO" target="_blank" rel="noopener" title="Google Maps：teamLab Planets TOKYO">📍地圖</a>＋⭐平日光雕秀</h2>
-<div class="muted">住宿：上野　主題：海洋 + 海鮮 + teamLab → 新宿都廳平日光雕秀（由原 Day4 移至此日；原橫濱八景島已移除）</div>
+<h2>Day 2｜8/13(四)　葛西水族園<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%91%9B%E8%A5%BF%E8%87%A8%E6%B5%B7%E6%B0%B4%E6%97%8F%E5%9C%92" target="_blank" rel="noopener" title="Google Maps：葛西臨海水族園">📍地圖</a>・豐洲市場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E6%B4%B2%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：豊洲市場">📍地圖</a>・teamLab Borderless（麻布台）<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab%20Borderless%20TOKYO%20Azabudai%20Hills" target="_blank" rel="noopener" title="Google Maps：teamLab Borderless Azabudai">📍地圖</a>・附近／回上野</h2>
+<div class="muted">住宿：上野　主題：海洋 + 海鮮 + Borderless → 傍晚麻布台附近或回上野（<b>不排都廳光雕秀</b>；光雕改 Day3）</div>
 <a class="map-link" href="assets/day-02-20260812.png" target="_blank" rel="noopener"><img src="assets/day-02-20260812.png" alt="Day 2 旅程地圖（點擊開啟高畫質原圖）" class="map-img" loading="lazy" decoding="async"></a>
 
-<div class="okbox">✅ <b>本日定案</b>：白天葛西→豐洲→teamLab；傍晚改 <b>新宿都廳光雕秀</b>（8/13 四・平日場）。晚餐改<b>新宿</b>，<b>不訂</b>陽山道。<br>
-⚠️ 週末寶可夢優先場已改到 <b>Day3（五）</b> 與 <b>Day5 備案</b>；本日以「看得到秀」為主，出發前查 <a href="https://tokyoprojectionmappingproject.jp/">TIMETABLE</a>。</div>
-<div class="warnbox">⚠️ <b>teamLab 只去一次</b>：建議放今天（豐洲→teamLab 最順）。8 月午後炎熱，葛西→豐洲轉乘請走有空調的轉乘動線；teamLab 請穿可捲褲管／短褲。</div>
+<div class="okbox">✅ <b>本日定案（主線）</b>：葛西→豐洲午餐→<b>teamLab Borderless（麻布台・建議 15:00 入場）</b>→<b>麻布台之丘附近散步／晚餐</b>（或備案回上野）。<b>不訂</b>陽山道、<b>不趕都廳</b>。<br>
+⭐ Borderless 在麻布台之丘 Garden Plaza B B1；神谷町站 5 出口地下通道約 2–3 分。<br>
+⭐ 都廳寶可夢光雕秀改由 <b>Day3</b> 主看。</div>
+<div class="warnbox">⚠️ 豐洲→麻布台需地鐵約 <b>35–45 分</b>（含轉乘／走路）；午餐請 <b>13:20 前結束</b>。Borderless 建議約 <b>2 小時</b>，約 <b>17:00 出場</b>後留在附近或回上野，不必趕長途轉乘。</div>
 
 <details open>
-<summary>🕒 時間表 + 交通路線</summary>
+<summary>🕒 主線時間表 + 交通（Borderless → 附近）</summary>
 <div class="card">
 <p><span class="time">08:30</span> 上野出發。</p>
 <p><b>路線</b>：JR 上野→（經東京站轉京葉線）<b>葛西臨海公園站</b>。<span class="muted">（或上野→八丁堀→京葉線）</span></p>
 <p><span class="time">09:30–11:30</span> 葛西臨海水族園（開園 9:30–17:00；入園截止 16:00）。</p>
-<p class="muted">必看：<b>10:45</b> ペンギン「エサの時間」。若還在園內，<b>11:45</b> 海鳥餵食可接。</p>
+<p class="muted">必看：<b>10:45</b> ペンギン「エサの時間」。若還在園內，<b>11:45</b> 海鳥餵食可接。停留約 2 小時即可。</p>
 <p><span class="time">11:30</span> 葛西→（京葉線）新木場→（有樂町線）市場前／豐洲，~20–30 分。</p>
-<p><span class="time">12:00–13:30</span> 豐洲市場午餐（見下）。</p>
-<p><span class="time">14:00–16:00</span> <b>teamLab Planets</b>（市場步行 10–15 分）。</p>
-<p><span class="time">16:00</span> teamLab 出場（豐洲）。</p>
+<p><span class="time">12:00–13:20</span> 豐洲市場午餐（見下；<b>提早結束</b>）。</p>
+<p><span class="time">13:20–14:10</span> 豐洲 → 麻布台／神谷町（有樂町線轉日比谷線；門到門約 35–45 分）。</p>
+<p><span class="time">14:45</span> 前抵達 Borderless 入口卡位。</p>
+<p><span class="time">15:00–17:00</span> <b>teamLab Borderless</b>（約 2 小時；若只剩 15:00 場就訂這檔）。</p>
+<p class="muted">館址：麻布台ヒルズ ガーデンプラザ B B1。官網：<a href="https://www.teamlab.art/e/tokyo/" target="_blank" rel="noopener">teamLab Borderless</a></p>
 <hr>
-<p><b>傍晚｜⭐平日光雕秀（主線）</b></p>
-<p><span class="time">16:15–17:15</span> 豐洲 → <b>新宿／都廳前</b>。</p>
-<p><b>路線（擇一）</b>：有樂町線→飯田橋換大江戶線 <b>都廳前</b>（直結都民廣場）｜或有樂町線→新宿三丁目／新宿，西口步行約 10 分。約 <b>35–50 分</b>。</p>
-<p><span class="time">17:15–19:00</span> <b>新宿晚餐</b>（見下；秀前吃完最穩）。</p>
-<p>⭐ <span class="time">19:30 或 20:00／20:30</span> 都民廣場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：東京都庁 都民広場">📍地圖</a>光雕秀（以當日 TIMETABLE 為準；平日不一定是寶可夢）。</p>
-<p><span class="time">~21:00–21:30</span> JR 新宿→上野 → 宵夜／便利店（焼肉ライク可選）→ 回飯店。</p>
-<p class="muted">免費、免預約；每場約 15 分。詳見 <a href="#poke">寶可夢光雕秀</a>。</p>
+<p><b>傍晚｜麻布台附近（主推｜不往都廳）</b></p>
+<p><span class="time">17:00–18:20</span> <b>Borderless 後附近擇 1–2</b>（全可步行／短程，勿再拉新宿）：</p>
+<ul>
+<li><b>① 麻布台之丘 Azabudai Hills</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Azabudai%20Hills" target="_blank" rel="noopener">📍地圖</a> — Market／Garden／Tower 廣場散步、室內吹冷氣、輕採買；約 40–60 分。</li>
+<li><b>② 東京鐵塔外觀</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">📍地圖</a> — 芝公園方向步行約 15–20 分；<b>不強制登塔</b>（Day5 還會過鐵塔）。酷熱可取消。</li>
+<li><b>③ 六本木之丘／森大樓周邊室內</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AD%E6%9C%AC%E6%9C%A8%E3%83%92%E3%83%AB%E3%82%BA" target="_blank" rel="noopener">📍地圖</a> — 地鐵 1 站或短程；只逛商場休息即可。</li>
+</ul>
+<p><span class="time">18:30–20:00</span> <b>麻布台／神谷町晚餐</b>（Hills 餐廳樓／站前定食拉麵；見餐食）。</p>
+<p><span class="time">20:10–20:50</span> 回上野（日比谷線轉山手／或經霞關・上野）→ 宵夜／便利店 → 回飯店。</p>
 </div>
 </details>
 
 <details open>
-<summary>⭐ teamLab 後・光雕秀動線（已定案）</summary>
+<summary>🔄 備案 A｜Borderless 後直接回上野</summary>
+<div class="card">
+<p class="okbox">適合：體力見底、帶小孩、或雨天不想再逛。Borderless 約 17:00 出場 → 直回上野吹冷氣吃飯。</p>
+<p><span class="time">17:00–17:40</span> 神谷町／麻布台 → 上野（約 25–35 分）。</p>
+<p><span class="time">18:00–19:30</span> <b>上野／阿美橫晚餐</b>（アメ横食堂／定食／燒肉ライク／松屋）。</p>
+<p><span class="time">19:30–21:00</span> 不忍池夜散或 PARCO_ya／便利店補給 → 回飯店早休息（為 Day3 蓄電）。</p>
+</div>
+</details>
+
+<details open>
+<summary>🔄 備案 B｜Borderless 沒票：豐洲附近室內 → 回上野</summary>
+<div class="card">
+<p class="okbox">適合：Borderless／Planets 都訂不到。仍保留葛西＋豐洲午餐；傍晚<b>不排新宿／都廳</b>。</p>
+<p><span class="time">12:00–13:30</span> 豐洲市場午餐（可稍放鬆）。</p>
+<p><span class="time">13:40–16:00</span> <b>豐洲附近室內擇一～二</b>：</p>
+<ul>
+<li><b>① ガスの科学館</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%AC%E3%82%B9%E3%81%AE%E7%A7%91%E5%AD%A6%E9%A4%A8%20%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener">📍地圖</a> — 約 60–90 分；出發前確認營業。</li>
+<li><b>② ららぽーと豊洲</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%89%E3%82%89%E3%83%9D%E3%83%BC%E3%81%A8%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener">📍地圖</a> — 冷氣商場休息／輕購物。</li>
+<li><b>③ 豐洲周邊室內休息</b> — 低體力版。</li>
+</ul>
+<p class="warnbox">⚠️ 8 月中有明／灣岸若有大型展會——<b>不要硬去ビッグサイト繞路</b>。</p>
+<p><span class="time">16:10–16:50</span> 豐洲 → 上野。</p>
+<p><span class="time">17:15–19:00</span> 上野／阿美橫晚餐 → 早回飯店。</p>
+</div>
+</details>
+
+<details>
+<summary>⭐ Borderless 後動線摘要</summary>
 <div class="card">
 <ul>
-<li><span class="time">16:00</span> teamLab 結束（豐洲）</li>
-<li><span class="time">16:15–17:15</span> 移動新宿都廳</li>
-<li><span class="time">17:15–19:00</span> 新宿晚餐（秀前）</li>
-<li><span class="time">19:30+</span> 光雕秀（對 TIMETABLE）</li>
-<li><span class="time">~21:00+</span> 回上野；<b>不排</b>陽山道、<b>不排</b>燈籠流（燈籠流在 Day4）</li>
+<li><span class="time">17:00</span> Borderless 出場（麻布台）</li>
+<li><b>主線</b>：Hills／鐵塔外觀（選配）→ 附近晚餐 → 回上野</li>
+<li><b>備案 A</b>：直回上野晚餐</li>
+<li><b>不排</b>：都廳光雕秀、陽山道、燈籠流</li>
 </ul>
-<p class="warnbox">若只想保留「一次」寶可夢體驗：優先 <b>Day3（五）</b> 對 TIMETABLE；週末 8/15 晚上本版改排燈籠流，無法兼顧都廳秀。</p>
 </div>
 </details>
 
 <details>
 <summary>🍽️ 三餐 ×3 備案</summary>
 <div class="card">
-<p class="muted">本日風格：<b>便利早餐 ＋ 豐洲海鮮丼午餐 ＋ 新宿秀前晚餐</b>。</p>
+<p class="muted">本日風格：<b>便利早餐 ＋ 豐洲海鮮丼午餐 ＋ 麻布台附近／上野晚餐</b>。</p>
 <p><span class="tag b">早餐（08:30 前）</span></p>
-<p><b>① 飯店早餐</b> — 最省力。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%92%E3%83%AB%E3%82%BA%E4%B8%8A%E9%87%8E%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>① 飯店早餐</b> — 最省力。</p>
 <p><b>② 上野站便利商店</b> — 飯糰+關東煮+牛奶，¥500–800，車上吃。</p>
 <p><b>③ 葛西臨海公園站前輕食</b> — 咖啡+三明治，¥600–1,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%91%9B%E8%A5%BF%E8%87%A8%E6%B5%B7%E5%85%AC%E5%9C%92%E9%A7%85" target="_blank" rel="noopener">📍地圖</a></p>
 <hr>
-<p><span class="tag l">午餐（豐洲市場 12:00）</span></p>
-<p class="warnbox">⚠️ 壽司大/大和壽司清晨開賣，<b>中午多半已賣完</b>。請以海鮮丼／定食為主力。</p>
-<p><b>① 仲家（Nakaya）海鮮丼</b> — ¥2,500–3,500，現場排，12:00 前較穩。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%B2%E5%AE%B6%20%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>② 天房（天婦羅定食）</b> — ¥2,000–3,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E6%88%BF%20%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>③ 八千代（炸物定食）</b> — ¥2,000–3,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E5%8D%83%E4%BB%A3%20%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>④ 管理設施棟 1F 定食/海鮮丼</b> — ¥1,500–2,500，保險牌。</p>
+<p><span class="tag l">午餐（豐洲 12:00｜多店機動）</span></p>
+<p class="warnbox">⚠️ 壽司大／大和壽司清晨開賣，<b>中午多半已賣完</b>。主線請 <b>13:20 前離開</b>趕 Borderless。<br>
+機動：排隊＋用餐 &gt; 40 分就換；<b>12:40 還沒入座</b> → 改千客万来或ららぽーと。</p>
+<p class="muted"><b>A｜豐洲市場內</b></p>
+<p><b>① 仲家海鮮丼</b> — ¥2,500–3,500；長隊立刻放棄。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%B2%E5%AE%B6%20%E8%B1%8A%E6%B4%B2%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>② 天房／八千代定食</b> — ¥2,000–3,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E6%88%BF%20%E8%B1%8A%E6%B4%B2%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>③ すしざんまい 豊洲市場前</b> — ¥1,500–3,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%97%E3%81%96%E3%82%93%E3%81%BE%E3%81%84%20%E8%B1%8A%E6%B4%B2%E5%B8%82%E5%A0%B4%E5%89%8D" target="_blank" rel="noopener">📍地圖</a></p>
+<p class="muted"><b>B｜千客万来／ららぽーと</b></p>
+<p><b>④ 豊洲 千客万来</b> — 現場挑短隊。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E6%B4%B2%20%E5%8D%83%E5%AE%A2%E4%B8%87%E6%9D%A5" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑤ 麺屋武一／魚べい（ららぽーと）</b> — 保險牌。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%89%E3%82%89%E3%83%9D%E3%83%BC%E3%81%A8%E8%B1%8A%E6%B4%B2" target="_blank" rel="noopener">📍地圖</a></p>
 <hr>
-<p><span class="tag d">晚餐（新宿 17:15–19:00｜秀前）</span></p>
-<p class="muted"><b>不訂陽山道</b>（與光雕秀衝突）。以下皆不訂位為主：</p>
-<p><b>① 新宿思い出橫丁串燒</b> — ¥1,500–2,500，氛圍強，19:00 前離開去都民廣場。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E6%80%9D%E3%81%84%E5%87%BA%E6%A8%AA%E4%B8%81" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>② 新宿站西口拉麵／定食</b> — ¥800–1,500，最快。</p>
-<p><b>③ ルミネ／駅ビル輕食</b> — ¥1,000–2,000，室內冷氣。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%AB%E3%83%9F%E3%83%8D%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
-<p class="muted">秀後回上野若還餓：<b>焼肉ライク</b>／便利店。</p>
+<p><span class="tag d">晚餐（主線麻布台 18:30–20:00｜或上野備案）</span></p>
+<p class="warnbox">不再趕光雕秀，可吃慢一點。規則：排隊＋用餐預估 &gt; 40 分就換店；仍建議 <b>20:30 前開始回上野</b>。Hills 內高檔店多需預約，沒訂就優先 Market／連鎖。</p>
+<p class="muted"><b>A｜麻布台之丘內（出場最順｜主推）</b></p>
+<p><b>① Azabudai Hills Market／美食區</b> — 現場挑短隊；丼／定食／輕食約 ¥1,200–3,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Azabudai%20Hills%20Market" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>② 希須林 麻布台</b>（Hills 唯一拉麵店）— 軍雞／煮干拉麵、擔擔約 ¥1,200–2,500；有小孩迷你拉麵。人多可先 TableCheck／現場候位。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%B8%8C%E9%A0%88%E6%9E%97%20%E9%BA%BB%E5%B8%83%E5%8F%B0" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>③ Sta.麻布台</b>（Garden Plaza B）— 唐揚／餃子／漢堡排等輕食約 ¥1,500–3,500；親子友善、庭園旁。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Sta.%20%E9%BA%BB%E5%B8%83%E5%8F%B0" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>④ Balcony by 6th</b>（Tower Plaza 3F）— 義式／全天；晚餐約 ¥4,000–8,000，建議 TableCheck。想坐下來慢慢吃再選。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Balcony%20by%206th%20Azabudai" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑤ Tower Plaza／Garden Plaza 餐廳樓空位機動</b> — 現場看哪間短隊；披薩／漢堡／定食都有，約 ¥1,500–4,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Azabudai%20Hills%20Tower%20Plaza%20restaurant" target="_blank" rel="noopener">📍地圖</a></p>
+<p class="muted">選配（需預約、預算偏高，不當主線）：鳥おか（燒鳥分店，課程制）、Dining 33（33F 法式）— 沒訂就跳過。</p>
+
+<p class="muted"><b>B｜神谷町・虎ノ門・六本木一丁目（步行／地鐵 1 站）</b></p>
+<p><b>⑥ 神谷町站前定食／拉麵短隊</b> — ¥900–1,800；出場直往站口最省力。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E8%B0%B7%E7%94%BA%20%E5%AE%9A%E9%A3%9F" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑦ 虎ノ門ヒルズ 餐廳／美食樓</b> — 冷氣、選擇多，約 ¥1,200–3,000；神谷町方向可走或短程。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%99%8E%E3%83%8E%E9%96%80%E3%83%92%E3%83%AB%E3%82%BA%20%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑧ AFURI 六本木</b> — 柚子鹽／湯麵約 ¥1,000–1,600；清爽、翻桌穩。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=AFURI%20%E5%85%AD%E6%9C%AC%E6%9C%A8" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑨ 一風堂／一蘭（六本木）</b> — 豚骨約 ¥900–1,500；連鎖保險。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E9%A2%A8%E5%A0%82%20%E5%85%AD%E6%9C%AC%E6%9C%A8" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑩ 鳥貴族（六本木／赤羽橋周邊）</b> — 均一串燒約 ¥1,000–2,000；好帶小孩、不需預約。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%B3%A5%E8%B2%B4%E6%97%8F%20%E5%85%AD%E6%9C%AC%E6%9C%A8" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑪ 大戸屋／やよい軒／かつや（虎ノ門・六本木）</b> — 定食／豬排 ¥900–1,800。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%88%B8%E5%B1%8B%20%E8%99%8E%E3%83%8E%E9%96%80" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑫ 餃子の王将／町中華（六本木・神谷町）</b> — 餃子＋炒飯／拉麵 ¥900–1,600。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%A4%83%E5%AD%90%E3%81%AE%E7%8E%8B%E5%B0%86%20%E5%85%AD%E6%9C%AC%E6%9C%A8" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑬ 魚べい／スシロー（六本木・虎ノ門若近）</b> — ¥1,000–1,800；App 抽號，等 &gt;20 分改拉麵。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E3%81%B9%E3%81%84%20%E5%85%AD%E6%9C%AC%E6%9C%A8" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑭ 松屋／すき家／サイゼリヤ（神谷町・六本木）</b> — ¥500–1,500；最穩保險。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B1%8B%20%E7%A5%9E%E8%B0%B7%E7%94%BA" target="_blank" rel="noopener">📍地圖</a></p>
+
+<p class="muted"><b>C｜若傍晚走到鐵塔方向</b></p>
+<p><b>⑮ 東京鐵塔 FootTown／芝公園周邊輕食</b> — ¥800–2,000；吃完再回神谷町搭車。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC%20FootTown" target="_blank" rel="noopener">📍地圖</a></p>
+
+<p class="muted"><b>D｜回上野（備案 A）</b></p>
+<p><b>⑯ アメ横食堂</b> — 海鮮丼／定食 ¥1,500–2,500。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%A1%E6%A8%AA%E9%A3%9F%E5%A0%82" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑰ 天丼てんや 上野</b> — ¥800–1,200；最穩不排隊。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E4%B8%BC%E3%81%A6%E3%82%93%E3%82%84%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑱ とんかつ 山家（御徒町）</b> — 炸豬排 ¥1,000–1,500。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%82%93%E3%81%8B%E3%81%A4%E5%B1%B1%E5%AE%B6%20%E5%BE%A1%E5%BE%92%E7%94%BA" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑲ 煮干しラーメン 玉 上野</b> — ¥900–1,200；在地排隊店，長隊改てんや。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E7%85%AE%E5%B9%B2%E3%81%97%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%8E%89%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑳ 焼肉ライク 上野／松屋／便利店</b> — ¥500–2,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%83%A9%E3%82%A4%E3%82%AF%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
+<p class="muted">Day5 已排叙々苑，今晚不必硬吃燒肉。更多上野店見 <a href="tokyo-2026-08-ueno-local-guide.html">上野手冊</a>。</p>
 </div>
 </details>
 
 <details>
 <summary>💴 Day2 預算（/人）</summary>
 <div class="card">
-交通 <span class="price">¥1,000–1,200</span>＋門票（水族園¥700+teamLab¥3,800）<span class="price">¥4,500</span>＋午餐 <span class="price">¥3,000</span>＋晚餐 <span class="price">¥2,000</span>＋光雕秀 <span class="price">免費</span>＝<b class="big">約 ¥10,500–11,000</b>
+主線：交通 <span class="price">¥900–1,200</span>＋門票（水族園¥700＋Borderless 約 ¥3,600–5,600）＋午餐 <span class="price">¥3,000</span>＋晚餐 <span class="price">¥1,500–3,000</span>＝約 <b class="big">¥9,700–13,500</b><br>
+備案（無 Borderless／回上野早）：整體約 <b class="big">¥6,500–9,000</b>。
 </div>
 </details>
 </section>
 <!-- ============================= DAY 3 ============================= -->
 <section id="d3">
-<h2>Day 3｜8/14(五)　明治神宮・原宿／表參道＋澀谷室內避暑 ＋ ⭐平日光雕秀</h2>
-<div class="muted">住宿：上野　主題：上午神宮與原宿，午後避暑進商場，傍晚澀谷 SKY＋都廳光雕秀</div>
+<h2>Day 3｜8/14(五)　明治神宮・WEGO・澀谷逛街・都廳展望台・⭐平日光雕秀</h2>
+<div class="muted">住宿：上野　定案：神宮短走 → WEGO（10:30 開）→ 澀谷午餐 → PARCO／Hikarie（擇一）→ 路口快拍 → <b>都廳展望台</b> → 西口晚餐 → 都廳 19:30 光雕秀（SKY 改選配）</div>
 <a class="map-link" href="assets/day-03-20260812.png" target="_blank" rel="noopener"><img src="assets/day-03-20260812.png" alt="Day 3 旅程地圖（點擊開啟高畫質原圖）" class="map-img" loading="lazy" decoding="async"></a>
 
-<div class="accbox">✅ <b>Day3 已改成避暑版西側動線</b>：Day7 已安排上野公園／東京國立博物館，所以今天不再把上野動物園＋科博當主線；Day4 已排葛西＋teamLab，也不重複。午後取消表參道 Hills＋咖啡休息，<b>午餐後直接往澀谷</b>，以 Hikarie／PARCO／Scramble Square 室內移動為主，Cat Street 只保留涼一點時快閃。</div>
-<div class="accbox">⭐ <b>本日光雕秀鎖定 19:30</b>：為了不要太晚回上野，澀谷 SKY 改抓 <b>15:30–16:00 入場</b>，晚餐改 <b>17:15–18:15 早場</b>，<b>18:35 前離開澀谷</b>轉新宿都民廣場。平日場請出發前對 <a href="https://tokyoprojectionmappingproject.jp/">TIMETABLE</a>，若 19:30 不是想看的作品，也以「早回上野」優先。</div>
+<div class="okbox">
+✅ <b>本日一句話</b>：原宿只辦 <b>WEGO 本店</b>；澀谷＝午餐＋<b>PARCO／Hikarie 擇一</b>；高空景改 <b>都廳展望台（免費）</b>，晚上接 <b>19:30 光雕秀</b>。<br>
+📅 8/14 五為平日（お盆期間人偏多）。展望台／光雕秀可能因天候或休室調整；出發前對官方。
+</div>
+<div class="warnbox">
+⚠️ <b>硬性死線</b>：WEGO <b>10:30</b> 才開門｜<b>16:00–16:20</b> 前離澀谷｜展望台建議 <b>18:15 前下樓</b>｜晚餐 <b>19:05</b> 前結帳｜都民廣場 <b>19:10</b> 前到場卡 <b>19:30</b>。<br>
+PARCO 與 Hikarie <b>不要兩邊深逛</b>。展望台與光雕秀是不同體驗：前者室內 45F 景，後者戶外看外牆投影。
+</div>
 
 <details open>
-<summary>主線 A：明治神宮＋原宿／表參道午餐＋澀谷室內避暑（推薦）</summary>
+<summary>🕒 主線時間表（推薦｜都廳展望台）</summary>
 <div class="card">
-<p><span class="time">08:30</span> JR 上野→原宿<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E5%AE%BF%E9%A7%85" target="_blank" rel="noopener" title="Google Maps：原宿駅">📍地圖</a>（山手線約 28 分）。</p>
-<p><span class="time">09:00–10:15</span> 明治神宮<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE" target="_blank" rel="noopener" title="Google Maps：明治神宮">📍地圖</a>：只走到主殿參拜、拍大鳥居，不深入繞太久；8 月早上完成最舒服。</p>
-<p><span class="time">10:30–11:30</span> 原宿快閃：WEGO 原宿本店<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=WEGO%20%E5%8E%9F%E5%AE%BF%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" title="Google Maps：WEGO 原宿本店">📍地圖</a>／竹下通只短走，盡量進店吹冷氣。</p>
-<p><span class="time">11:30–13:00</span> 表參道・青山午餐（主推邁泉；排太久就改東急プラザ／青山周邊室內餐廳，見下方午餐備案）。</p>
-<p><span class="time">13:00–13:30</span> 午餐後不再停表參道 Hills，直接搭銀座線／副都心線轉到澀谷，保留更多時間給後面行程。</p>
-<p><span class="time">13:30–15:10</span> 進 <b>Hikarie<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shibuya%20Hikarie" target="_blank" rel="noopener" title="Google Maps：Shibuya Hikarie">📍地圖</a> / PARCO<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shibuya%20PARCO" target="_blank" rel="noopener" title="Google Maps：Shibuya PARCO">📍地圖</a> / Scramble Square<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shibuya%20Scramble%20Square" target="_blank" rel="noopener" title="Google Maps：Shibuya Scramble Square">📍地圖</a></b> 避暑；只挑 1–2 棟。<b>Cat Street 不當主線</b>，體感溫度低或雲多時才快走 15–20 分鐘。</p>
-<p><span class="time">15:15–15:30</span> 到 Shibuya Scramble Square，寄物／買水／整理裝備。</p>
-<p><span class="time">15:30–17:00</span> 澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a>（為配合 19:30 光雕秀，請搶 <b>15:30–16:00</b> 入場；日落完整場次改 Day4/Day6 夜景補）。</p>
-<p><span class="time">17:15–18:15</span> 晚餐（澀谷迴轉壽司早場；<b>16:45 前用 App 抽號</b>，排太久就改博多風龍／美食街）。</p>
-<p><span class="time">18:35</span> JR 澀谷→新宿（6 分）→ 步行／大江戶線到都民廣場，<b>19:10 前到場</b>卡位置。</p>
-<p>⭐ <span class="time">19:30</span> 都民廣場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：東京都庁 都民広場">📍地圖</a>看光雕秀（約 15 分；若非寶可夢作品也不延到 21:00，以早回上野優先）。</p>
-<p><span class="time">20:00–20:40</span> 新宿→上野（JR 山手線約 25 分）回飯店；想吃宵夜改上野便利店／焼肉ライク。</p>
-<hr>
-<p><b>午後避暑點怎麼選</b>：想看角色／遊戲周邊走 <b>PARCO</b>；想安靜喝咖啡、看設計雜貨走 <b>Hikarie</b>；已接近 SKY 入場時間就直接回 <b>Scramble Square</b>。三棟不要貪心全逛深，挑 1–2 棟即可。</p>
+<p><span class="time">08:30</span> 上野出發 → JR 山手線原宿<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E5%AE%BF%E9%A7%85" target="_blank" rel="noopener">📍地圖</a>（約 28 分）。</p>
+<p><span class="time">09:00–10:15</span> <b>明治神宮</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE" target="_blank" rel="noopener">📍地圖</a>：大鳥居＋主殿參拜；不進御苑、不深入長走。</p>
+<p><span class="time">10:20–10:30</span> 移至明治神宮前駅 5 出口方向，到 <b>WEGO 原宿本店</b>門口等開門。</p>
+<p><span class="time">10:30–11:20</span> <b>WEGO 原宿本店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=WEGO%20%E5%8E%9F%E5%AE%BF%E6%9C%AC%E5%BA%97%20%E7%A5%9E%E5%AE%AE%E5%89%8D%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">📍地圖</a>（營業 <b>10:30–20:00</b>；Tax-free）。約 45–50 分；不深逛竹下通。</p>
+<p><span class="time">11:25–11:45</span> 往澀谷（山手線 1 站最穩）。</p>
+<p><span class="time">11:45–12:45</span> <b>澀谷午餐</b>（Hikarie／PARCO 美食樓／站內／拉麵；見餐食）。</p>
+<p><span class="time">12:50–15:20</span> <b>PARCO／Hikarie 擇一深逛</b>（主線只留這一棟）：
+<ul>
+<li><b>① 渋谷 PARCO</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shibuya%20PARCO" target="_blank" rel="noopener">📍地圖</a> — <b>最推</b>：角色／潮流／雜貨。</li>
+<li><b>② Shibuya Hikarie</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shibuya%20Hikarie" target="_blank" rel="noopener">📍地圖</a> — 較安靜、全室內、直結車站。</li>
+</ul>
+選配短停：Tower Records、宮下快閃 10 分。</p>
+<p><span class="time">15:20–15:50</span> <b>十字路口快拍</b>：Magnet by Shibuya<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Magnet%20by%20Shibuya%20109" target="_blank" rel="noopener">📍地圖</a> 屋頂或 QFRONT／人行島。購物袋可先寄 Scramble／站內（見寄物）。</p>
+<p><span class="time">16:00–16:20</span> JR 澀谷→新宿西口（約 5–8 分車程＋走路），往都廳。</p>
+<p><span class="time">16:45–18:15</span> <b>都廳展望台</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E5%B1%95%E6%9C%9B%E5%AE%A4" target="_blank" rel="noopener">📍地圖</a>（第一本廳舍 45F；<b>免費</b>）。優先 <b>南展望室</b>（開至約 22:00）。尖峰可能排 20–30 分，預留緩衝；<b>18:15 前下樓</b>。</p>
+<p><span class="time">18:20–19:05</span> <b>新宿西口實用晚餐</b>（定食／拉麵／站ビル；見餐食）。走路 5–10 分可到都民廣場。</p>
+<p>⭐ <span class="time">19:10</span> 前到都民廣場卡位 → <span class="time">19:30</span> 都廳光雕秀<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener">📍地圖</a>（約 15 分；對 <a href="https://tokyoprojectionmappingproject.jp/">TIMETABLE</a>）→ <span class="time">20:00–20:40</span> 回上野。</p>
 </div>
 </details>
 
 <details open>
-<summary>午後景點備案｜午餐後 → 19:30 光雕秀前（澀谷／新宿）</summary>
+<summary>📌 本日休館／營業重點（8/14）</summary>
 <div class="card">
-<p class="warnbox"><b>硬性倒推</b>：不管選哪個備案，<b>18:35 前必須離開澀谷或 19:10 前到都民廣場</b>。17:15–18:15 是早晚餐時間；若餐廳排隊超過 30 分，直接改拉麵／美食街，不延後光雕秀。</p>
-
-<p><b>備案 S1｜澀谷室內購物＋SKY（最推薦、最抗熱）</b></p>
-<p><span class="time">13:00–13:30</span> 午餐後直接往澀谷 → <span class="time">13:30–15:10</span> 澀谷 Hikarie／PARCO 二選一 → <span class="time">15:15</span> Scramble Square 整理裝備 → <span class="time">15:30–17:00</span> 澀谷 SKY → <span class="time">17:15</span> 晚餐。</p>
-<p class="muted">適合：天氣熱、想買角色／遊戲周邊、已買到 SKY 15:30–16:00 票。PARCO 偏角色與潮流，Hikarie 偏設計雜貨與咖啡。</p>
-
-<p><b>備案 S2｜澀谷輕景點＋少量戶外快閃</b></p>
-<p><span class="time">13:00–13:30</span> 午餐後移動澀谷 → <span class="time">13:30–13:50</span> Cat Street／宮下公園<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=MIYASHITA%20PARK%20Shibuya" target="_blank" rel="noopener" title="Google Maps：MIYASHITA PARK 渋谷">📍地圖</a>只快閃拍照 → <span class="time">14:00–15:00</span> Tower Records 澀谷<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tower%20Records%20Shibuya" target="_blank" rel="noopener" title="Google Maps：Tower Records Shibuya">📍地圖</a>／PARCO 室內 → <span class="time">15:15–17:00</span> 接 SKY。</p>
-<p class="muted">適合：陰天、體感不熱、想補澀谷街景。若太陽很大，Cat Street 與宮下公園直接取消，改走 S1。</p>
-
-<p><b>備案 S3｜放棄澀谷 SKY，提早進新宿卡位</b></p>
-<p><span class="time">13:00–13:30</span> 午餐後直接移動 → <span class="time">13:30–14:00</span> 表參道／澀谷 → 新宿 → <span class="time">14:00–16:45</span> 新宿西口 Yodobashi／Lumine Est／NEWoMan 擇一 → <span class="time">17:00–18:15</span> 新宿西口拉麵／定食早晚餐 → <span class="time">18:30–19:10</span> 都廳展望室或都民廣場卡位。</p>
-<p class="muted">適合：沒搶到 SKY 票、太熱不想轉太多點、或想把重心放在 19:30 光雕秀。新宿線最穩，但就少了澀谷高空景觀。</p>
-
-<p><b>備案 S4｜低體力親子版：咖啡＋美食街＋光雕秀</b></p>
-<p><span class="time">13:00–15:00</span> 直接移動澀谷後找咖啡店／商場座位休息 → <span class="time">15:00–16:30</span> Scramble Square／Hikarie 美食伴手禮樓層 → <span class="time">16:45–18:00</span> 美食街早晚餐 → <span class="time">18:20</span> 前往新宿都廳。</p>
-<p class="muted">適合：午後疲累或下雨。這案不追求打卡點，以冷氣、洗手間、座位與不趕路為優先。</p>
+<table>
+<tr><th>項目</th><th>8/14 預期</th></tr>
+<tr><td>明治神宮境內</td><td>無休（日出～日落）</td></tr>
+<tr><td>WEGO 原宿本店</td><td>10:30–20:00；平日通常開</td></tr>
+<tr><td>都廳展望台</td><td>南約 9:30–22:00／北約至 17:30；免費。休室多為特定週一／週二，周五通常開</td></tr>
+<tr><td>PARCO／Hikarie／Magnet</td><td>商圈平日正常開</td></tr>
+<tr><td>澀谷 SKY</td><td>選配；無理想時段則跳過</td></tr>
+<tr><td>都廳光雕秀</td><td>免費；荒天可能中止</td></tr>
+</table>
+<p class="muted">展望台最新開室：<a href="https://www.zaimu.metro.tokyo.lg.jp/tochousha/goannai/tenbou" target="_blank" rel="noopener">東京都財務局・展望室案内</a>／電話 03-5320-7890。</p>
 </div>
 </details>
 
 <details>
-<summary>備案 B：雨天／太熱低體力版（澀谷全室內）</summary>
+<summary>🔄 備案（依狀況切換）</summary>
 <div class="card">
-<p><span class="time">10:30</span> 上野→澀谷，直接進 Hikarie／Scramble Square；把戶外明治神宮與原宿省掉。</p>
-<p><span class="time">11:30–13:00</span> 澀谷站內或 Scramble Square 午餐；排隊太長就改美食街。</p>
-<p><span class="time">13:00–15:10</span> PARCO（角色周邊／遊戲店）→ Hikarie（設計雜貨／咖啡）→ Scramble Square，全部以室內空橋或短距離移動為主。</p>
-<p><span class="time">15:30</span> 澀谷 SKY；之後接 17:15 早晚餐與 19:30 光雕秀同主線。</p>
+<p><b>S1｜已有理想 SKY 時段（選配）</b>：PARCO／Hikarie 縮短 → Scramble 寄物 → SKY 約 60 分 → <b>16:00 前離澀谷</b> → 展望台改 <b>16:45–17:50</b>（縮短）→ 西口快晚餐 → 19:10 廣場。保光雕秀。</p>
+<p><b>S2｜WEGO 多逛</b>：店內拉到 11:40 → 澀谷輕食 → 13:20–15:00 只進一棟商場 → 15:30 路口快拍 → 16:00 往新宿。</p>
+<p><b>S3｜展望台排隊過長</b>：改在 1F／都民廣場周邊休息拍照，晚餐後若南展望室仍開、秀後可補上（最後入室約 21:30）；優先保 19:30 秀。</p>
+<p><b>S4｜雨天／超熱</b>：神宮可縮；WEGO 仍 10:30；全室內商場 → 早到新宿；展望台室內避雨仍可。</p>
+<p><b>S5｜低體力</b>：神宮極短 → WEGO 40 分 → 澀谷午餐 → 直達新宿休息 → 展望台＋晚餐＋秀。</p>
 </div>
 </details>
 
-<details>
-<summary>備案 C：上野知性備案（雨後或想看熊貓才選）</summary>
+<details open>
+<summary>🏙️ 都廳展望台（官方重點）</summary>
 <div class="card">
-<p class="warnbox"><b>不當主線原因</b>：Day7 已安排上野公園＋東京國立博物館；今天再排上野動物園＋科博會重複上野區，也少了原宿／澀谷購物時間。</p>
-<p><span class="time">09:30–12:00</span> 上野動物園<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E5%8B%95%E7%89%A9%E5%9C%92" target="_blank" rel="noopener" title="Google Maps：上野動物園">📍地圖</a>只看熊貓／重點動線；戶外熱時縮短。</p>
-<p><span class="time">12:00–13:00</span> Park Side Cafe 或阿美橫食堂午餐。</p>
-<p><span class="time">13:00–15:00</span> 國立科學博物館<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%BD%E7%AB%8B%E7%A7%91%E5%AD%A6%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener" title="Google Maps：国立科学博物館">📍地圖</a>重點館；<span class="time">15:00</span> 銀座線上野→澀谷，接 SKY。</p>
+<p><b>地點</b>：東京都廳第一本廳舍 45 階<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E5%B1%95%E6%9C%9B%E5%AE%A4" target="_blank" rel="noopener">📍地圖</a><br>
+<b>費用</b>：免費　｜　<b>電梯</b>：1F 展望室專用電梯<br>
+<b>南展望室</b>：約 9:30–22:00（最後入室約 21:30）— <b>本日主推</b>，可看傍晚轉夜景<br>
+<b>北展望室</b>：約 9:30–17:30（最後入室約 17:00）— 若 16:45 前到也可先北後南<br>
+<b>交通</b>：都營大江戶線「都廳前」直結；或 JR 新宿西口步行約 10 分</p>
+<p class="okbox">實作：16:45 入場 → 拍夕景／市區 → 18:15 前下樓吃飯 → 19:10 都民廣場（同一都廳園區，不用遠移）。</p>
+<p class="warnbox">安檢／排隊視人潮而定。禁大型行李時可先寄新宿站置物櫃。官方：<a href="https://www.zaimu.metro.tokyo.lg.jp/tochousha/goannai/tenbou" target="_blank" rel="noopener">展望室利用案内</a></p>
 </div>
 </details>
 
-<details>
-<summary>🛍️ 購物插單備案｜Day 3：WEGO</summary>
+<details open>
+<summary>🛍️ WEGO 原宿本店（官方資訊）</summary>
 <div class="card">
-<p><b>推薦情境</b>：全行程 <b>WEGO 最佳日</b>；想買日系服飾、護照可辦免稅，嵌入既有原宿<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E5%AE%BF%E9%A7%85" target="_blank" rel="noopener" title="Google Maps：原宿駅">📍地圖</a>／澀谷動線即可，不必另開一天。</p>
-<p><b>最適合搭配</b>：</p>
-<p>• <b>主線 A</b> — <b>WEGO 原宿<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=WEGO%20%E5%8E%9F%E5%AE%BF%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" title="Google Maps：WEGO 原宿本店">📍地圖</a>本店</b>：<span class="time">10:30–11:30</span> 明治神宮後快逛，時間最順。</p>
-<p>• <b>備案 B</b> — <b>WEGO SHIBUYA109<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=WEGO%20%E6%B8%8B%E8%B0%B7109" target="_blank" rel="noopener" title="Google Maps：WEGO 渋谷109">📍地圖</a>（7F）</b>：若上午直接進澀谷室內，改放 SKY 前快逛；與 PARCO 二選一即可。</p>
-<p>店舖查詢：<a href="https://wego.jp/a/shops/tokyo">WEGO 東京店舗一覧</a>。澀谷多數營業至 21:00–22:00。</p>
-<p class="warnbox"><b>不建議情況</b>：不要為了 Cat Street 從表參道一路慢走到澀谷；8 月午後太熱。K-BOOKS<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=K-BOOKS%20%E7%A7%8B%E8%91%89%E5%8E%9F%E6%9C%AC%E9%A4%A8" target="_blank" rel="noopener" title="Google Maps：K-BOOKS 秋葉原本館">📍地圖</a> 需另繞池袋（約 2 小時），會壓縮 SKY／晚餐／光雕秀。</p>
+<p><b>地址</b>：東京都渋谷區神宮前 1-5-10 神宮前タワービルディング 1F <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=WEGO%20%E5%8E%9F%E5%AE%BF%E6%9C%AC%E5%BA%97%20%E7%A5%9E%E5%AE%AE%E5%89%8D%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">📍地圖</a><br>
+<b>營業</b>：<b>10:30–20:00</b>／原則無休（休館日除外）／Tax-free<br>
+<b>電話</b>：03-6853-0580　｜　<a href="https://wego.jp/a/shops/tokyo" target="_blank" rel="noopener">wego.jp 東京店舗</a></p>
+<p>明治神宮前駅 5 出口徒歩約 3–4 分。備案店：WEGO SHIBUYA109 7F（10:00–21:00）— 僅在放棄原宿時用。</p>
 </div>
 </details>
 
-<details>
-<summary>🍽️ 三餐 ×3 備案</summary>
+<details open>
+<summary>🧳 澀谷寄物（逛街用｜無 SKY 也適用）</summary>
 <div class="card">
-<p class="muted">本日風格：<b>簡單早餐 ＋ 表參道/青山午餐 ＋ 澀谷迴轉壽司晚餐</b>。午後避免戶外慢走，餐廳優先選冷氣穩、翻桌快。</p>
+<p>PARCO／Hikarie 購物袋可寄 <b>Scramble Square 1F 電梯前</b>或澀谷站置物櫃（約 10:00–21:00；關櫃後取不出）。費用約 ¥300／次。往新宿前務必取回。<br>
+若走選配 SKY：仍用 46F ¥100 退還櫃放小包（詳見先前規則）。</p>
+</div>
+</details>
+
+<details open>
+<summary>🍽️ 三餐備案（午餐澀谷｜晚餐新宿西口）</summary>
+<div class="card">
+<p class="muted">規則：排隊＋用餐 &gt; 30 分就換店。午餐在澀谷；晚餐改到展望台後、光雕秀前。</p>
+
 <p><span class="tag b">早餐</span></p>
-<p><b>① 飯店早餐</b> — 最省力，¥0–1,500（視飯店方案）。</p>
-<p><b>② ecute 上野<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=ecute%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener" title="Google Maps：ecute上野">📍地圖</a> Andersen / PRONTO<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=PRONTO%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener" title="Google Maps：PRONTO 上野">📍地圖</a></b> — 麵包或吐司套餐，¥500–900，<b>不訂位</b>，8:00 開。</p>
-<p><b>③ 原宿<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E5%AE%BF%E9%A7%85" target="_blank" rel="noopener" title="Google Maps：原宿駅">📍地圖</a>/澀谷站<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%B8%8B%E8%B0%B7%E9%A7%85" target="_blank" rel="noopener" title="Google Maps：渋谷駅">📍地圖</a>前咖啡</b> — 星巴克 / Tully's，¥500–800，<b>不訂位</b>。</p>
+<p><b>① 飯店早餐</b> — 最省力。</p>
+<p><b>② ecute 上野 Andersen／PRONTO</b> — ¥500–900 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=ecute%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>③ 神宮後／原宿站前咖啡</b> — 等 WEGO 開門，¥500–800。</p>
+
 <hr>
-<p><span class="tag l">午餐（表參道・青山 11:30–13:00）</span></p>
-<p>① <b>邁泉炸豬排<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%BE%E3%81%84%E6%B3%89%20%E9%9D%92%E5%B1%B1%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener" title="Google Maps：まい泉 青山本店">📍地圖</a> まい泉 青山本店</b> — ¥1,800–3,000，<b>建議 TableCheck 提前 1–2 週</b>，否則 <b>11:00–11:30 前到</b>排隊。</p>
-<p>② <b>東急プラザ／青山周邊室內餐廳</b> — 義麵／定食／咖啡輕食，¥1,500–2,500；天熱或邁泉排太久時最穩，吃完直接往澀谷。</p>
-<p>③ <b>東急プラザ表參道「おもはら」周邊室內餐廳</b> — ¥1,200–2,000，逛原宿後動線順，容易快速進冷氣。</p>
-<p>④ <b>コメダ珈琲 表參道<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank" rel="noopener" title="Google Maps：表参道">📍地圖</a></b> — 厚吐司套餐，¥800–1,200，食慾低／想坐久一點時用。</p>
+<p><span class="tag l">午餐（澀谷 11:45–12:45）</span></p>
+<p><b>① Hikarie／PARCO／Scramble 美食樓</b> — ¥1,000–2,500 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shibuya%20Hikarie%20%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>② やよい軒／大戸屋／松屋</b> — ¥500–1,800 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%82%88%E3%81%84%E8%BB%92%20%E6%B8%8B%E8%B0%B7" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>③ 博多風龍／一蘭／金伝丸</b> — ¥800–1,300 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E9%A2%A8%E9%BE%8D%20%E6%B8%8B%E8%B0%B7%E5%BA%97" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>④ 魚べい／壽司郎（澀谷）</b> — ¥1,000–1,800；午間機動 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E3%81%B9%E3%81%84%20%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82" target="_blank" rel="noopener">📍地圖</a></p>
+
 <hr>
-<p><span class="tag d">早晚餐（澀谷 17:15–18:15，19:30 光雕秀前）</span></p>
-<p><b>① 魚べい<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E3%81%B9%E3%81%84%20%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82" target="_blank" rel="noopener" title="Google Maps：魚べい 渋谷道玄坂">📍地圖</a>（Uobei）澀谷道玄坂</b> — 平板點餐軌道送餐，¥1,000–1,800，<b>16:45 前 App 抽號</b>；18:15 前沒入座就放棄。</p>
-<p><b>② 壽司郎<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%82%B7%E3%83%AD%E3%83%BC%20%E6%B8%8B%E8%B0%B7" target="_blank" rel="noopener" title="Google Maps：スシロー 渋谷">📍地圖</a> 澀谷<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%82%B7%E3%83%AD%E3%83%BC%20%E6%B8%8B%E8%B0%B7" target="_blank" rel="noopener" title="Google Maps：スシロー 渋谷">📍地圖</a></b> — 同上 App 抽號，¥1,000–1,800；若等待超過 30 分改③。</p>
-<p><b>③ 博多風龍 澀谷店<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E9%A2%A8%E9%BE%8D%20%E6%B8%8B%E8%B0%B7%E5%BA%97" target="_blank" rel="noopener" title="Google Maps：博多風龍 渋谷店">📍地圖</a></b>（拉麵）— ¥800–1,200，<b>不訂位</b>，趕 19:30 光雕秀時最快。</p>
-<p><b>④ 光雕秀後｜上野便利店／焼肉ライク</b> — 若 17:15 來不及吃，先買飯糰墊胃，20:30 回上野再補。</p>
+<p><span class="tag d">晚餐（新宿西口 18:20–19:05｜趕光雕秀）</span></p>
+<p class="warnbox">硬條件：<b>19:05 前結帳</b>、<b>19:10 前到都民廣場</b>。優先西口／都廳最近；排隊長立刻改松屋／サイゼリヤ。</p>
+<p class="muted"><b>A｜最近都廳／西口站前（主推）</b></p>
+<p><b>① 小田急百貨／Odakyu 美食區</b> — ¥1,000–2,000；冷氣、選擇多、離西口近 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E7%94%B0%E6%80%A5%E7%99%BE%E8%B2%A8%E5%BA%97%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>② 京王百貨／ルミネ新宿 美食樓</b> — ¥1,000–2,000；站內不用淋雨 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E7%8E%8B%E7%99%BE%E8%B2%A8%E5%BA%97%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>③ NEWoMan 新宿 餐廳樓</b> — ¥1,200–2,500；南口側但室內連通，選短隊即可 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=NEWoMan%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>④ 松屋／すき家／吉野家（西口）</b> — ¥500–900；最穩保險 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B1%8B%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑤ サイゼリヤ 新宿西口</b> — ¥800–1,500；便宜、好帶小孩 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%82%A4%E3%82%BC%E3%83%AA%E3%83%A4%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+
+<p class="muted"><b>B｜定食／炸物（家庭友善、翻桌穩）</b></p>
+<p><b>⑥ 大戸屋 新宿西口店</b> — 定食 ¥1,000–1,800 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%88%B8%E5%B1%8B%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑦ やよい軒（新宿西口周邊）</b> — 定食 ¥900–1,500 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%82%88%E3%81%84%E8%BB%92%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑧ 京都勝牛 新宿西口</b> — 炸牛排定食 ¥1,200–2,000 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%83%BD%E5%8B%9D%E7%89%9B%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑨ かつや 新宿西口</b> — 豬排定食 ¥900–1,500；連鎖穩 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%81%A4%E3%82%84%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑩ なか卯／すき家牛丼定食系</b> — ¥700–1,200；親子丼／うどん也快 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%AA%E3%81%8B%E5%8D%AF%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+
+<p class="muted"><b>C｜拉麵／中華（一人位多、好趕時間）</b></p>
+<p><b>⑪ らーめん直久 新宿西口</b>（エルタワー B2）— 雞湯系 ¥900–1,400；站西口近 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%89%E3%83%BC%E3%82%81%E3%82%93%E7%9B%B4%E4%B9%85%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑫ 壱角家 新宿西口</b> — 家系拉麵 ¥900–1,300 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%B1%E8%A7%92%E5%AE%B6%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑬ 麺屋武一（新宿西口／西新宿）</b> — 雞白湯 ¥1,000–1,500；排久就換 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%BA%E5%B1%8B%E6%AD%A6%E4%B8%80%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑭ 唐朝刀削麺 西新宿</b> — 刀削麵／擔擔約 ¥1,000–1,600；都廳前方向 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%94%90%E6%9C%9D%E5%88%80%E5%89%8A%E9%BA%BA%20%E8%A5%BF%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑮ 餃子の王将 新宿西口</b> — 餃子＋炒飯／拉麵 ¥900–1,600；翻桌快 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%A4%83%E5%AD%90%E3%81%AE%E7%8E%8B%E5%B0%86%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+
+<p class="muted"><b>D｜壽司／燒肉輕量／保險牌</b></p>
+<p><b>⑯ 魚べい／壽司郎（新宿站周邊）</b> — ¥1,000–1,800；App 抽號，等 &gt;20 分改拉麵 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E3%81%B9%E3%81%84%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑰ 焼肉ライク 新宿</b> — 一人燒肉 ¥1,000–2,000；翻桌快 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%83%A9%E3%82%A4%E3%82%AF%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑱ 新宿三段落輕食</b> — ¥1,500–2,500；只點定食／少數串，勿久坐喝酒 <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%AE%BF%E4%B8%89%E6%AE%B5%E8%90%BD" target="_blank" rel="noopener">📍地圖</a></p>
+<p class="muted"><b>E｜當地人／上班族常去（西新宿味｜趕秀請抓排隊）</b></p>
+<p class="okbox">這區真正在地感多半是「職安通／ハルク後方路地」的町中華與老派拉麵；味道好但可能排隊。規則不變：預估排隊＋用餐 &gt; 30 分 → 立刻改 A／B 連鎖保險牌。</p>
+<p><b>⑲ らぁめん 満来</b>（西口ハルク後方）— 1960 年代起的西新宿老鋪；醬油拉麵／ざる系，上班族常客多。現金券賣機；人多就換。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%89%E3%81%81%E3%82%81%E3%82%93%20%E6%BA%80%E6%9D%A5%20%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>⑳ らぁめん ほりうち 本店</b> — 満来同街區分出；鹽／醬油系，當地人與拉麵迷常排。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%89%E3%81%81%E3%82%81%E3%82%93%20%E3%81%BB%E3%82%8A%E3%81%86%E3%81%A1%20%E6%96%B0%E5%AE%BF%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>㉑ 萬馬軒 新宿西口本店</b> — 町中華感；炒飯／拉麵／餃子，附近上班族常點。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%90%AC%E9%A6%AC%E8%BB%92%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>㉒ 情熱のすためし どんどん 新宿西口</b> — 炸豬排定食；份量大、翻桌相對快，在地便當感。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A9%E3%82%93%E3%81%A9%E3%82%93%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>㉓ 中華料理 元気屋 西新宿</b> — 雜居ビル內町中華；定食份量足，偏上班族午餐／晚餐。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E8%8F%AF%E6%96%99%E7%90%86%20%E5%85%83%E6%B0%97%E5%B1%8B%20%E8%A5%BF%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>㉔ 炭火活烹 三是 新宿西口</b> — 海鮮居酒屋；想吃魚可點定食／少點快吃，勿喝太久。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E7%82%AD%E7%81%AB%E6%B4%BB%E7%83%B9%20%E4%B8%89%E6%98%AF%20%E6%96%B0%E5%AE%BF%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>㉕ とんかつ まるや 西新宿</b>（若近）— 豬排定食；西新宿辦公區常客。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%82%93%E3%81%8B%E3%81%A4%20%E3%81%BE%E3%82%8B%E3%82%84%20%E8%A5%BF%E6%96%B0%E5%AE%BF" target="_blank" rel="noopener">📍地圖</a></p>
+<p class="muted">備註：西新宿超有名町中華「<b>登喜和</b>」幾乎只開平日午餐（約 11:30–15:00），<b>不能當 Day3 晚餐</b>；若之後白天在西新宿再訪。</p>
+<p class="muted">秀後回上野若還餓：便利店／焼肉ライク 上野。寧換店也不要錯過 19:30。</p>
 </div>
 </details>
 
 <details>
-<summary>💴 Day3 預算（/人，以主線A估）</summary>
+<summary>💴 Day3 預算（/人）</summary>
 <div class="card">
-交通 <span class="price">¥800–1,000</span>（原宿→表參道→澀谷→新宿→上野，NT$170–210）＋澀谷SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a> <span class="price">¥2,500</span>＋餐食 <span class="price">¥4,800–5,500</span>＝<b class="big">約 ¥8,100–9,000（NT$1,700–1,890）</b>
-<br><span class="muted">明治神宮、商場與都廳光雕秀免費。購物、咖啡、角色周邊另計。</span>
+交通 <span class="price">¥600–900</span>＋展望台 <span class="price">免費</span>＋午餐 <span class="price">¥1,000–2,500</span>＋西口晚餐 <span class="price">¥1,000–2,500</span>＋光雕秀免費<br>
+＝約 <b class="big">¥3,500–6,500</b>。<span class="muted">若加選配 SKY 另約 ¥2,700；WEGO 購物另計。</span>
 </div>
 </details>
 </section>
-
 <!-- ============================= DAY 4 ============================= -->
 <section id="d4">
 <h2>Day 4｜8/15(六・山の日)　⭐晴空塔／Solamachi／淺草 ＋ 隅田川淺草燈籠流（浅草とうろうながし）</h2>
@@ -774,7 +994,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <a class="map-link" href="assets/day-04-20260812.png" target="_blank" rel="noopener"><img src="assets/day-04-20260812.png" alt="Day 4 旅程地圖（點擊開啟高畫質原圖）" class="map-img" loading="lazy" decoding="async"></a>
 
 <div class="okbox">✅ <b>本日定案</b>：白天 <b>晴空塔タウン／Solamachi＋淺草</b> → 傍晚 <b>隅田川とうろう流し</b>（式典約 18:30、一般流し約 18:45–20:15）。<br>
-📅 <b>日期對齊</b>：燈籠流官方日就是 <b>8/15（六）</b>。原 Day5 的「深川水かけ」高潮在 <b>8/16（日）</b>，本版改為 Day5 清晨選配（見 <a href="#d5">Day5</a>），白天主線改品川新文化點。<br>
+📅 <b>日期對齊</b>：燈籠流官方日就是 <b>8/15（六）</b>。深川「水かけ」高潮在 <b>8/16（日）</b>，本版放 Day5 清晨選配後轉兩國（見 <a href="#d5">Day5</a>）；MoN／Aqua 已對調至 <a href="#d6">Day6</a>。<br>
 詳見 <a href="tokyo-2026-08-festivals-research.html#tourou">慶典調查・燈籠流</a>／<a href="tokyo-2026-08-festivals-research.html#fukagawa">深川</a>。</div>
 <div class="warnbox">⚠️ 8/15–16 有明／台場有コミケ等大型活動，灣岸線極擠——<b>本日不要繞有明／豊洲當交通樞紐</b>。燈籠請<b>事前買</b>（網路約至 8/6–8/7；當日現場 ¥2,000 且易完售）。墨田側買的燈籠不能從淺草側流（官方明訂）。</div>
 
@@ -802,7 +1022,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <li><b>墨田側</b>：區役所前うるおい広場／親水テラス — 「本所吾妻橋」徒歩約 5 分。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AC%E6%89%80%E5%90%BE%E5%A6%BB%E6%A9%8B%E9%A7%85" target="_blank" rel="noopener">📍地圖</a></li>
 </ul>
 <p>⭐ <span class="time">18:30</span> 式典／流し初め　｜　<span class="time">18:45–約 20:15</span> 一般とうろう流し（雨天決行；颱風等可能順延 8/16）。</p>
-<p><span class="time">20:30–21:30</span> <b>淺草／上野晚餐</b>（燈籠後；叙々苑改排 Day6，今晚以在地快速餐為主）→ 回上野。</p>
+<p><span class="time">20:30–21:30</span> <b>淺草／上野晚餐</b>（燈籠後；叙々苑改排 Day5，今晚以在地快速餐為主）→ 回上野。</p>
 </div>
 </details>
 
@@ -836,7 +1056,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <li><span class="time">13:15–14:15</span> <b>8F 千葉工業大學 東京スカイツリータウンキャンパス</b>（免費）— 機器人／宇宙展示。約 10:30–18:00。</li>
 <li><span class="time">14:15–15:00</span> <b>9F 郵政博物館</b>（選配，大人約 ¥300）或繼續商場吹冷氣。</li>
 </ol>
-<p><b>選配 B｜墨田水族館</b>：同棟 5–6F，約 90–120 分、票約 ¥2,500。Day2 已去葛西、Day5 有 Aqua Park → <b>可省略</b>。若去，請 <b>15:00 前出館</b>趕淺草／燈籠準備。</p>
+<p><b>選配 B｜墨田水族館</b>：同棟 5–6F，約 90–120 分、票約 ¥2,500。Day2 已去葛西、Day6 有 Aqua Park → <b>可省略</b>。若去，請 <b>15:00 前出館</b>趕淺草／燈籠準備。</p>
 <p class="muted">展望台（Tembo Deck）週六易排隊且貴；本日傍晚要趕燈籠 → <b>不建議硬登塔</b>。</p>
 </div>
 </details>
@@ -846,7 +1066,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <div class="card">
 <ul>
 <li><b>燈籠完售／小孩累</b>：改在吾妻橋／隅田公園遠觀河面燈籠，或提早回上野吃叙々苑（若能改訂 Day4 晚；否則改焼肉ライク）。</li>
-<li><b>荒天順延至 8/16</b>：Day4 晚上改淺草晚餐＋早回；Day5 晚上若想補燈籠，需壓縮 Aqua 夜間秀／TRACKS（見 Day5 備案）。</li>
+<li><b>荒天順延至 8/16</b>：Day4 晚上改淺草晚餐＋早回；Day5 若想補燈籠，需改訂／取消叙々苑並縮鐵塔午後（見 Day5 備案）。</li>
 <li><b>太熱</b>：取消選配 A 的戶外淺草長走，改銀座線直達淺草文化觀光中心室內休息後再下河岸。</li>
 </ul>
 </div>
@@ -855,7 +1075,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <details>
 <summary>🍽️ 三餐 ×3 備案</summary>
 <div class="card">
-<p class="muted">本日風格：<b>輕早餐 ＋ Solamachi 午餐 ＋ 燈籠後淺草／上野晚餐</b>（叙々苑改 Day6）。</p>
+<p class="muted">本日風格：<b>輕早餐 ＋ Solamachi 午餐 ＋ 燈籠後淺草／上野晚餐</b>（叙々苑改 Day5）。</p>
 <p><span class="tag b">早餐（07:30 前）</span></p>
 <p><b>① 便利商店</b> — 飯糰＋優格＋寶礦力，¥500–800，<b>最推薦</b>。</p>
 <p><b>② 飯店輕食</b> — 勿吃到撐。</p>
@@ -863,14 +1083,14 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <hr>
 <p><span class="tag l">午餐（Solamachi 11:00 起）</span></p>
 <p><b>① 迴轉壽司 トリトン</b>（6F）— ¥2,000–3,000，<b>10:45–11:00 前取號</b>。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%83%AA%E3%83%88%E3%83%B3%20%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>② 利久牛舌 Solamachi</b> — ¥2,000–2,800；與 Day5 品川利久錯開。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%88%A9%E4%B9%85%20%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>② 利久牛舌 Solamachi</b> — ¥2,000–2,800；與 Day6 品川利久錯開。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%88%A9%E4%B9%85%20%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81" target="_blank" rel="noopener">📍地圖</a></p>
 <p><b>③ 美食街讚岐烏龍／とんかつ</b> — ¥1,200–1,800，趕時間最快。</p>
 <hr>
 <p><span class="tag d">晚餐（燈籠後 ~20:30）</span></p>
 <p><b>① 淺草今半／天丼／蕎麥（吾妻橋周邊）</b> — ¥1,500–3,500；燈籠後就近吃，免再跨區。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%85%E8%8D%89%20%E4%BB%8A%E5%8D%8A" target="_blank" rel="noopener">📍地圖</a></p>
 <p><b>② 上野焼肉ライク／ワンカルビ</b> — ¥1,000–2,000，回上野後最快。</p>
 <p><b>③ Solamachi 美食街先吃再下河岸</b> — 僅在想 <b>17:00–18:00 早吃</b>、燈籠後不再用餐時使用。</p>
-<p class="muted">慶祝燒肉 <b>叙々苑</b> 改訂 <a href="#d6">Day6</a> 晚上，避免與燈籠衝突。</p>
+<p class="muted">慶祝燒肉 <b>叙々苑</b> 改訂 <a href="#d5">Day5</a> 晚上，避免與燈籠衝突。</p>
 </div>
 </details>
 
@@ -884,140 +1104,26 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 </section>
 <!-- ============================= DAY 5 ============================= -->
 <section id="d5">
-<h2>Day 5｜8/16(日)　MoN Takanawa → マクセル Aqua Park 品川 → 大井町 TRACKS（＋夜間海豚／光雕備案）</h2>
-<div class="muted">住宿：上野　主題：2026 新文化點＋夜間水族館；原橫濱八景島／原 Day6 品川日整併至此</div>
+<h2>Day 5｜8/16(日)　（選配）深川水かけ・兩國（江戶東京博物館）・東京車站・麻布台之丘・東京鐵塔・⭐叙々苑</h2>
+<div class="muted">住宿：上野　主題：水かけ清晨選配 → 下町博物館（週日開館）→ 東京站室內 → 麻布台／鐵塔 → 上野叙々苑。與 Day6 對調：避開江戶東京博物館週一休館。</div>
 <a class="map-link" href="assets/day-05-20260812.png" target="_blank" rel="noopener"><img src="assets/day-05-20260812.png" alt="Day 5 旅程地圖（點擊開啟高畫質原圖）" class="map-img" loading="lazy" decoding="async"></a>
 
-<div class="okbox">✅ <b>本日定案（主線 A）</b>：上午 <b>MoN Takanawa</b> → 午餐品川 → <b>Aqua Park</b>（日間館＋日間海豚秀）→ 傍晚出館轉 <b>大井町 OIMACHI TRACKS</b> 晚餐逛街。<br>
-⭐ <b>夜間體驗二擇一</b>：主推 <b>Aqua Park 夜間海豚／雷射秀</b>（需含夜間秀＋可再入場票）；若想看都廳秀，改備案 B（放棄夜間海豚，改新宿光雕）。</div>
-<div class="warnbox">⚠️ 8/16 是深川<b>神輿連合渡御（水かけ）</b>高潮日。想看水かけ請用「選配・清晨快看」後再趕高輪；會濕、極熱、道路封鎖。主線若不看祭，請避開門前仲町當轉乘樞紐。</div>
-
-<details open>
-<summary>🕒 時間表 + 交通（主線 A｜MoN→Aqua→TRACKS＋夜間海豚）</summary>
-<div class="card">
-<p><b>選配・清晨｜深川水かけ快看（可省略）</b></p>
-<p class="muted">僅想體驗本祭り水かけ、且接受濕熱與趕車時啟用；否則直接 08:30 出發高輪。</p>
-<p><span class="time">06:40</span> 便利店輕食 → <span class="time">06:55</span> 上野御徒町→門前仲町 → <span class="time">07:30–09:00</span> 看神輿＋水かけ一段 → <span class="time">09:00</span> 離場換衣（濕透建議回上野換，多 40 分）→ 趕 <span class="time">10:15</span> 前到高輪 Gateway。</p>
-<hr>
-<p><b>上午｜MoN Takanawa</b></p>
-<p><span class="time">08:30</span> 上野出發 → JR 山手線／京濱東北至 <b>高輪 Gateway</b>（約 20–25 分）。</p>
-<p><span class="time">09:00–09:20</span> TAKANAWA GATEWAY CITY 找入口／置物。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Takanawa+Gateway+City" target="_blank" rel="noopener">📍地圖</a></p>
-<p><span class="time">09:20–11:30</span> <b>MoN Takanawa 博物館</b>——當期主展＋建築公共空間。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=MoN+Takanawa" target="_blank" rel="noopener">📍地圖</a></p>
-<p><span class="time">11:30–12:10</span> <b>高輪 Gateway City／NEWoMan Takanawa 必逛快閃</b>：HARBS、MoN Shop、MoN Park Cafe 等（詳見下方清單）。若想坐下吃 HARBS，午餐往後或把品川午餐改成高輪輕食。</p>
-<p class="muted">2026 新開幕，出發前確認是否需時段預約／公休。<a href="https://www.takanawagateway-city.com/" target="_blank" rel="noopener">官網／園區資訊</a>｜<a href="https://www.newoman.jp/takanawa/" target="_blank" rel="noopener">NEWoMan Takanawa</a>｜<a href="https://montakanawa.jp/en/facilities/" target="_blank" rel="noopener">MoN 館內設施</a></p>
-<hr>
-<p><b>午餐｜品川／高輪（二擇一）</b></p>
-<p><span class="time">12:10–12:25</span> 高輪 Gateway → 品川（JR 1 站約 2 分；或步行 15–20 分，酷暑不建議）。</p>
-<p><span class="time">12:15–13:20</span> 午餐（利久／つばめグリル／站內；見下）。</p>
-<hr>
-<p><b>下午｜Aqua Park 日間</b></p>
-<p><span class="time">13:30</span> 入園 <b>マクセル Aqua Park 品川</b>（品川王子）。入園時確認再入場規則與日間／夜間秀時間。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%82%AF%E3%82%BB%E3%83%AB%20%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%91%E3%83%BC%E3%82%AF%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
-<p><span class="time">13:30–16:30</span> 水母牆→海底隧道→企鵝／海豹→<b>日間 Splash 海豚秀</b>（開始時間以官網 event schedule 為準；建議開演前 20–30 分就座）。</p>
-<p><span class="time">~16:40</span> 日間段結束後<b>出館</b>（保留手環／再入場憑證）。</p>
-<hr>
-<p><b>傍晚｜大井町 TRACKS</b></p>
-<p><span class="time">16:50–17:20</span> JR 品川→大井町（京濱東北線 1 站，約 3 分；含步行抓 20–30 分）。</p>
-<p><span class="time">17:20–19:00</span> <b>OIMACHI TRACKS</b> 商場逛街、決定晚餐店、補伴手禮。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=OIMACHI+TRACKS" target="_blank" rel="noopener">📍地圖</a></p>
-<p class="muted">若主線要看夜間海豚：TRACKS 只逛 40–60 分，改吃「輕食／定食快吃」，<b>17:40 前</b>回品川再入園。</p>
-<hr>
-<p><b>夜間｜⭐ Aqua Park 夜間海豚秀（主推）</b></p>
-<p><span class="time">17:40</span> 再入園 → <span class="time">約 18:00–19:30</span> 夜間雷射／海豚秀（約 15 分；前排會濕，相機防水）。</p>
-<p><span class="time">19:45–20:30</span> 若還想回 TRACKS 補逛／甜點；否則 JR 回上野宵夜。</p>
-<p><span class="time">~21:00</span> 回上野；可順手劃 Day7 Skyliner（或改 Day6 晚劃）。</p>
-</div>
-</details>
-
-<details open>
-<summary>🛍️ 高輪 Gateway City／NEWoMan Takanawa 必逛店家（11:30–12:10 快閃）</summary>
-<div class="card">
-<p class="okbox">⭐ <b>主線玩法</b>：MoN 看完後不要急著下品川，先用 <b>30–40 分鐘</b>逛高輪 Gateway City。若 HARBS 排隊可外帶蛋糕或改 MoN Park Cafe；不要為了排甜點壓縮 Aqua Park。</p>
-<ul>
-<li><b>HARBS ニュウマン高輪店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=HARBS%20%E3%83%8B%E3%83%A5%E3%82%A6%E3%83%9E%E3%83%B3%E9%AB%98%E8%BC%AA" target="_blank" rel="noopener">📍地圖</a> — NEWoMan Takanawa South 3F；手工蛋糕／水果千層，約 ¥1,500–2,000，官方資訊 11:00–20:00（L.O. 19:30）。<b>排隊長就外帶或跳過</b>。</li>
-<li><b>MoN Park Cafe by Spiral（1F）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=MoN%20Park%20Cafe%20by%20Spiral" target="_blank" rel="noopener">📍地圖</a> — 咖啡、麵包、Spiral Cornet、輕食；適合 MoN 前後快速補水。</li>
-<li><b>MoN Shop by Spiral（2F）</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=MoN%20Shop%20by%20Spiral" target="_blank" rel="noopener">📍地圖</a> — 藝術／設計雜貨、MoN 原創商品；適合買輕巧紀念品。</li>
-<li><b>MoN Kitchen by Spiral（3F）</b> — 咖啡、飲料、tapas、pasta、甜點；若品川午餐排隊風險高，可改這裡吃早午餐。</li>
-<li><b>MoN Garden Restaurant “LAUBE”（6F）</b> — 露台景觀餐廳；時間較緊不當主線，適合未來重訪或不去 Aqua Park 時。</li>
-<li><b>NEWoMan Takanawa South/North</b> — 1–5F 基本購物餐飲；可看中川政七商店、生活雜貨、伴手禮與期間限定 POP UP。LUFTBAUM 28–29F 是高樓餐飲／展望感區域，時間不夠只快速拍照。</li>
-</ul>
-<p class="warnbox"><b>時間控制</b>：Day5 下午還有 Aqua Park 與 TRACKS，建議 <b>12:10 前離開高輪</b>。如果 HARBS 想內用，請把品川午餐簡化成 ecute 便當或延後 Aqua 入園。</p>
-</div>
-</details>
-
-<details open>
-<summary>备案 B｜夜間改都廳光雕秀（放棄夜間海豚）</summary>
-<div class="card">
-<p>適合：更想看投影秀、或夜間海豚票售完／小孩怕水花。</p>
-<ul>
-<li><span class="time">13:30–16:30</span> Aqua Park <b>只看日間秀</b>後出館（可不買夜間票）。</li>
-<li><span class="time">16:40–18:30</span> 大井町 TRACKS 晚餐完整版。</li>
-<li><span class="time">18:40–19:20</span> 大井町／品川 → 新宿都廳前。</li>
-<li>⭐ <span class="time">19:30／20:00／20:30</span> 都民廣場光雕秀（對 TIMETABLE；週日較可能有寶可夢取向場）。</li>
-<li><span class="time">~21:00</span> 新宿→上野。</li>
-</ul>
-<p class="warnbox">主線 A 與備案 B <b>二擇一</b>：夜間海豚＋光雕同晚趕場過緊，8 月不建議硬塞。</p>
-</div>
-</details>
-
-<details>
-<summary>备案 C｜MoN 休館／太累</summary>
-<div class="card">
-<ul>
-<li>MoN 休館：改高輪 Gateway City／NEWoMan Takanawa（HARBS、MoN Park Cafe、MoN Shop、生活雜貨）上午，下午照進 Aqua Park。</li>
-<li>太累：縮 Aqua 為 2 小時（水母＋主缸＋一場海豚秀）；TRACKS 只吃晚餐不逛街。</li>
-<li>雨天：全日幾乎室內，最適合雨天，不必大改。</li>
-</ul>
-</div>
-</details>
-
-<details>
-<summary>🍽️ 三餐 ×3 備案</summary>
-<div class="card">
-<p class="muted">本日風格：<b>站內早餐 ＋ 品川午餐 ＋ TRACKS／大井町晚餐</b>（夜間海豚後可再補點心）。</p>
-<p><span class="tag b">早餐（08:30 前）</span></p>
-<p><b>① 飯店／便利商店</b> — ¥500–800。</p>
-<p><b>② HARBS ニュウマン高輪／MoN Park Cafe</b> — 若 11:00 後才吃早午餐或想甜點，HARBS 蛋糕／MoN 咖啡輕食，¥800–2,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=HARBS%20%E3%83%8B%E3%83%A5%E3%82%A6%E3%83%9E%E3%83%B3%E9%AB%98%E8%BC%AA" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>③ PAUL 品川／高輪口</b> — 麵包外帶，¥600–1,200。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=PAUL%20%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>④ 喫茶室ルノアール 品川高輪口</b> — 飲料送早餐感，¥800–1,200。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%AB%E3%83%8E%E3%82%A2%E3%83%BC%E3%83%AB%20%E5%93%81%E5%B7%9D%E9%AB%98%E8%BC%AA" target="_blank" rel="noopener">📍地圖</a></p>
-<hr>
-<p><span class="tag l">午餐（品川 12:15）</span></p>
-<p><b>① 利久牛舌 Atre 品川</b> ⭐ — ¥2,000–2,800；<b>11:50 前排隊</b>較穩（週日仍可能等）。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%88%A9%E4%B9%85%20%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>② つばめグリル 品川駅前</b> — 漢堡排，¥1,800–3,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A4%E3%81%B0%E3%82%81%E3%82%B0%E3%83%AA%E3%83%AB%20%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>③ ecute 品川 便當／拉麵</b> — ¥800–1,500，趕時間保險。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=ecute%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>④ 麵屋 翔 品川</b> — ¥1,100–1,600；尖峰常排，想吃請提早。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%BA%E5%B1%8B%20%E7%BF%94%20%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
-<hr>
-<p><span class="tag d">晚餐（TRACKS／大井町 17:30–19:00）</span></p>
-<p><b>① TRACKS 商場內餐廳／定食</b> — ¥1,200–3,500，最省腳力。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=OIMACHI+TRACKS" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>② 麵屋 蕾（大井町）</b> — 拉麵／沾麵，¥1,000–1,500。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%BA%E5%B1%8B%20%E8%95%BE%20%E5%A4%A7%E4%BA%95%E7%94%BA" target="_blank" rel="noopener">📍地圖</a></p>
-<p><b>③ 牛角／磯丸水產 大井町</b> — 燒肉／海鮮居酒屋，¥2,500–5,000；帶小孩建議早場。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E8%A7%92%20%E5%A4%A7%E4%BA%95%E7%94%BA" target="_blank" rel="noopener">📍地圖</a></p>
-<p class="muted">若走夜間海豚：晚餐改輕量（定食／拉麵），秀後回上野再補宵夜。</p>
-</div>
-</details>
-
-<details>
-<summary>💴 Day5 預算（/人）</summary>
-<div class="card">
-交通 <span class="price">¥900–1,200</span>＋MoN（以當日票價為準，估 <span class="price">¥1,500–2,500</span>）＋Aqua Park 含夜間／再入場 <span class="price">¥2,800–3,500</span>＋午餐 <span class="price">¥2,500</span>＋晚餐 <span class="price">¥2,000–3,500</span><br>
-＝主線約 <b class="big">¥10,000–13,000</b>。備案 B 光雕秀免費；可省夜間票差價。
-</div>
-</details>
-</section>
-<!-- ============================= DAY 6 ============================= -->
-<section id="d6">
-<h2>Day 6｜8/17(一)　兩國（江戶東京博物館）・東京車站・麻布台之丘・東京鐵塔</h2>
-<div class="muted">住宿：上野　主題：下町文化 → 東京站室內 → 新地標麻布台 → 東京鐵塔；原 Day6 品川水族館已移至 Day5。晚餐回上野 <b>叙々苑</b> 慶祝</div>
-<a class="map-link" href="assets/day-06-20260812.png" target="_blank" rel="noopener"><img src="assets/day-06-20260812.png" alt="Day 6 旅程地圖（點擊開啟高畫質原圖）" class="map-img" loading="lazy" decoding="async"></a>
-
-<div class="okbox">✅ <b>本日定案</b>：上午 <b>兩國・江戶東京博物館</b> → 午餐兩國 → 午後 <b>東京車站／KITTE／一番街</b> → 轉 <b>麻布台之丘</b> → <b>東京鐵塔</b>外觀／FootTown → 回上野 <b>叙々苑</b>。<br>
-動線採「東側下町 → 中央車站室內避暑 → 南側地標」，避免午後來回繞路。</div>
-<div class="warnbox">⚠️ 8 月午後 33°C+：兩國→東京站、麻布台→鐵塔的戶外段請縮短；鐵塔<b>不強制登塔</b>（已有 Day3 SKY）。江戶東京博物館出發前確認開館／票價／是否需預約。</div>
+<div class="okbox">✅ <b>本日定案</b>：（選配）清晨 <b>深川水かけ</b> → 上午 <b>兩國・江戶東京博物館</b> → 兩國午餐 → 午後 <b>東京駅一番街／KITTE</b> → <b>麻布台之丘</b> → <b>東京鐵塔</b>外觀 → 回上野 <b>叙々苑 19:00</b>。<br>
+⭐ 動線：門前仲町／兩國同屬東側下町，水かけ後轉博物館最順；博物館週一休，故排本日（日）。</div>
+<div class="warnbox">⚠️ 8/16 是深川<b>神輿連合渡御（水かけ）</b>高潮日。會濕、極熱、道路封鎖。主線若不看祭，直接 08:30 出發兩國即可，並避開門前仲町當轉乘樞紐。江戶東京博物館出發前確認開館／票價／是否需預約。</div>
 
 <details open>
 <summary>🕒 時間表 + 交通路線</summary>
 <div class="card">
+<p><b>選配・清晨｜深川水かけ快看（可省略）</b></p>
+<p class="muted">僅想體驗本祭り水かけ、且接受濕熱時啟用；看完就近轉兩國，不必再衝高輪。</p>
+<p><span class="time">06:40</span> 便利店輕食 → <span class="time">06:55</span> 上野御徒町→門前仲町 → <span class="time">07:30–09:00</span> 看神輿＋水かけ一段 → <span class="time">09:00</span> 離場（濕透可先更衣／擦乾）→ 地鐵往 <b>兩國</b>（大江戶線等，約 10–15 分）。</p>
+<hr>
 <p><b>上午｜兩國・江戶東京博物館</b></p>
-<p><span class="time">08:30</span> 上野出發 → JR 山手線→秋葉原換總武線 <b>兩國</b>（或地鐵大江戶線；約 20–30 分）。</p>
+<p><span class="time">08:30</span>（不看祭）上野出發 → JR 山手線→秋葉原換總武線 <b>兩國</b>（或地鐵大江戶線；約 20–30 分）。</p>
 <p><span class="time">09:00–09:20</span> 兩國國技館外觀＋博物館建築拍照。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%A1%E5%9B%BD%E5%9B%BD%E6%8A%80%E9%A4%A8" target="_blank" rel="noopener">📍國技館</a></p>
-<p><span class="time">09:30–12:15</span> <b>江戶東京博物館</b>（常設展：日本橋模型、江戶街區、近代東京）。帶小孩優先模型／互動區。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%B1%9F%E6%88%B8%E6%9D%B1%E4%BA%AC%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener">📍地圖</a></p>
+<p><span class="time">09:30–12:15</span> <b>江戶東京博物館</b>（常設展：日本橋模型、江戶街區、近代東京）。帶小孩優先模型／互動區。週日開館；週一原則休館。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%B1%9F%E6%88%B8%E6%9D%B1%E4%BA%AC%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener">📍地圖</a></p>
+<p class="muted">若清晨有看水かけ：博物館改抓 <b>09:45–12:15</b>（縮短互動區即可）。</p>
 <p><span class="time">12:15–13:30</span> 兩國午餐（相撲火鍋／炸豬排／江戶NOREN；見下）。</p>
 <hr>
 <p><b>午後前半｜東京車站室內</b></p>
@@ -1027,14 +1133,14 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <hr>
 <p><b>午後後半｜麻布台之丘 → 東京鐵塔</b></p>
 <p><span class="time">15:30–16:00</span> 東京站 → 神谷町（丸之內線→霞關換日比谷線，或都營大江戶；約 20–30 分）。</p>
-<p><span class="time">16:00–17:15</span> <b>麻布台之丘</b>：Garden Plaza／商場／公共空間；可買咖啡（% ARABICA 等）。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Azabudai+Hills" target="_blank" rel="noopener">📍地圖</a></p>
+<p><span class="time">16:00–17:15</span> <b>麻布台之丘</b>：Garden Plaza／商場／公共空間；可買咖啡（% ARABICA 等）。Day2 已過 Borderless，本日以商場／廣場為主。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Azabudai+Hills" target="_blank" rel="noopener">📍地圖</a></p>
 <p><span class="time">17:15–17:35</span> 步行至東京鐵塔（約 10–15 分；過熱改計程車 5 分）。</p>
-<p><span class="time">17:35–18:15</span> <b>東京鐵塔</b>外觀＋FootTown 短逛／拍照；登塔選配（時間緊可省略）。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">📍地圖</a></p>
+<p><span class="time">17:35–18:15</span> <b>東京鐵塔</b>外觀＋FootTown 短逛／拍照；登塔選配（時間緊可省略；Day3 已有都廳展望台）。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">📍地圖</a></p>
 <hr>
 <p><b>晚餐｜上野慶祝</b></p>
 <p><span class="time">18:20–18:50</span> 神谷町／御成門 → 上野（日比谷線直達上野，約 20–25 分）。</p>
-<p><span class="time">19:00–20:30</span> <b>叙々苑 上野</b>（建議訂 19:00）。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%99%E5%8F%99%E8%8B%91%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
-<p><span class="time">~21:00</span> 京成上野站劃位／確認 Day7 Skyliner → 回飯店。</p>
+<p><span class="time">19:00–20:30</span> <b>叙々苑 上野</b>（建議訂 <b>19:00</b>）。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%99%E5%8F%99%E8%8B%91%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
+<p><span class="time">~21:00</span> 回飯店休息（Skyliner 劃位可改 <a href="#d6">Day6</a> 晚）。</p>
 </div>
 </details>
 
@@ -1042,10 +1148,12 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <summary>🔄 備案動線</summary>
 <div class="card">
 <ul>
-<li><b>博物館休館／沒興趣</b>：上午改淺草寺短訪（Day4 已去則改合羽橋刀具街或刀劍博物館視開放），午餐仍兩國或直接東京站。</li>
+<li><b>博物館休館／沒興趣</b>：上午改淺草寺短訪（Day4 已去則改合羽橋刀具街），午餐仍兩國或直接東京站。</li>
 <li><b>太熱版</b>：兩國午餐後直達東京站室內；麻布台只逛商場；鐵塔只拍外觀 10 分；提早回上野休息再叙々苑。</li>
 <li><b>鐵塔優先</b>：縮東京站為 45 分，17:00 前到鐵塔搶夕色外觀。</li>
-<li><b>teamLab Borderless（麻布台）</b>：若 Day2 Planets 去不成，可把 16:00–18:00 改 Borderless（需另購票、時段預約）。</li>
+<li><b>水かけ後太累</b>：取消麻布台／鐵塔，東京站後直回上野休息再叙々苑。</li>
+<li><b>燈籠荒天順延至 8/16</b>：若要補燈籠，需改訂／取消叙々苑，縮午後鐵塔；否則優先叙々苑、燈籠改遠觀或不去。</li>
+<li><b>teamLab</b>：Day2 已 Borderless；本日勿再塞第二場 teamLab。</li>
 </ul>
 </div>
 </details>
@@ -1054,7 +1162,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <summary>🍽️ 三餐 ×3 備案</summary>
 <div class="card">
 <p class="muted">本日風格：<b>上野外帶早餐 ＋ 兩國特色午餐 ＋ 上野叙々苑晚餐</b>；東京站可補咖啡／點心。</p>
-<p><span class="tag b">早餐（08:30 前）</span></p>
+<p><span class="tag b">早餐（08:30 前｜水かけ則 06:40）</span></p>
 <p><b>① 便利商店／ecute 上野</b> — ¥500–900。</p>
 <p><b>② 喫茶 ニューストン（兩國）</b> — 厚片吐司＋咖啡，到兩國再吃。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%83%88%E3%83%B3%20%E4%B8%A1%E5%9B%BD" target="_blank" rel="noopener">📍地圖</a></p>
 <p><b>③ 文殊 兩國（立食蕎麥）</b> — ¥400–800，最快。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%96%87%E6%AE%8A%20%E4%B8%A1%E5%9B%BD" target="_blank" rel="noopener">📍地圖</a></p>
@@ -1065,28 +1173,163 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <p><b>③ 両国江戸NOREN（複合餐飲／壽司等）</b> — ¥1,000–3,500，免久候備案。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%A1%E5%9B%BD%E6%B1%9F%E6%88%B8NOREN" target="_blank" rel="noopener">📍地圖</a></p>
 <hr>
 <p><span class="tag l">午後點心（東京站／KITTE 選配）</span></p>
-<p><b>① 根室花丸 KITTE</b> — 若午餐吃不夠可當早晚餐前輕食，但排隊長；超過 40 分改駅弁。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%A0%B9%E5%AE%A4%E8%8A%B1%E4%B8%B8%20KITTE" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>① 根室花丸 KITTE</b> — 排隊長；超過 40 分改駅弁。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%A0%B9%E5%AE%A4%E8%8A%B1%E4%B8%B8%20KITTE" target="_blank" rel="noopener">📍地圖</a></p>
 <p><b>② 一番街甜點／咖啡</b> — ¥500–1,200。</p>
 <hr>
 <p><span class="tag d">晚餐（上野 19:00）</span></p>
-<p><b>① 叙々苑 上野</b> ⭐ <b>主線慶祝</b> — 務必先訂。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%99%E5%8F%99%E8%8B%91%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>① 叙々苑 上野</b> ⭐ <b>主線慶祝</b> — 務必先訂（8/16 日）。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%99%E5%8F%99%E8%8B%91%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
 <p><b>② 焼肉ライク／ワンカルビ</b> — 滿席備案。</p>
 <p><b>③ 陽山道 上野</b> — 若叙々苑訂不到可改訂此店。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%99%BD%E5%B1%B1%E9%81%93%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">📍地圖</a></p>
 </div>
 </details>
 
 <details>
+<summary>💴 Day5 預算（/人）</summary>
+<div class="card">
+交通 <span class="price">¥800–1,200</span>＋江戶東京博物館（估 <span class="price">¥600–1,000</span>）＋午餐 <span class="price">¥2,000–3,500</span>＋點心 <span class="price">¥800</span>＋叙々苑 <span class="price">¥4,000–6,000</span>＋（選配）鐵塔展望<br>
+＝主線約 <b class="big">¥9,000–12,500</b>
+</div>
+</details>
+</section>
+<!-- ============================= DAY 6 ============================= -->
+<section id="d6">
+<h2>Day 6｜8/17(一)　LUFTBAUM → MoN Takanawa → Aqua Park → TRACKS（＋夜間海豚／光雕備案）</h2>
+<div class="muted">住宿：上野　主題：高輪晨景＋MoN＋夜間水族館；與 Day5 對調後排週一。晚餐不排叙々苑（已改 Day5）。⚠️ MoN 本日開館；<b>8/18（二）休館</b>。</div>
+<a class="map-link" href="assets/day-06-20260812.png" target="_blank" rel="noopener"><img src="assets/day-06-20260812.png" alt="Day 6 旅程地圖（點擊開啟高畫質原圖）" class="map-img" loading="lazy" decoding="async"></a>
+
+<div class="okbox">✅ <b>本日定案（主線 A）</b>：上午 <b>先 LUFTBAUM</b>（開館前晨景）→ <b>MoN Takanawa</b>（約 10:00 起）→ NEWoMan 快閃 → 品川午餐 → <b>Aqua Park</b>（日間秀主推 <b>16:00</b>）→ TRACKS 輕食。<br>
+⭐ <b>夜間體驗二擇一</b>：主推 <b>Aqua Park 夜間海豚秀約 19:00</b>；備案 B：都廳光雕。<br>
+⭐ ぐるぐる展建議出發前線上購票（一般 ¥2,500）；館內公共空間免費。</div>
+<div class="warnbox">⚠️ 週一 Aqua 通常比週日好卡位，仍建議開演前 20–30 分就座。MoN 原則休館＝每月第 2 個星期二；2026 年 8 月改休 <b>8/18</b>，故 <b>8/17 可逛、Day7 不可補</b>。</div>
+
+<details open>
+<summary>🕒 時間表 + 交通（主線 A｜LUFTBAUM→MoN→Aqua→TRACKS＋夜間海豚）</summary>
+<div class="card">
+<p><b>上午｜先 LUFTBAUM，再開 MoN</b></p>
+<p><span class="time">08:30</span> 上野出發 → JR 山手線／京濱東北至 <b>高輪 Gateway</b>（約 20–25 分）。</p>
+<p><span class="time">08:55–09:10</span> TAKANAWA GATEWAY CITY 到站、置物、補水。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Takanawa+Gateway+City" target="_blank" rel="noopener">📍地圖</a></p>
+<p><span class="time">09:10–09:55</span> ⭐ <b>LUFTBAUM（NEWoMan 28–29F）</b> 晨景＋咖啡。<span class="muted">展望空間約 08:00–24:00、免費；約 40–45 分即可，MoN 約 10:00 開門再下樓。</span><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=LUFTBAUM%20NEWoMan%20Takanawa" target="_blank" rel="noopener">📍地圖</a></p>
+<p><span class="time">10:00–11:45</span> ⭐ <b>MoN Takanawa</b>——主推當期 <b>ぐるぐる展</b>（Box1500；語音導覽體驗約 1.5–2 小時）＋館內公共空間。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=MoN+Takanawa" target="_blank" rel="noopener">📍地圖</a>｜<a href="https://montakanawa.jp/programs/spiral/" target="_blank" rel="noopener">ぐるぐる展</a>｜<a href="https://montakanawa.jp/visit/schedule/" target="_blank" rel="noopener">開館時間</a></p>
+<p><span class="time">11:45–12:20</span> <b>NEWoMan／高輪 Gateway 快閃</b>：HARBS、MoN Shop、MoN Park Cafe（LUFTBAUM 已逛過，勿再上樓耗時）。</p>
+<p class="muted">時間緊可縮 MoN 至 11:30 出館；HARBS 排隊長就外帶或跳過。</p>
+<hr>
+<p><b>午餐｜品川／高輪</b></p>
+<p><span class="time">12:20–12:35</span> 高輪 Gateway → 品川（JR 1 站約 2 分）。</p>
+<p><span class="time">12:30–13:30</span> 午餐（利久／つばめグリル／站內；見下）。</p>
+<hr>
+<p><b>下午｜Aqua Park 日間</b></p>
+<p><span class="time">13:40</span> 入園 <b>マクセル Aqua Park 品川</b>（品川王子）。入園時確認再入場規則；開演時間以館內／官網當日表為準。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%82%AF%E3%82%BB%E3%83%AB%20%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%91%E3%83%BC%E3%82%AF%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
+<p><span class="time">13:40–15:30</span> 水母牆→海底隧道→企鵝／海豹（先逛館）。</p>
+<p><span class="time">15:30–15:40</span> 前往 2F「ザ スタジアム」卡位 → ⭐ <b>日間海豚秀主推 16:00</b>（約 15 分；建議開演前 <b>20–30 分</b>就座，前排會濕）。</p>
+<p class="muted">若提早入園、館內已逛完：可改看 <b>14:30</b> 日間場，再繼續逛到 16:30 出館。</p>
+<p><span class="time">~16:20–16:40</span> 日間秀結束後出館（保留手環／再入場憑證）。</p>
+<hr>
+<p><b>傍晚｜大井町 TRACKS</b></p>
+<p><span class="time">16:50–17:20</span> JR 品川→大井町（京濱東北線 1 站，約 3 分；含步行抓 20–30 分）。</p>
+<p><span class="time">17:20–18:10</span> <b>OIMACHI TRACKS</b> 輕食／定食快吃＋短逛（主線夜間秀請勿久坐）。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=OIMACHI+TRACKS" target="_blank" rel="noopener">📍地圖</a></p>
+<p class="muted">夜間秀若為 <b>19:00</b>：請 <b>18:15–18:25</b> 前離開 TRACKS 回品川再入園。</p>
+<hr>
+<p><b>夜間｜⭐ Aqua Park 夜間海豚秀（主推）</b></p>
+<p><span class="time">18:25–18:40</span> 再入園 → 2F スタジアム卡位（建議開演前 20–30 分）。</p>
+<p>⭐ <span class="time">19:00–19:15</span> <b>夜間海豚秀（ナイト ver.）</b> — 雷射／光影＋海豚，約 15 分；禁閃光燈；前排會濕，相機／手機做好防水。</p>
+<p class="muted">旺季／暑期偶有加場（如 17:30、20:00／20:30）；以當日官網表為準。若當日主場改 20:00，TRACKS 可多留 30–40 分。</p>
+<p><span class="time">19:30–20:30</span> 若還想回 TRACKS 補逛／甜點；否則 JR 回上野宵夜。</p>
+<p><span class="time">~21:00</span> 回上野；⭐ <b>京成上野劃 Day7 Skyliner</b>。</p>
+</div>
+</details>
+
+<details open>
+<summary>🐬 Aqua Park 海豚秀時間表（日間／夜間｜8 月參考）</summary>
+<div class="card">
+<p class="okbox">場次每日微調，<b>出發當日務必對</b>官網 <a href="https://www.aqua-park.jp/aqua/event/index.html" target="_blank" rel="noopener">イベントスケジュール</a>。以下為夏季常見編排（本版 Day6＝8/17 一）。夜間主題夏季多為「瑠璃花火-Digital Fireworks-」類光影秀（約 7/3–9/6）。</p>
+<table>
+<tr><th>類型</th><th>常見開演時間</th><th>本版 Day6 建議</th></tr>
+<tr><td><b>日間（デイ ver.）</b></td><td>11:30／13:00／14:30／16:00<br><span class="muted">旺季偶加 10:30 或 17:30</span></td><td>⭐ <b>16:00</b>（備案 14:30）</td></tr>
+<tr><td><b>夜間（ナイト ver.）</b></td><td>19:00<br><span class="muted">旺季偶加 17:30、20:00／20:30</span></td><td>⭐ <b>19:00</b></td></tr>
+</table>
+<ul>
+<li><b>場地</b>：2F ザ スタジアム；每場約 <b>15 分</b>；含在入園票內，秀本身不用另購票。</li>
+<li><b>票種</b>：主線需買可看夜間秀＋允許再入場之票（日間出館去 TRACKS 再回來）。</li>
+<li><b>就座</b>：平日約 20–30 分前；想前排／中央更早。</li>
+<li><b>水花</b>：前排易濕；夜間禁閃光燈。</li>
+<li><b>營業</b>：常見 10:00–20:00／最終入場約 19:00；暑期延長時以官網「營業時間・料金」為準。</li>
+</ul>
+<p class="warnbox">⚠️ 若當日夜間主場改成 <b>20:00</b> 或更晚：改 <b>18:50–19:20</b> 再入園即可，TRACKS 可吃飽一點。若只有 17:30 夜間場：放棄 TRACKS 或縮到 20 分，日間秀後直接留館／短暫出館。</p>
+</div>
+</details>
+
+<details open>
+<summary>🛍️ 高輪 Gateway City／NEWoMan 必逛（主線約 11:45–12:20）</summary>
+<div class="card">
+<p class="okbox">⭐ 主線已先逛 LUFTBAUM；MoN 後只留 <b>30–35 分</b>快閃。HARBS 排隊長就外帶或改 MoN Park Cafe；不要為了排甜點壓縮 Aqua。</p>
+<ul>
+<li><b>HARBS ニュウマン高輪店</b><a class="gmap" href="https://www.google.com/maps/search/?api=1&query=HARBS%20%E3%83%8B%E3%83%A5%E3%82%A6%E3%83%9E%E3%83%B3%E9%AB%98%E8%BC%AA" target="_blank" rel="noopener">📍地圖</a> — NEWoMan South 3F；約 ¥1,500–2,000。<b>排隊長就外帶或跳過</b>。</li>
+<li><b>MoN Park Cafe／MoN Shop</b> — 咖啡輕食、設計雜貨；適合 MoN 出館後短停。</li>
+<li><b>NEWoMan 1–5F</b> — 生活雜貨、伴手禮、POP UP；時間不夠只快速掃過。</li>
+</ul>
+<p class="warnbox"><b>時間控制</b>：建議 <b>12:20 前離開高輪</b>下品川午餐。</p>
+</div>
+</details>
+
+<details open>
+<summary>備案 B｜夜間改都廳光雕秀（放棄夜間海豚）</summary>
+<div class="card">
+<p>適合：更想看投影秀、或夜間海豚票售完／小孩怕水花。週一平日場請對 TIMETABLE（寶可夢取向未必有）。</p>
+<ul>
+<li><span class="time">13:40–16:40</span> Aqua Park <b>只看日間秀（主推 16:00）</b>後出館（可不買夜間票）。</li>
+<li><span class="time">16:50–18:30</span> 大井町 TRACKS 晚餐完整版。</li>
+<li><span class="time">18:40–19:20</span> 大井町／品川 → 新宿都廳前。</li>
+<li>⭐ <span class="time">19:30／20:00／20:30</span> 都民廣場光雕秀（對 <a href="https://tokyoprojectionmappingproject.jp/">TIMETABLE</a>）。</li>
+<li><span class="time">~21:00</span> 新宿→上野；劃 Skyliner。</li>
+</ul>
+<p class="warnbox">主線 A 與備案 B <b>二擇一</b>：夜間海豚＋光雕同晚趕場過緊，8 月不建議硬塞。</p>
+</div>
+</details>
+
+<details>
+<summary>備案 C｜不想逛 MoN／低體力｜LUFTBAUM＋泉岳寺加深</summary>
+<div class="card">
+<p class="okbox">適合：跳過有料展、或票售完。主線上午改：LUFTBAUM → 泉岳寺 → NEWoMan；下午仍接 Aqua。⚠️ <b>不可改 Day7 補 MoN</b>（8/18 休館）。</p>
+<p><span class="time">09:10–10:00</span> LUFTBAUM（同上）。</p>
+<p><span class="time">10:10–10:50</span> <b>泉岳寺</b> 短訪。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%B3%89%E5%B2%B3%E5%AF%BA" target="_blank" rel="noopener">📍地圖</a></p>
+<p><span class="time">11:00–12:20</span> NEWoMan／Gateway 加深逛 → 品川午餐。</p>
+</div>
+</details>
+
+<details>
+<summary>🍽️ 三餐 ×3 備案</summary>
+<div class="card">
+<p class="muted">本日風格：<b>站內／LUFTBAUM 早餐感 ＋ 品川午餐 ＋ TRACKS／大井町晚餐</b>。叙々苑已改 Day5。</p>
+<p><span class="tag b">早餐（08:30 前或 LUFTBAUM 咖啡）</span></p>
+<p><b>① 飯店／便利商店</b> — ¥500–800。</p>
+<p><b>② LUFTBAUM／MoN Park Cafe</b> — 晨景時段咖啡輕食，¥800–1,500。</p>
+<p><b>③ PAUL 品川／高輪口</b> — 麵包外帶，¥600–1,200。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=PAUL%20%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
+<hr>
+<p><span class="tag l">午餐（品川 12:30）</span></p>
+<p><b>① 利久牛舌 Atre 品川</b> ⭐ — ¥2,000–2,800；<b>12:00 前排隊</b>較穩。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%88%A9%E4%B9%85%20%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>② つばめグリル 品川駅前</b> — 漢堡排，¥1,800–3,000。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A4%E3%81%B0%E3%82%81%E3%82%B0%E3%83%AA%E3%83%AB%20%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>③ ecute 品川 便當／拉麵</b> — ¥800–1,500，趕時間保險。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=ecute%E5%93%81%E5%B7%9D" target="_blank" rel="noopener">📍地圖</a></p>
+<hr>
+<p><span class="tag d">晚餐（TRACKS／大井町 17:20–18:10｜趕夜間秀）</span></p>
+<p><b>① TRACKS 商場內餐廳／定食</b> — ¥1,200–3,500。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=OIMACHI+TRACKS" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>② 麵屋 蕾（大井町）</b> — ¥1,000–1,500。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%BA%E5%B1%8B%20%E8%95%BE%20%E5%A4%A7%E4%BA%95%E7%94%BA" target="_blank" rel="noopener">📍地圖</a></p>
+<p><b>③ 牛角／磯丸水產 大井町</b> — ¥2,500–5,000；趕秀請改定食。<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E8%A7%92%20%E5%A4%A7%E4%BA%95%E7%94%BA" target="_blank" rel="noopener">📍地圖</a></p>
+<p class="muted">若走夜間海豚：晚餐改輕量，秀後回上野再補宵夜。</p>
+</div>
+</details>
+
+<details>
 <summary>💴 Day6 預算（/人）</summary>
 <div class="card">
-交通 <span class="price">¥800–1,100</span>＋江戶東京博物館（估 <span class="price">¥600–1,000</span>）＋午餐 <span class="price">¥2,000–3,500</span>＋點心 <span class="price">¥800</span>＋叙々苑 <span class="price">¥4,000–6,000</span>＋（選配）鐵塔展望<br>
-＝主線約 <b class="big">¥9,000–12,000</b>
+交通 <span class="price">¥900–1,200</span>＋MoN ぐるぐる展 <span class="price">¥2,500</span>（小中高 ¥800）＋Aqua Park 含夜間／再入場 <span class="price">¥2,800–3,500</span>＋午餐 <span class="price">¥2,500</span>＋晚餐 <span class="price">¥2,000–3,500</span><br>
+＝主線約 <b class="big">¥10,500–13,500</b>。備案 C 省 MoN 票；備案 B 光雕免費可省夜間票差價。
 </div>
 </details>
 </section>
 <!-- ============================= DAY 7 ============================= -->
 <section id="d7">
 <h2>Day 7｜8/18(二)　上野文化半日・返家</h2>
-<div class="muted">班機 20:40 起飛｜上午觀光＋午後採買｜Skyliner 倒推</div>
+<div class="muted">班機 20:40 起飛｜上午上野觀光＋午後採買｜Skyliner 倒推｜⚠️ 本日 MoN 休館，勿排高輪</div>
 <a class="map-link" href="assets/day-07-20260812.png" target="_blank" rel="noopener"><img src="assets/day-07-20260812.png" alt="Day 7 旅程地圖（點擊開啟高畫質原圖）" class="map-img" loading="lazy" decoding="async"></a>
 
 <details open>
@@ -1100,7 +1343,8 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <p><span class="time">15:00–15:30</span> 回飯店取行李、整理退稅品與護照；步行至京成上野站。</p>
 <p><span class="time">16:00–16:30</span> 搭 Skyliner（41–45 分；<b>實際班次以當日京成時刻表為準，建議最晚約 16:30 離開上野</b>）。</p>
 <p><span class="time">約 17:00–17:20</span> 抵成田機場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E7%94%B0%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener" title="Google Maps：成田国際空港">📍地圖</a>，報到托運、安檢、晚餐與免稅店。</p>
-<p><span class="time">20:40</span> 起飛返台 🛫。</p>
+<p><span class="time">20:40</span> 成田 T1 起飛返台（BR 195 長榮／經濟艙）→ <span class="time">23:20</span> 抵桃園 T2 🛫。</p>
+<p class="warnbox">⚠️ 返程日硬條件：<b>15:00 前回到上野飯店取行李</b>。本日 <b>MoN 休館</b>，勿再衝高輪。</p>
 </div>
 </details>
 
@@ -1112,7 +1356,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋下午茶
 <p><b>③ 雨天／低體力</b>：PARCO_ya<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=PARCO_ya%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener" title="Google Maps：PARCO_ya 上野">📍地圖</a>＋松坂屋＋ecute 上野<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=ecute%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener" title="Google Maps：ecute上野">📍地圖</a>，全程室內，隨時可回飯店拿行李。</p>
 <hr>
 <p><span class="tag b">早餐 3 選（07:30–08:15）</span></p>
-<p><b>① ecute Andersen 可頌+咖啡</b> — ¥600–900，<b>不訂位</b>，外帶上 Skyliner。</p>
+<p><b>① ecute Andersen 可頌+咖啡</b> — ¥600–900，<b>不訂位</b>。</p>
 <p><b>② 名代 富士そば<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%90%8D%E4%BB%A3%E5%AF%8C%E5%A3%AB%E3%81%9D%E3%81%B0" target="_blank" rel="noopener" title="Google Maps：名代富士そば">📍地圖</a> 上野<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%90%8D%E4%BB%A3%E5%AF%8C%E5%A3%AB%E3%81%9D%E3%81%B0%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener" title="Google Maps：名代富士そば 上野">📍地圖</a></b>（24h）— 熱湯蕎麥+溫泉蛋，¥500–800，<b>不訂位</b>。</p>
 <p><b>③ 飯店早餐 / 前晚預購便利商店</b> — ¥0–1,000，最趕時間時用。</p>
 <p><span class="tag d">午餐</span> 上野炸豬排／定食／蕎麥麵擇一，抓 <b>12:30–13:30</b>；不要排需要久候的名店。</p>
@@ -1134,14 +1378,15 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋早餐 <s
 <h2>🕳️ 待一起安排的空檔（已移除七月慶典）</h2>
 <div class="warnbox">
 七月版慶典（上野夏祭、神樂坂阿波舞、隅田川花火）不在本段日期。<b>とよす夏祭</b>本趟不排。<br>
-本檔為 <code>tokyo-20260812-guide.html</code> 重排版：已去掉橫濱八景島；燈籠流排入 Day4；品川新文化軸排入 Day5。
+本檔為 <code>tokyo-20260812-guide.html</code> 重排版：已去掉橫濱八景島；燈籠流排入 Day4；Day5／Day6 對調（兩國＋叙々苑在 8/16；LUFTBAUM→MoN＋Aqua 在 8/17）。MoN <b>8/18 休館</b>。
 </div>
 <table>
 <tr><th>日期</th><th>狀態</th><th>本版安排</th></tr>
-<tr><td><b>Day2</b> 8/13(四)</td><td><span class="pill m">已定案</span></td><td>葛西→豐洲→teamLab→平日光雕秀（原 Day4）</td></tr>
+<tr><td><b>Day2</b> 8/13(四)</td><td><span class="pill m">已定案</span></td><td>葛西→豐洲→Borderless→麻布台附近／回上野（不排都廳）</td></tr>
 <tr><td><b>Day4</b> 8/15(六) <span class="pill w">山の日</span></td><td><span class="pill m">已定案</span></td><td>晴空塔／淺草＋<b>燈籠流</b>（週末都廳秀不排）</td></tr>
-<tr><td><b>Day5</b> 8/16(日)</td><td><span class="pill m">已定案</span></td><td>MoN→Aqua→TRACKS（水かけ清晨選配）</td></tr>
-<tr><td><b>Day6</b> 8/17(一)</td><td><span class="pill m">已定案</span></td><td>兩國→東京站→麻布台→鐵塔→叙々苑</td></tr>
+<tr><td><b>Day5</b> 8/16(日)</td><td><span class="pill m">已定案</span></td><td>水かけ清晨選配→兩國→東京站→麻布台／鐵塔→叙々苑</td></tr>
+<tr><td><b>Day6</b> 8/17(一)</td><td><span class="pill m">已定案</span></td><td>LUFTBAUM→MoN→Aqua→TRACKS＋夜間海豚</td></tr>
+<tr><td><b>Day7</b> 8/18(二)</td><td><span class="pill m">已定案</span></td><td>上野文化半日→採買→Skyliner 返台（MoN 休館）</td></tr>
 </table>
 <div class="okbox">
 彈性多在各日備案內調整。國高生逛街見 <a href="tokyo-2026-08-ueno-local-guide.html#teen">上野手冊</a>。
@@ -1162,7 +1407,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋早餐 <s
 <details>
 <summary>🎟️ 優惠券 / 折扣哪裡拿</summary>
 <ul>
-<li>門票：<b>Klook / KKday</b> 常比官網現場便宜（teamLab、Aqua Park<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab%20Planets%20TOKYO" target="_blank" rel="noopener" title="Google Maps：teamLab Planets TOKYO">📍地圖</a>、墨田水族館<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%BF%E3%81%A0%E6%B0%B4%E6%97%8F%E9%A4%A8" target="_blank" rel="noopener" title="Google Maps：すみだ水族館">📍地圖</a>、Aqua Park<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%82%AF%E3%82%BB%E3%83%AB%20%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%91%E3%83%BC%E3%82%AF%E5%93%81%E5%B7%9D" target="_blank" rel="noopener" title="Google Maps：マクセル アクアパーク品川">📍地圖</a>、澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a>），且可掃碼免排隊。</li>
+<li>門票：<b>Klook / KKday</b> 常比官網現場便宜（Borderless<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab%20Borderless%20TOKYO%20Azabudai%20Hills" target="_blank" rel="noopener" title="Google Maps：teamLab Borderless Azabudai">📍地圖</a>、墨田水族館<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%BF%E3%81%A0%E6%B0%B4%E6%97%8F%E9%A4%A8" target="_blank" rel="noopener" title="Google Maps：すみだ水族館">📍地圖</a>、Aqua Park<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%82%AF%E3%82%BB%E3%83%AB%20%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%91%E3%83%BC%E3%82%AF%E5%93%81%E5%B7%9D" target="_blank" rel="noopener" title="Google Maps：マクセル アクアパーク品川">📍地圖</a>、澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a>），且可掃碼免排隊。</li>
 <li><b>唐吉訶德/Bic/Yodobashi 出示護照免稅 8–10%</b> + APP/官網優惠券再折。家電店・<a href="tokyo-2026-08-ueno-local-guide.html#electronics-compare">比價工具</a>／<a href="tokyo-2026-08-ueno-local-guide.html#electronics-coupon">折價券</a>見 <a href="tokyo-2026-08-ueno-local-guide.html#electronics">上野手冊・家電電子</a>（⭐ 上野站前ヨドバシ）。藥妝店（松本清等）滿額免稅 + 折價券。</li>
 <li>觀光案內所、機場、飯店大廳常有免費 coupon book。</li>
 </ul>
@@ -1202,7 +1447,7 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋早餐 <s
 <li>透氣排汗短袖 T、薄襯衫；快乾材質為主（會狂流汗，每天 1 套換洗）。</li>
 <li><b>薄長袖外套/開襟衫</b>：水族館、博物館、電車冷氣超強，室內外溫差大（小孩必備防感冒）。</li>
 <li></li>
-<li>鞋：<b>好走透氣的運動鞋/慢跑鞋</b>（每天走 1.5 萬步以上），加一雙涼鞋（teamLab<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab%20Planets%20TOKYO" target="_blank" rel="noopener" title="Google Maps：teamLab Planets TOKYO">📍地圖</a> 涉水穿短褲+赤腳，現場有置物）。</li>
+<li>鞋：<b>好走透氣的運動鞋/慢跑鞋</b>（每天走 1.5 萬步以上），加一雙涼鞋（舒適備援；Borderless 以運動鞋為主）。</li>
 <li>防曬：太陽眼鏡（<b>澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a> 頂樓禁帶傘/帽，必備墨鏡</b>）、防曬乳、薄帽（戶外用）。</li>
 </ul>
 </details>
@@ -1235,18 +1480,19 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋早餐 <s
 <table>
 <tr><th>原本怕雨的戶外段</th><th>室內備案</th></tr>
 <tr><td>Day1 上野公園</td><td>改 PARCO_ya<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=PARCO_ya%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener" title="Google Maps：PARCO_ya 上野">📍地圖</a> / 阿美橫町<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%A1%E6%A8%AA" target="_blank" rel="noopener" title="Google Maps：アメ横">📍地圖</a>室內店家、上野的森美術館</td></tr>
-<tr><td>Day2 葛西戶外園區</td><td>主館室內為主；轉豐洲／teamLab 全室內</td></tr>
-<tr><td>Day3 明治神宮<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE" target="_blank" rel="noopener" title="Google Maps：明治神宮">📍地圖</a>/表參道<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank" rel="noopener" title="Google Maps：表参道">📍地圖</a></td><td>明治神宮縮短或取消；直接走澀谷全室內備案（Hikarie／PARCO／Scramble Square）。Cat Street 不當雨天或酷暑主線。</td></tr>
-<tr><td>Day4 燈籠流荒天順延</td><td>改淺草／上野晚餐；順延日見 Day5 備案壓縮夜間</td></tr>
-<tr><td>Day5 高輪戶外</td><td>MoN／Aqua／TRACKS 幾乎全室內，最適合雨天</td></tr>
-<tr><td>Day6 鐵塔步行</td><td>改計程車或只在麻布台室內遠眺；東京站室內加深</td></tr>
+<tr><td>Day2 葛西戶外園區</td><td>主館室內為主；轉豐洲／Borderless 或ららぽーと全室內</td></tr>
+<tr><td>Day3 明治神宮／原宿戶外</td><td>神宮縮短或取消；WEGO 仍 10:30 進；全室內 PARCO／Hikarie → 早到新宿；都廳展望台室內仍可 → 光雕秀。</td></tr>
+<tr><td>Day4 燈籠流荒天順延</td><td>改淺草／上野晚餐；順延日見 Day5 備案（叙々苑／燈籠二擇一）</td></tr>
+<tr><td>Day5 鐵塔步行</td><td>改計程車或只在麻布台室內遠眺；東京站室內加深</td></tr>
+<tr><td>Day6 高輪／Aqua</td><td>LUFTBAUM／MoN／NEWoMan／Aqua／TRACKS 幾乎全室內</td></tr>
+<tr><td>Day7 上野／返程</td><td>國博室內；太趕改 PARCO_ya／ecute</td></tr>
 </table>
-<p class="muted">最不怕雨的天：Day2（teamLab）／Day5（MoN+Aqua+TRACKS）。Day4 燈籠為戶外河邊；Day6 鐵塔步行可縮。</p>
+<p class="muted">最不怕雨的天：Day2（Borderless／豐洲室內備案）／Day6（高輪＋Aqua）。Day4 燈籠為戶外河邊；Day5 鐵塔步行可縮。</p>
 </details>
 <details>
 <summary>🔁 景點臨時關閉替代</summary>
 <ul>
-<li>teamLab<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab%20Planets%20TOKYO" target="_blank" rel="noopener" title="Google Maps：teamLab Planets TOKYO">📍地圖</a> 售完/維修 → <b>teamLab<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=teamLab%20Planets%20TOKYO" target="_blank" rel="noopener" title="Google Maps：teamLab Planets TOKYO">📍地圖</a> Borderless（麻布台）</b>或墨田水族館<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%BF%E3%81%A0%E6%B0%B4%E6%97%8F%E9%A4%A8" target="_blank" rel="noopener" title="Google Maps：すみだ水族館">📍地圖</a>。</li>
+<li>Borderless 售完 → 走 Day2 <b>豐洲室內備案</b>（ガス科学館／ららぽーと）→ 回上野；或改日後補 Planets（非本版主線）。</li>
 <li>澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a> 售完 → <b>東京鐵塔<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener" title="Google Maps：東京タワー">📍地圖</a> / 都廳免費展望台 / Shibuya Hikarie Sky Lobby</b>。</li>
 <li>豐洲市場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E6%B4%B2%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：豊洲市場">📍地圖</a>店休 → 葛西/築地場外市場（仍有壽司丼飯）。</li>
 <li>動物園週一休 → 科博<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%BD%E7%AB%8B%E7%A7%91%E5%AD%A6%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener" title="Google Maps：国立科学博物館">📍地圖</a>/上野之森美術館。</li>
@@ -1270,14 +1516,15 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋早餐 <s
 <details open>
 <summary>📸 各景點最佳時間 / 角度 / 注意</summary>
 <ul>
-<li><b>都廳光雕秀（Day2/3／Day5備案）</b>：都民廣場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：東京都庁 都民広場">📍地圖</a>正面拍全幅；夜暗對比強，手機開夜間模式、靠欄杆穩拍。</li>
-<li><b>澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a>（Day3）</b>：日落前 30 分上樓拍藍調夜景最美；頂樓 <b>禁帶傘/帽</b>，注意手機防摔繩。SKY EDGE 邊角是 IG 熱點。</li>
-<li><b>不忍池<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8D%E5%BF%8D%E6%B1%A0" target="_blank" rel="noopener" title="Google Maps：不忍池">📍地圖</a>荷花（Day1/7）</b>：清晨 6–8 點花最開、光最柔，弁天堂為背景。</li>
+<li><b>都廳光雕秀（Day3／Day6備案）</b>：都民廣場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：東京都庁 都民広場">📍地圖</a>正面拍全幅；夜暗對比強，手機開夜間模式、靠欄杆穩拍。</li>
+<li><b>都廳展望台＋光雕秀（Day3）</b>：展望台免費看高空景；19:30 戶外投影另算一場。兩者可同一晚接做。</li>
+<li><b>澀谷 SKY（Day3 選配）</b>：有理想時段才加；頂樓禁帶傘/帽。路口景用 Magnet 補。</li>
+<li><b>不忍池<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8D%E5%BF%8D%E6%B1%A0" target="_blank" rel="noopener" title="Google Maps：不忍池">📍地圖</a>荷花（Day1／Day7）</b>：清晨 6–8 點花最開、光最柔，弁天堂為背景。</li>
 <li><b>明治神宮<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE" target="_blank" rel="noopener" title="Google Maps：明治神宮">📍地圖</a>大鳥居（Day3）</b>：早晨人少順光；神宮內<b>正殿前禁拍/脫帽</b>，尊重參拜。</li>
 <li><b>隅田川燈籠流（Day4）</b>：吾妻橋兩岸；夜景曝光易過曝，先測光再拍燈籠群。<br></li>
-<li><b>東京車站丸之內（Day6）</b>：傍晚點燈後紅磚+廣場倒影，KITTE 屋上庭園可俯拍站舍正面（免費）。</li>
-<li><b>teamLab（Day2）</b>：水面倒影鏡像、垂直花朵房；<b>建議穿深色短褲、避免裙子（地面為鏡）</b>，相機防水袋。</li>
-<li><b>品川 Aqua Park（Day5）</b>：水母牆變色、海豚秀水花（前排會濕，相機防水）；夜間秀雷射場最華麗。</li>
+<li><b>東京車站丸之內（Day5）</b>：傍晚點燈後紅磚+廣場倒影，KITTE 屋上庭園可俯拍站舍正面（免費）。</li>
+<li><b>Borderless（Day2）</b>：迷宮式展間、光影互動；運動鞋好走即可（無 Planets 涉水）。人多時放慢腳步、預留重逛熱門房。</li>
+<li><b>品川 Aqua Park（Day6）</b>：水母牆變色、海豚秀水花（前排會濕，相機防水）；夜間秀雷射場最華麗。</li>
 <li><b>淺草觀光中心頂樓／燈籠河邊（Day4）</b>：仲見世+晴空塔<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%84%E3%83%AA%E3%83%BC" target="_blank" rel="noopener" title="Google Maps：東京スカイツリー">📍地圖</a>一鏡到底，免費私房點。</li>
 </ul>
 <p class="muted">通則：神社/寺廟正殿、部分店內、表演中可能禁拍；祭典拍人請禮貌。商店街拍照避免擋道。</p>
@@ -1294,9 +1541,9 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋早餐 <s
 <tr><td>D3</td><td>700</td><td>3,730</td><td>4,500</td><td>8,930</td><td>1,875</td></tr>
 <tr><td>D4</td><td>900</td><td>2,000</td><td>5,000</td><td>7,900</td><td>1,660</td></tr>
 <tr><td>D5</td><td>1,100</td><td>5,500</td><td>5,500</td><td>12,100</td><td>2,540</td></tr>
-<tr><td>D6</td><td>1,000</td><td>1,000</td><td>7,000</td><td>9,000</td><td>1,890</td></tr>
+<tr><td>D6</td><td>1,000</td><td>5,500</td><td>6,500</td><td>13,000</td><td>2,730</td></tr>
 <tr><td>D7</td><td>2,580</td><td>1,000</td><td>3,800</td><td>7,380</td><td>1,550</td></tr>
-<tr><th>合計</th><th>10,960</th><th>17,730</th><th>34,600</th><th>~62,290</th><th>~13,080</th></tr>
+<tr><th>合計</th><th>10,960</th><th>22,230</th><th>34,100</th><th>~67,290</th><th>~14,130</th></tr>
 </table>
 <div class="okbox">
 <b class="big">行程內每人 ≈ ¥60,000–68,000（約 NT$12,600–14,300）</b><br>
@@ -1313,14 +1560,14 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋早餐 <s
 <li>☐ 護照效期 6 個月以上、機票、住宿確認單</li>
 <li>☐ <b>Visit Japan Web</b> 全員登錄完成（入境+海關 QR）</li>
 <li>☐ 旅平險+海外醫療投保</li>
-<li>☐ <b>澀谷 SKY<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA%20SKY" target="_blank" rel="noopener" title="Google Maps：SHIBUYA SKY">📍地圖</a></b> 開賣日(參觀前28天)搶日落場</li>
-<li>☐ <b>teamLab Planets</b> 指定時段票（Day2；提前 1 個月）</li>
+<li>☐ <b>澀谷 SKY</b> 14:40 票（已訂）＋可選窗邊夜景餐廳訂位（USHIHACHI／旬彩）</li>
+<li>☐ <b>teamLab Borderless</b> 指定時段票（Day2；優先 15:00／次選 14:30）</li>
 <li>☐ <b>燈籠</b> Day4 事前購買（確認淺草／墨田側）</li>
-<li>☐ Aqua Park 含夜間秀＋再入場（Day5）；MoN 是否需預約</li>
+<li>☐ Aqua Park 含夜間秀＋再入場（Day6）；MoN ぐるぐる展票（Day6；⚠️ 8/18 休館）</li>
 <li>☐ 墨田水族館（Day4 選配，可省略）</li>
-<li>☐ <b>叙々苑</b> Day6 <b>19:00</b> 訂位；江戶東京博物館確認開館</li>
-<li>☐ 邁泉青山本店訂位（Day3）</li>
-<li>☐ 都廳光雕秀 TIMETABLE（Day2／Day3／Day5 備案；8/15 不排都廳）</li>
+<li>☐ <b>叙々苑</b> Day5 <b>8/16（日）19:00</b> 訂位；江戶東京博物館確認開館（勿排週一）</li>
+<li>☐ （選）邁泉青山—Day3 午餐已改澀谷，非必須</li>
+<li>☐ 都廳光雕秀 TIMETABLE（Day3 主看／Day6 備案；Day2 不排；8/15 不排都廳）</li>
 </ul>
 </details>
 <details>
@@ -1358,22 +1605,22 @@ Skyliner 來回攤半 <span class="price">¥2,580</span>（NT$540）＋早餐 <s
 【基本資料】
 - 日期：2026/8/12(三)–8/18(二)，共 7 天；2 大人+小孩家庭
 - 住宿全程：上野 Hotel Crown Hills Ueno Premier<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%92%E3%83%AB%E3%82%BA%E4%B8%8A%E9%87%8E%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2" target="_blank" rel="noopener" title="Google Maps：ホテルクラウンヒルズ上野プレミア">📍地圖</a>
-- 進出：去程 NRT 12:25 抵達；回程 8/18 班機 20:40 起飛
+- 進出：去程 BR 184 07:55 TPE→12:25 NRT；回程 BR 195 8/18 20:40 NRT→23:20 TPE
 - 交通主力：iPhone 綁定 Suica 嗶卡；機場往返用京成 Skyliner 來回票（勿買 JR Pass/地鐵一日券，因混用 JR+地鐵+私鐵）
 
 【每日主軸】
 D1 上野：HARBS 下午茶→多慶屋快逛→阿美橫町→晚餐アメ横食堂→續逛→買宵夜早餐回飯店
-D2 葛西→豐洲午餐→teamLab→新宿晚餐→平日光雕秀
-D3（平日）明治神宮短走→原宿 WEGO→表參道／青山午餐→午後 Hikarie／PARCO／Scramble Square→15:30–17:00 澀谷 SKY→17:15 澀谷早晚餐→19:30 光雕秀→回上野
+D2 葛西→豐洲午餐→Borderless 15:00→麻布台附近／回上野（不排都廳；備案：豐洲室內→上野）
+D3 明治神宮→WEGO10:30→澀谷午餐→PARCO/Hikarie→路口快拍→都廳展望台→西口晚餐→19:30光雕秀
 D4 晴空塔／Solamachi／淺草→18:30 隅田川とうろう流し→燈籠後晚餐（不排都廳週末秀）
-D5 MoN Takanawa→高輪 Gateway City（HARBS/NEWoMan/MoN店家）→品川午餐→Aqua Park 日間→TRACKS→夜間海豚秀（或備案都廳光雕）
-D6 江戶東京博物館→兩國午餐→東京駅／KITTE→麻布台之丘→東京鐵塔→19:00 叙々苑→劃 Skyliner
+D5 （選配）深川水かけ→江戶東京博物館→兩國午餐→東京駅／KITTE→麻布台之丘→東京鐵塔→19:00 叙々苑
+D6 LUFTBAUM晨景→MoNぐるぐる展→NEWoMan快閃→品川午餐→Aqua 日間16:00→TRACKS→夜間海豚19:00（或備案都廳光雕）→劃 Skyliner
 D7 不忍池荷花晨散→退房寄行李→東京國立博物館（或淺草半日）→上野午餐＋最後採買→16:00–16:30 Skyliner→成田→20:40返台
 
 【必含重點】
 - 寶可夢光雕秀=都廳第一本廳舍東側/都民廣場<a class="gmap" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%20%E9%83%BD%E6%B0%91%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener" title="Google Maps：東京都庁 都民広場">📍地圖</a>，免費免預約，8月場次19:30/20:00/20:30/21:00/21:30，需查官網TIMETABLE確認寶可夢場次；8/17(一)為平日，哥吉拉等週末作品可能不播
 - 入境：Visit Japan Web 全員登錄、海關違禁品(肉品)、上網eSIM、現金/Suica
-- 提前預約：澀谷SKY(28天前搶15:30–16:00場)、teamLab Planets(Day2・1個月)、燈籠(Day4)、Aqua Park夜間票(Day5)、MoN是否需預約、江戶東京博物館、叙々苑 Day6 19:00、邁泉青山本店訂位
+- 提前預約：teamLab Borderless(Day2・15:00)、燈籠(Day4)、叙々苑 Day5 8/16 19:00、江戶東京博物館確認開館、Aqua Park夜間票(Day6)、MoNぐるぐる展(Day6；8/18休館勿排Day7)；Day3 展望台免預約／SKY 僅選配
 - 8月東京33-36°C高濕午後雷雨：防暑+雨具+室內備案
 請輸出完整可下載 PDF 連結。
 </pre>
