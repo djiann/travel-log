@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>上野站／京成上野 → Minn 上野｜步行動線・Check-in／out・洗衣・寄行李</title>
+<style>
+  :root{--bg:#f6f4f0;--card:#fff;--card2:#faf8f5;--ink:#2a3238;--mut:#6b7a88;--acc:#d4566a;--acc2:#3a8f9f;--ok:#2d8a62;--warn:#b87820;--line:#e6e1da;--shadow:0 2px 12px rgba(42,50,56,.06)}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,"PingFang TC","Noto Sans TC","Hiragino Sans GB","Microsoft JhengHei",system-ui,sans-serif;background:var(--bg);background-image:radial-gradient(ellipse 80% 50% at 100% -10%,rgba(212,86,106,.07),transparent),radial-gradient(ellipse 60% 40% at 0% 100%,rgba(58,143,159,.06),transparent);color:var(--ink);line-height:1.72;font-size:16px;-webkit-font-smoothing:antialiased}
+  header{padding:32px 20px 24px;background:linear-gradient(145deg,#fff 0%,#fdf6f4 45%,#f0f7f8 100%);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  h1{margin:0 0 8px;font-size:22px;font-weight:800;letter-spacing:-.02em}.sub{color:var(--mut);font-size:14px;line-height:1.55}.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+  nav.toc{position:sticky;top:0;z-index:20;background:rgba(246,244,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 0;margin:0 -16px 20px;overflow-x:auto;white-space:nowrap}
+  nav.toc a{display:inline-block;color:var(--acc2);text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;background:#fff;border:1px solid var(--line);border-radius:20px;margin:4px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  section{margin:24px 0} h2{font-size:19px;font-weight:800;border-left:4px solid var(--acc);padding-left:12px;margin:28px 0 14px;scroll-margin-top:70px} h3{font-size:16px;font-weight:700;color:var(--acc2);margin:18px 0 8px}
+  .card{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}.okbox{background:#f0faf4;border:1px solid #c5e6d4;border-left:4px solid var(--ok);border-radius:12px;padding:14px 16px;margin:10px 0}.warnbox{background:#fff9ee;border:1px solid #f0ddb8;border-left:4px solid var(--warn);border-radius:12px;padding:14px 16px;margin:10px 0}.accbox{background:linear-gradient(135deg,#fdf4f6,#f4f9fa);border:1px solid #e8d4d8;border-left:4px solid var(--acc);border-radius:12px;padding:14px 16px;margin:10px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;display:block;overflow-x:auto;border-radius:10px} th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;min-width:140px} th{background:#f0f4f6;color:var(--acc2);font-weight:700;white-space:nowrap} tr:nth-child(even) td{background:#fafafa}
+  ul{padding-left:20px;margin:8px 0} li{margin:5px 0} a{color:var(--acc2);text-decoration:none;border-bottom:1px solid rgba(58,143,159,.25)}.muted{color:var(--mut);font-size:13px}.time{color:var(--acc);font-weight:800}.price{color:var(--ok);font-weight:800}.kbd{display:inline-block;background:#fff;border:1px solid #d6c8bb;border-bottom-width:3px;border-radius:7px;padding:2px 7px;font-weight:800;color:#5c4033}
+  .flow{display:grid;gap:8px;margin:10px 0}.step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px}.num{flex:0 0 34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--acc2);color:#fff;font-weight:900}.step b{display:block}
+  .mini-map{background:#fffaf2;border:2px solid #eadbca;border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}.rail{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.station{background:#fff;border:2px solid #d8c7b6;border-radius:999px;padding:7px 12px;font-weight:800}.arrow{font-weight:900;color:var(--acc)}.note{font-size:12px;color:var(--mut);margin-top:4px}
+  .footer{color:var(--mut);font-size:12px;text-align:center;padding:32px 0 16px;border-top:1px solid var(--line);margin-top:48px}
+  .gmap{font-size:.85em;margin-left:.2em}
+  @media print{nav.toc{display:none}body{background:#fff;background-image:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🏨 上野站／京成上野 → Minn 上野</h1>
+  <div class="sub">本趟住宿：<b>Minn 上野（ミン上野）</b>　｜　地址：東京都台東区東上野 1-19-5　｜　電話：<a href="tel:050-3642-4644">050-3642-4644</a><br>
+  官方：<a href="https://staytuned.asia/ja/brands/minn/hotels/minn-ueno" target="_blank" rel="noopener">staytuned.asia · Minn 上野</a>
+  <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Minn%E4%B8%8A%E9%87%8E+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E6%9D%B1%E4%B8%8A%E9%87%8E1-19-5" target="_blank" rel="noopener">📍 Google Maps</a></div>
+</header>
+<div class="wrap">
+<nav class="toc">
+  <a href="tokyo-20260812-guide.html">← 回主指南</a>
+  <a href="#quick">快速結論</a>
+  <a href="#walk">各站步行</a>
+  <a href="#keisei">京成上野動線</a>
+  <a href="#jr">JR 上野／御徒町</a>
+  <a href="#checkin">Check-in／out</a>
+  <a href="#luggage">寄行李</a>
+  <a href="#laundry">洗衣機1F</a>
+  <a href="#amenity">盥洗備品</a>
+  <a href="#tips">注意事項</a>
+</nav>
+
+<section id="quick">
+<h2>① 快速結論</h2>
+<div class="okbox">
+  <b>最近車站：日比谷線「仲御徒町」約步行 3 分</b>（官方標示）。<br>
+  JR「御徒町」或 JR／地鐵「上野」約步行 5 分。京成上野下車也可走，帶大件行李約 <b>10–15 分</b>，夏天建議改走御徒町／仲御徒町較近。<br>
+  Check-in <b>15:00 起</b>（手機自助）；Check-out <b>10:00</b>。有 <b>自助置物（セルフクローク）</b> 與 <b>投幣洗衣機</b>。
+</div>
+<table>
+<tr><th>項目</th><th>本趟重點</th></tr>
+<tr><td>住宿類型</td><td>公寓式飯店（廚房／IH／微波／冰箱）</td></tr>
+<tr><td>Check-in</td><td>15:00–24:00；手機自助。⚠️ <b>無 Early Check-in</b>（官網明確不接受 15:00 前進房）</td></tr>
+<tr><td>Check-out</td><td>10:00；可申請延至最晚 12:00（有費，見下）</td></tr>
+<tr><td>寄行李</td><td>大廳自助クローク；Check-in 前／後皆可（提早到可先寄再逛）</td></tr>
+<tr><td>洗衣</td><td><b>1F 投幣洗衣機＋烘衣機</b>（ハウスガイド標示）</td></tr>
+<tr><td>盥洗／備品</td><td>有洗髮精／潤髮／沐浴乳／洗手乳、大小毛巾、拖鞋；<b>無牙刷／刮鬍刀／化妝水／睡衣</b>（請自備；現場可另購竹牙刷）</td></tr>
+<tr><td>Visit Japan Web 地址</td><td>東京都台東区東上野1-19-5／電話 050-3642-4644</td></tr>
+</table>
+</section>
+
+<section id="walk">
+<h2>② 各站到 Minn 上野（步行時間參考）</h2>
+<table>
+<tr><th>起點</th><th>步行</th><th>適合情境</th></tr>
+<tr><td><b>日比谷線 仲御徒町</b></td><td>約 <b>3 分</b></td><td>⭐ 最近；若從地鐵日比谷線回飯店首選</td></tr>
+<tr><td><b>JR 御徒町</b></td><td>約 <b>5 分</b></td><td>山手線／京濱東北；拖行李比京成上野輕鬆</td></tr>
+<tr><td><b>JR／地鐵 上野</b></td><td>約 <b>5–8 分</b></td><td>出站往御徒町／広小路方向走</td></tr>
+<tr><td><b>京成上野</b></td><td>約 <b>10–15 分</b></td><td>Skyliner 下車直走可到；大行李＋酷暑可改轉 JR 御徒町 1 站</td></tr>
+</table>
+<div class="mini-map">
+  <h3>方位感（不用背路名）</h3>
+  <div class="rail">
+    <span class="station">京成上野</span><span class="arrow">南↓</span>
+    <span class="station">JR 上野</span><span class="arrow">南↓</span>
+    <span class="station">JR 御徒町／仲御徒町</span><span class="arrow">→</span>
+    <span class="station">東上野 1-19-5 Minn</span>
+  </div>
+  <div class="note">飯店在「東上野」靠近御徒町／阿美橫町南側一帶，不是不忍池北側的上野公園區。</div>
+</div>
+<p class="muted">實際路線請開 Google Maps 導航：搜尋「Minn 上野」或「東上野1-19-5」。</p>
+</section>
+
+<section id="keisei">
+<h2>③ 從京成上野站走去（Day1 Skyliner 下車）</h2>
+<div class="flow">
+  <div class="step"><div class="num">1</div><div><b>京成上野下車 → 出站</b><span class="muted">跟著「出口／Exit」；大廳與 JR 上野地下街可連通，注意看指標。</span></div></div>
+  <div class="step"><div class="num">2</div><div><b>手機開 Google Maps：目的地 Minn 上野</b><span class="muted">步行約 10–15 分。大方向往南（御徒町／阿美橫），勿往不忍池／動物園北走。</span></div></div>
+  <div class="step"><div class="num">3</div><div><b>抵達東上野 1-19-5</b><span class="muted">找 Minn／stay tuned 招牌進大廳。</span></div></div>
+</div>
+<div class="warnbox">
+  <b>行李重／太熱的備案：</b>京成上野 → 走地下街轉 <b>JR 山手線 1 站到御徒町</b>（南行）→ 御徒町出站再步行約 5 分。車程短、總移動通常更省力。
+</div>
+<div class="accbox">
+  Day1 建議節奏：Skyliner 約 14:00–14:40 抵京成上野 → 走到飯店約 15:00 前後（剛好 Check-in）。若提早到，先用 <b>セルフクローク</b> 寄行李再去吃／逛。
+</div>
+</section>
+
+<section id="jr">
+<h2>④ 從 JR 上野／御徒町走去</h2>
+<div class="card">
+<h3>JR 御徒町（推薦拖行李）</h3>
+<ul>
+<li>出站後開 Maps 導航至 Minn 上野，約 5 分。</li>
+<li>周邊即阿美橫町、多慶屋、便利店，補水／買宵夜方便。</li>
+</ul>
+</div>
+<div class="card">
+<h3>JR／地鐵上野</h3>
+<ul>
+<li>往「広小路／御徒町／アメ横」方向出站，不要往公園／動物園。</li>
+<li>沿上野中央通南側步行，約 5–8 分。</li>
+</ul>
+</div>
+<div class="card">
+<h3>日比谷線 仲御徒町（最近）</h3>
+<ul>
+<li>官方：步行約 <b>3 分</b>。</li>
+<li>適合行程中途回飯店放行李、洗衣。</li>
+</ul>
+</div>
+</section>
+
+<section id="checkin">
+<h2>⑤ Check-in／Check-out（官方）</h2>
+<div class="okbox">
+  <b>Check-in：15:00 起</b>（之後夜間也可；官網寫 15:00 後隨時可）。<br>
+  ⚠️ <b>沒有 Early Check-in 選項／網站</b>：官網 FAQ 明寫「15:00 より前のアーリーチェックインは承っておりません」。提早抵達請用セルフクローク寄行李再去吃喝逛。<br>
+  <b>Check-out：10:00</b>。
+</div>
+<h3>入住怎麼辦（自助）</h3>
+<div class="flow">
+  <div class="step"><div class="num">1</div><div><b>出發前／路上：手機完成事前 Check-in 登錄</b><span class="muted">依訂房郵件／官方指示填資料；外國籍需護照資訊。</span></div></div>
+  <div class="step"><div class="num">2</div><div><b>到大廳：用已登錄的手機完成手續</b><span class="muted">若沒預登錄：櫃台平板掃 QR，用自己手機完成登錄。</span></div></div>
+  <div class="step"><div class="num">3</div><div><b>護照</b><span class="muted">非日本居住之外國籍旅客需提示護照（法定）。全員資料需登錄（姓名／住址／聯絡／職業等）。</span></div></div>
+</div>
+<div class="warnbox">
+  晚 Check-out（延至最晚 12:00）需預約後另洽；當日狀況可能無法。費用（稅込）官方 FAQ：<br>
+  至 10:30＝¥2,000｜11:00＝¥4,000｜11:30＝¥6,000｜12:00＝¥8,000。
+</div>
+<p class="muted">Day7 建議：早餐後於 <b>10:00 前退房</b> → 行李放セルフクローク → 再去不忍池／國立博物館。</p>
+</section>
+
+<section id="luggage">
+<h2>⑥ 寄行李（有）</h2>
+<div class="okbox">
+  官方：<b>設有セルフクローク（自助置物）</b>，Check-in <b>前／後</b>皆可自行使用。<br>
+  適用：Day1 提早抵達、Day7 退房後繼續逛街再取行李去京成上野搭 Skyliner。
+</div>
+<ul>
+<li>把大件放入クローク，只帶隨身包出門。</li>
+<li>取行李後再走去京成上野（約 10–15 分）或 JR 上野轉京成。</li>
+<li>現場空間／櫃數有限；旺季盡早寄、標示清楚。</li>
+</ul>
+</section>
+
+<section id="laundry">
+<h2>⑦ 洗衣機（有・在 1F）</h2>
+<div class="okbox">
+  館內ハウスガイド標示：<b>１F コインランドリー</b>＝洗衣機＋烘衣機。<br>
+  費用、洗／烘時間以館內標示為準。
+</div>
+<ul>
+<li>建議排在回飯店較早的晚上（例如 Day3／Day5 後）。</li>
+<li>自備少量洗衣精亦可；現場是否販售以實際為準。</li>
+<li>客室有廚房／IH／微波／冰箱，但<b>無電鍋、無調味料</b>（官方）。</li>
+</ul>
+</section>
+
+<section id="amenity">
+<h2>⑧ 盥洗用具／備品（提供什麼）</h2>
+<div class="grid" style="display:grid;gap:10px">
+<div class="okbox">
+  <b>館內有提供：</b>洗髮精、潤髮乳、沐浴乳、洗手乳、大／小毛巾、拖鞋、除臭噴霧；浴室另有吹風機（洗面台前布袋內，ハウスガイド）。
+</div>
+<div class="warnbox">
+  <b>不提供（請自備）：</b>牙刷、刮鬍刀、化妝水、睡衣等。官方為減塑已取消客房牙刷；官網寫現場<b>可另購竹牙刷</b>。
+</div>
+</div>
+<p class="muted">詳見官方 <a href="https://staytuned.asia/ja/brands/minn/hotels/minn-ueno/amenity" target="_blank" rel="noopener">アメニティ頁</a>／<a href="https://sites.google.com/squeeze-inc.asia/house-guide-minn-ueno/" target="_blank" rel="noopener">ハウスガイド</a>。</p>
+</section>
+
+<section id="tips">
+<h2>⑨ 其他注意</h2>
+<ul>
+<li><b>全室禁煙</b>（含電子菸／加熱菸）。</li>
+<li>電話為 AI 自動應答為主（約 3–5 秒延遲），必要時會轉真人：<a href="tel:050-3642-4644">050-3642-4644</a>。</li>
+<li>詳情以訂房確認信與 <a href="https://staytuned.asia/ja/brands/minn/hotels/minn-ueno" target="_blank" rel="noopener">官網</a> 為準。</li>
+</ul>
+<div class="accbox">
+  相關頁：<a href="narita-to-ueno-access-guide.html">成田 → 上野（Skyliner）</a>　·　
+  <a href="tokyo-20260812-guide.html">八月主指南</a>　·　
+  <a href="tokyo-2026-08-ueno-local-guide.html">上野・阿美橫町手冊</a>
+</div>
+</section>
+
+<div class="footer">資訊整理自 Minn 上野官方頁（地址／Check-in／out／クローク／ランドリー）。步行時間為官方或 Maps 約略值，現場以導航為準。</div>
+</div>
+</body>
+</html>
